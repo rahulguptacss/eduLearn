@@ -26,35 +26,35 @@ export default function Topbar({ data }: { data: TopbarData }) {
   if (!data) return null;
 
   return (
-    <div className="bg-secondary text-white py-3 px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-16 flex flex-col md:flex-row justify-between items-center text-sm border-b border-gray-800">
+    <div className="hidden md:flex bg-secondary text-white py-2 sm:py-3 px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-16 flex-col md:flex-row justify-between items-center text-[13px] sm:text-[14px] border-b border-gray-800">
       
       {/* Left side: Contact Info */}
-      <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 mb-3 md:mb-0 font-medium">
-        <div className="flex items-center gap-2">
-          <MapPin size={18} className="text-primary fill-transparent" />
-          <span className="tracking-wide">{data.address}</span>
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-x-5 gap-y-1.5 mb-2.5 md:mb-0 font-medium w-full md:w-auto text-center sm:text-left">
+        <div className="flex items-start sm:items-center justify-center gap-2">
+          <MapPin size={16} className="text-primary fill-transparent shrink-0 mt-0.5 sm:mt-0" />
+          <span className="tracking-wide leading-tight">{data.address}</span>
         </div>
         <span className="text-gray-500 hidden sm:inline">|</span>
-        <div className="flex items-center gap-2">
-          <Mail size={18} className="text-primary" />
+        <div className="flex items-center justify-center gap-2">
+          <Mail size={16} className="text-primary shrink-0" />
           <span className="tracking-wide">{data.email}</span>
         </div>
       </div>
 
       {/* Right side: Social Links */}
-      <div className="flex items-center gap-4 font-medium">
+      <div className="flex items-center justify-center gap-3 font-medium w-full md:w-auto">
         <span>{data.followText}</span>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 sm:gap-4">
           {data.socialLinks.map((social, index) => {
             const Icon = socialIconMap[social.icon] || FacebookIcon;
             return (
               <React.Fragment key={index}>
                 <a 
                   href={social.href} 
-                  className="hover:text-primary transition-colors text-white"
+                  className="hover:text-primary transition-colors text-white flex items-center justify-center"
                   aria-label={social.icon}
                 >
-                  <Icon size={16} />
+                  <Icon size={15} />
                 </a>
                 {index < data.socialLinks.length - 1 && (
                   <span className="text-gray-500 font-light hidden sm:inline">|</span>

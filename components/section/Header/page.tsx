@@ -17,7 +17,7 @@ export default function Header({ data }: { data: HeaderData }) {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="bg-white py-2 px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-16 flex justify-between items-center shadow-sm sticky top-0 z-50"
+      className="bg-white py-3 px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-16 flex justify-between items-center shadow-sm sticky top-0 z-50"
     >
       <div className="flex items-center">
         <Link href="/">
@@ -26,7 +26,7 @@ export default function Header({ data }: { data: HeaderData }) {
             alt={data.logoText || "Logo"} 
             width={300} 
             height={90} 
-            className="h-12 sm:h-14 lg:h-[72px] w-auto object-contain" 
+            className="h-14 sm:h-16 lg:h-[72px] w-auto object-contain" 
             priority
           />
         </Link>
@@ -79,7 +79,10 @@ export default function Header({ data }: { data: HeaderData }) {
 
       {/* Mobile Menu Toggle */}
       <div className="xl:hidden flex items-center">
-        <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-secondary p-2">
+        <button 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+          className="text-white bg-primary hover:bg-[#e05312] p-2 rounded-lg shadow-sm transition-colors focus:outline-none"
+        >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -104,17 +107,17 @@ export default function Header({ data }: { data: HeaderData }) {
                   {item.label}
                 </Link>
               ))}
-              <div className="flex flex-col sm:flex-row gap-4 mt-4 pt-4 border-t border-gray-100">
-                <Link href="#" className="group bg-secondary hover:bg-gray-800 text-white pl-6 pr-2 py-1.5 rounded-xl font-semibold text-[15px] transition-all hover:shadow-md flex items-center justify-between w-full sm:w-auto">
-                  {data.contactButtonText}
-                  <div className="bg-white text-secondary rounded-full p-1.5 ml-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                    <Send size={18} className="-ml-0.5" />
+              <div className="flex flex-row gap-2 sm:gap-4 mt-4 pt-4 border-t border-gray-100">
+                <Link href="#" className="flex-1 group bg-secondary hover:bg-gray-800 text-white pl-3 sm:pl-6 pr-1 sm:pr-2 py-1.5 rounded-xl font-semibold text-[13px] sm:text-[15px] transition-all hover:shadow-md flex items-center justify-between w-full sm:w-auto">
+                  <span className="whitespace-nowrap truncate">{data.contactButtonText}</span>
+                  <div className="bg-white text-secondary rounded-full p-1 sm:p-1.5 ml-1 sm:ml-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                    <Send size={16} className="-ml-0.5" />
                   </div>
                 </Link>
-                <Link href="#" className="group bg-primary hover:bg-orange-600 text-white pl-6 pr-2 py-1.5 rounded-xl font-semibold text-[15px] transition-all hover:shadow-md flex items-center justify-between w-full sm:w-auto">
-                  {data.buttonText}
-                  <div className="bg-white text-primary rounded-full p-1.5 ml-3 transition-transform duration-300 group-hover:translate-x-1.5">
-                    <ArrowRight size={18} />
+                <Link href="#" className="flex-1 group bg-primary hover:bg-orange-600 text-white pl-3 sm:pl-6 pr-1 sm:pr-2 py-1.5 rounded-xl font-semibold text-[13px] sm:text-[15px] transition-all hover:shadow-md flex items-center justify-between w-full sm:w-auto">
+                  <span className="whitespace-nowrap truncate">{data.buttonText}</span>
+                  <div className="bg-white text-primary rounded-full p-1 sm:p-1.5 ml-1 sm:ml-3 transition-transform duration-300 group-hover:translate-x-1.5 shrink-0">
+                    <ArrowRight size={16} />
                   </div>
                 </Link>
               </div>

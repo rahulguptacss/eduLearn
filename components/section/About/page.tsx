@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 import { AboutData } from "../../types";
 import { GraduationCap, Users, BookOpen, ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { Caveat } from "next/font/google";
+import { motion } from "framer-motion";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
 
@@ -14,7 +17,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export default function About({ data }: { data: AboutData }) {
   return (
-    <section className="relative bg-[#f8fbfd] py-12 lg:py-[60px] overflow-hidden">
+    <section className="relative bg-white py-8 lg:py-[40px] overflow-hidden">
       {/* Background Dots Pattern (Decorative) */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-30 pointer-events-none">
         <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,20 +33,26 @@ export default function About({ data }: { data: AboutData }) {
         {/* =================================================
             LEFT CONTENT (Text & Features)
         ================================================== */}
-        <div className="lg:w-[50%] flex flex-col pt-4">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="lg:w-[50%] flex flex-col pt-4"
+        >
           
           {/* Subtitle */}
           <div className="flex items-center gap-4 mb-4">
-            <p className="text-primary font-semibold tracking-[1px] text-[13px] uppercase">
+            <p className="text-primary font-bold tracking-[2px] text-[15px] uppercase">
               {data.subtitle}
             </p>
             <span className="w-12 h-[1.5px] bg-primary" />
           </div>
 
           {/* Title */}
-          <h2 className="text-[36px] sm:text-[44px] lg:text-[50px] font-extrabold text-secondary leading-[1.15] mb-6 tracking-tight">
+          <h2 className="text-[32px] sm:text-[44px] lg:text-[50px] font-extrabold text-secondary leading-[1.15] mb-6 tracking-tight">
             50 Years of Experience <br className="hidden lg:block" />
-            <span className="text-primary">in Education</span>
+            <span className="text-primary block lg:inline mt-1 lg:mt-0">in Education</span>
           </h2>
 
           {/* Descriptions */}
@@ -106,6 +115,7 @@ export default function About({ data }: { data: AboutData }) {
               duration-300
               hover:shadow-lg
               w-fit
+              cursor-pointer
             "
           >
             <span>{data.buttonText}</span>
@@ -126,13 +136,19 @@ export default function About({ data }: { data: AboutData }) {
               <ArrowRight size={18} strokeWidth={2.5} />
             </span>
           </button>
-        </div>
+        </motion.div>
 
 
         {/* =================================================
             RIGHT CONTENT (Images & Badges)
         ================================================== */}
-        <div className="lg:w-[50%] relative h-[500px] lg:h-[600px] w-full flex">
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="lg:w-[50%] relative h-[500px] lg:h-[600px] w-full flex"
+        >
           
           {/* Decorative Blobs */}
           <div className="absolute top-[-30px] right-[-30px] w-72 h-72 bg-[#fff0e9] rounded-full opacity-60 pointer-events-none -z-10 blur-3xl" />
@@ -184,7 +200,13 @@ export default function About({ data }: { data: AboutData }) {
           </div>
 
           {/* Floating Center Badge */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-[20px] p-3 lg:py-4 lg:pl-4 lg:pr-6 flex items-center gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, type: "spring", stiffness: 100 }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-[20px] p-3 lg:py-4 lg:pl-4 lg:pr-6 flex items-center gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20"
+          >
             <div className="w-[48px] h-[48px] lg:w-[56px] lg:h-[56px] rounded-full bg-primary text-white flex items-center justify-center shrink-0">
               <GraduationCap size={28} fill="currentColor" strokeWidth={1} />
             </div>
@@ -192,9 +214,9 @@ export default function About({ data }: { data: AboutData }) {
               <p className="font-extrabold text-secondary text-[26px] lg:text-[30px] leading-none mb-1">50+</p>
               <p className="text-[#6b7280] text-[12px] lg:text-[13px] leading-snug font-medium">Years of Experience <br/> in Education</p>
             </div>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );
