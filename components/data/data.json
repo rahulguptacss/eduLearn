@@ -1,0 +1,292 @@
+{
+  "topbar": {
+    "address": "123, Sector 62, Noida, Uttar Pradesh 201309",
+    "email": "admissions@edulearn.in",
+    "followText": "Follow us :",
+    "socialLinks": [
+      { "icon": "facebook", "href": "#" },
+      { "icon": "linkedin", "href": "#" },
+      { "icon": "twitter", "href": "#" },
+      { "icon": "instagram", "href": "#" }
+    ]
+  },
+  "header": {
+    "logoText": "EduLearn",
+    "menu": [
+      { "label": "Home", "href": "#" },
+      { "label": "About", "href": "#" },
+      { "label": "Programs", "href": "#" },
+      { "label": "Courses", "href": "#" },
+      { "label": "Faculty", "href": "#" },
+      { "label": "Admission Process", "href": "#" },
+      { "label": "Gallery", "href": "#" },
+      { "label": "Blog", "href": "#" }
+    ],
+    "contactButtonText": "Contact Us",
+    "buttonText": "Apply Now"
+  },
+  "hero": {
+    "slides": [
+      {
+        "subtitle": "WELCOME TO EDULEARN",
+        "title": "Take Your Admission To The Best Online Learning Course",
+        "description": "Learn from industry experts, gain in-demand skills, and build a brighter future with EduLearn.",
+        "primaryButtonText": "Explore Programs",
+        "secondaryButtonText": "Watch Video",
+        "image": "/hero/1.png"
+      },
+      {
+        "subtitle": "MASTER YOUR SKILLS",
+        "title": "Unlock Your Potential With Expert Online Learning Course",
+        "description": "Join thousands of successful students who have transformed their careers through our platform.",
+        "primaryButtonText": "View Courses",
+        "secondaryButtonText": "Free Trial",
+        "image": "/hero/2.png"
+      },
+      {
+        "subtitle": "GLOBAL RECOGNITION",
+        "title": "Earn Certificates From The Best Online Learning Course",
+        "description": "Our verified certificates are recognized by top companies worldwide to help you land your dream job.",
+        "primaryButtonText": "Start Learning",
+        "secondaryButtonText": "Our Alumni",
+        "image": "/hero/3.png"
+      }
+    ],
+    "features": [
+      {
+        "title": "Expert Faculty",
+        "subtitle": "Learn from the best",
+        "icon": "graduation-cap"
+      },
+      {
+        "title": "Flexible Learning",
+        "subtitle": "Study at your own pace",
+        "icon": "book-open"
+      },
+      {
+        "title": "Global Opportunities",
+        "subtitle": "Grow beyond boundaries",
+        "icon": "users"
+      }
+    ]
+  },
+  "about": {
+    "subtitle": "ABOUT EDULEARN",
+    "title": "50 Years of Experience in Education",
+    "description1": "We are committed to providing quality education and empowering students to build a brighter future. Our industry-focused programs, expert faculty, and modern learning approach help you achieve your goals.",
+    "description2": "At EduLearn, we believe education is more than just academics — it's about building character, creativity, and confidence. We strive to create a supportive learning environment where every student can learn, grow, and succeed.",
+    "features": [
+      { "title": "Quality Education", "icon": "graduation-cap" },
+      { "title": "Expert Faculty", "icon": "users" },
+      { "title": "Student Success", "icon": "book-open" }
+    ],
+    "buttonText": "Know More"
+  },
+  "popularCourses": {
+    "subtitle": "POPULAR COURSES",
+    "title": "Upgrade Your Skills With Popular Courses",
+    "courses": [
+      {
+        "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+        "category": "Web Development",
+        "rating": 4.8,
+        "reviews": 25,
+        "title": "Web Development & Web Design",
+        "author": "Michal John",
+        "duration": "14h 25m",
+        "price": 38,
+        "originalPrice": 45
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+        "category": "Business",
+        "rating": 4.9,
+        "reviews": 12,
+        "title": "Master In Business Management",
+        "author": "Jessica Smith",
+        "duration": "12h 30m",
+        "price": 45,
+        "originalPrice": 60
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+        "category": "Medical",
+        "rating": 5.0,
+        "reviews": 32,
+        "title": "Medical Science and Pharmacy",
+        "author": "Dr. Alex Doe",
+        "duration": "24h 10m",
+        "price": 50,
+        "originalPrice": 65
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80",
+        "category": "Photography",
+        "rating": 4.7,
+        "reviews": 18,
+        "title": "Photography Masterclass for Beginners",
+        "author": "Adam Smith",
+        "duration": "8h 45m",
+        "price": 89,
+        "originalPrice": 120
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      { "icon": "users", "value": "12,500+", "label": "Happy Students" },
+      { "icon": "graduation-cap", "value": "350+", "label": "Expert Instructors" },
+      { "icon": "book-open", "value": "200+", "label": "Online Courses" },
+      { "icon": "award", "value": "95%", "label": "Success Rate" }
+    ]
+  },
+  "whyChooseUs": {
+    "subtitle": "WHY CHOOSE US",
+    "title": "Your Learning Partner for a Brighter Tomorrow",
+    "features": [
+      {
+        "title": "Online Education",
+        "description": "Learn from anywhere in the world.",
+        "icon": "laptop",
+        "bgColor": "bg-blue-100",
+        "iconColor": "text-blue-500"
+      },
+      {
+        "title": "Expert Faculty",
+        "description": "World-class instructors.",
+        "icon": "users",
+        "bgColor": "bg-orange-100",
+        "iconColor": "text-orange-500"
+      },
+      {
+        "title": "Modern Campus",
+        "description": "State of the art facilities.",
+        "icon": "building",
+        "bgColor": "bg-green-100",
+        "iconColor": "text-green-500"
+      },
+      {
+        "title": "Flexible Learning",
+        "description": "Study at your own pace.",
+        "icon": "clock",
+        "bgColor": "bg-purple-100",
+        "iconColor": "text-purple-500"
+      },
+      {
+        "title": "Dedicated Mentors",
+        "description": "Personalized guidance.",
+        "icon": "user-check",
+        "bgColor": "bg-pink-100",
+        "iconColor": "text-pink-500"
+      },
+      {
+        "title": "Active Alumni",
+        "description": "Connect with graduates.",
+        "icon": "network",
+        "bgColor": "bg-teal-100",
+        "iconColor": "text-teal-500"
+      }
+    ],
+    "floatingBadge": {
+      "icon": "star",
+      "value": "24+",
+      "label": "Live Q&A Sessions"
+    }
+  },
+  "testimonials": {
+    "subtitle": "TESTIMONIALS",
+    "title": "Real Experiences From Our Dedicated Learners",
+    "description": "Hear from our students who have transformed their skills and careers with us.",
+    "testimonials": [
+      {
+        "quote": "The platform provided a great learning experience. The instructors are amazing and the support team is always there to help. I have gained practical skills and confidence to take on real world projects.",
+        "author": "Mila Jones",
+        "role": "Student",
+        "rating": 5,
+        "image": "https://randomuser.me/api/portraits/women/44.jpg"
+      }
+    ],
+    "ctaText": "Learn Anytime, Anywhere",
+    "ctaSubText": "Start Your Free Trial!"
+  },
+  "blog": {
+    "subtitle": "OUR BLOG",
+    "title": "Latest News & Articles",
+    "description": "Stay updated with the latest news, events and articles from our educational community.",
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+        "author": "Michal John",
+        "date": "15 Dec 2024",
+        "comments": 2,
+        "title": "All that is wrong with coding in the field of apprentices"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+        "author": "Sarah Smith",
+        "date": "18 Dec 2024",
+        "comments": 5,
+        "title": "How to use technology to adapt your talent to the world"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
+        "author": "David Warner",
+        "date": "20 Dec 2024",
+        "comments": 0,
+        "title": "Here are the things to look for when selecting an online course"
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Start Your Learning Journey With EduLearn",
+    "subtitle": "Join over 50,000+ happy students who are already learning on our platform. We offer a high class education.",
+    "buttonText": "Get Started Now"
+  },
+  "footer": {
+    "logoText": "EduLearn",
+    "description": "We are a growing community with a focus on quality education. Join us and discover a whole new world of learning.",
+    "linkGroups": [
+      {
+        "title": "Quick Links",
+        "links": [
+          { "label": "About Us", "href": "#" },
+          { "label": "Programs", "href": "#" },
+          { "label": "Courses", "href": "#" },
+          { "label": "Events", "href": "#" },
+          { "label": "Admission Process", "href": "#" }
+        ]
+      },
+      {
+        "title": "Our Courses",
+        "links": [
+          { "label": "Photography", "href": "#" },
+          { "label": "Business", "href": "#" },
+          { "label": "Medical Science", "href": "#" },
+          { "label": "Data Science", "href": "#" },
+          { "label": "Design Art", "href": "#" }
+        ]
+      },
+      {
+        "title": "Support",
+        "links": [
+          { "label": "Help Center", "href": "#" },
+          { "label": "FAQ", "href": "#" },
+          { "label": "Privacy Policy", "href": "#" },
+          { "label": "Terms of Service", "href": "#" },
+          { "label": "Sitemap", "href": "#" }
+        ]
+      }
+    ],
+    "contactInfo": {
+      "phone": "+1 234 567 890",
+      "email": "info@edulearn.com",
+      "address": "123 Education Street, NY, USA"
+    },
+    "socialLinks": [
+      { "icon": "facebook", "href": "#" },
+      { "icon": "twitter", "href": "#" },
+      { "icon": "instagram", "href": "#" },
+      { "icon": "linkedin", "href": "#" }
+    ]
+  }
+}
