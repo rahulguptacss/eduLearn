@@ -7,9 +7,6 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 export default function BlogList({ data }: { data: BlogData }) {
-  const dummyDescription = "Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-  const tags = ["Education", "Learning", "Courses"];
-
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -66,16 +63,16 @@ export default function BlogList({ data }: { data: BlogData }) {
         >
           <div className="flex items-center justify-center gap-3 mb-2">
             <div className="w-10 h-[2px] bg-[#ff5e14]"></div>
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#0e2a46] tracking-[2px] uppercase">OUR BLOG</span>
+            <span className="text-[14px] sm:text-[16px] font-bold text-[#0e2a46] tracking-[2px] uppercase">{data.subtitle}</span>
             <div className="w-10 h-[2px] bg-[#ff5e14]"></div>
           </div>
           
           <h2 className="text-[36px] sm:text-[44px] lg:text-[56px] font-bold text-[#0e2a46] leading-[1.15] tracking-tight mb-4">
-            Latest News & <span className="text-[#ff5e14]">Articles</span>
+            {data.title} {data.titleHighlight && <span className="text-[#ff5e14]">{data.titleHighlight}</span>}
           </h2>
           
           <p className="text-[#5a6b82] text-[16px] sm:text-[17px] lg:text-[18px] max-w-[800px] mx-auto leading-[1.6]">
-            Stay updated with the latest insights, tips and stories from the world of education,<br className="hidden lg:block" /> learning and career development.
+            {data.description}
           </p>
         </motion.div>
         
@@ -123,7 +120,7 @@ export default function BlogList({ data }: { data: BlogData }) {
                       <path d="M2.58579 16.5858L7.41421 21.4142C8.19526 22.1953 9.46159 22.1953 10.2426 21.4142L20.8284 10.8284C21.6095 10.0474 22 8.98816 22 7.88457V4C22 2.89543 21.1046 2 20 2H16.1154C15.0118 2 13.9526 2.43929 13.1716 3.22033L2.58579 13.8061C1.80474 14.5872 1.80474 15.8047 2.58579 16.5858Z" stroke="#0071ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       <circle cx="16.5" cy="7.5" r="1.5" fill="white"/>
                     </svg>
-                    {tags[idx % tags.length]}
+                    {post.tag}
                   </div>
                 </div>
                 
@@ -134,7 +131,7 @@ export default function BlogList({ data }: { data: BlogData }) {
                 
                 {/* Description */}
                 <p className="text-[#5a6b82] text-[13px] sm:text-[14px] leading-[1.6] mb-3 flex-grow">
-                  {dummyDescription}
+                  {post.description}
                 </p>
                 
                 {/* Read More Button */}
@@ -159,7 +156,7 @@ export default function BlogList({ data }: { data: BlogData }) {
           className="mt-5 lg:mt-6 flex justify-center"
         >
           <button className="bg-[#ff5e14] text-white rounded-full p-[4px] pl-6 sm:p-[5px] sm:pl-8 flex items-center gap-4 sm:gap-5 hover:bg-[#e04f0d] hover:shadow-[0_10px_30px_rgba(255,94,20,0.3)] transition-all duration-300 group/btn cursor-pointer">
-            <span className="font-semibold text-[14px] sm:text-[16px]">View All Articles</span>
+            <span className="font-semibold text-[14px] sm:text-[16px]">{data.buttonText || "View All"}</span>
             <div className="bg-white text-[#ff5e14] w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] rounded-full flex items-center justify-center group-hover/btn:translate-x-1 transition-transform">
               <ArrowRight className="w-4 h-4 sm:w-[18px] sm:h-[18px]" strokeWidth={2.5} />
             </div>

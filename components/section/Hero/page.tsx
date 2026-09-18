@@ -53,7 +53,7 @@ export default function Hero({ data }: { data: HeroData }) {
       ====================================================== */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
-          src="/hero/bherog.png"
+          src={data.bgImage || "/hero/bherog.png"}
           alt="University Background"
           fill
           priority
@@ -126,13 +126,11 @@ export default function Hero({ data }: { data: HeroData }) {
                   lg:mb-2
                 "
               >
-                {slide.title.includes("Online Learning Course") ? (
+                {slide.titleHighlight ? (
                   <>
-                    {slide.title.split("Online Learning Course")[0]}
-                    <span>Online </span>
-                    <span className="text-primary">
-                      Learning Course
-                    </span>
+                    {slide.title.split(slide.titleHighlight)[0]}
+                    <span className="text-primary">{slide.titleHighlight}</span>
+                    {slide.title.split(slide.titleHighlight)[1]}
                   </>
                 ) : (
                   slide.title

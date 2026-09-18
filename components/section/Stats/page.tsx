@@ -53,20 +53,21 @@ export default function Stats({ data }: { data: StatsData }) {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/img/bgcounter.png" 
+          src={data.bgImage || "/img/bgcounter.png"} 
           alt="Graduation Background" 
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#0e2a46]/75"></div>
+        <div className="absolute inset-0 bg-[#0e2a46]/90 mix-blend-multiply"></div>
       </div>
       
       {/* Content */}
       <div className="relative z-10 max-w-[1200px] mx-auto">
+        {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center mb-6 text-center"
         >
@@ -74,18 +75,17 @@ export default function Stats({ data }: { data: StatsData }) {
             <span className="w-10 h-[1.5px] bg-white"></span>
             <div className="flex items-center gap-1.5">
               <GraduationCap size={18} strokeWidth={2.5} />
-              OUR IMPACT
+              {data.subtitle}
             </div>
             <span className="w-10 h-[1.5px] bg-white"></span>
           </div>
           
           <h2 className="text-[24px] sm:text-[32px] lg:text-[36px] font-bold text-white leading-[1.2] mb-4">
-            Numbers That Reflect <span className="text-[#ff5e14]">Our Commitment</span>
+            {data.title} {data.titleHighlight && <span className="text-[#ff5e14]">{data.titleHighlight}</span>}
           </h2>
 
           <p className="text-gray-300 max-w-[700px] mx-auto text-[14px] sm:text-[15px] leading-relaxed">
-            Empowering learners, building careers, and creating brighter futures<br className="hidden sm:block"/>
-            through quality education and continuous support.
+            {data.description}
           </p>
         </motion.div>
         
@@ -96,7 +96,7 @@ export default function Stats({ data }: { data: StatsData }) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-500/30 pt-4"
         >
-          {data.items.map((stat, idx) => {
+          {data.stats.map((stat, idx) => {
             const Icon = iconMap[stat.icon] || Users;
             return (
               <div key={idx} className="flex flex-col items-center justify-center p-6">

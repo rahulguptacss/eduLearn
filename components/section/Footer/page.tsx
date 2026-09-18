@@ -40,8 +40,8 @@ export default function Footer({ data }: { data: FooterData }) {
           <div className="mb-2">
             <Link href="/">
               <Image 
-                src="/logo/footerlogo.png" 
-                alt="EduLearn Logo" 
+                src={data.logo || "/logo/footerlogo.png"} 
+                alt={data.logoText || "EduLearn Logo"} 
                 width={280} 
                 height={90} 
                 className="w-auto h-20 object-contain"
@@ -143,11 +143,16 @@ export default function Footer({ data }: { data: FooterData }) {
       
       {/* Copyright */}
       <div className="max-w-[1400px] mx-auto border-t border-white/10 pt-6 pb-2 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-5 text-[11px] sm:text-[14px] text-[#aebfd0]">
-        <p className="text-center md:text-left leading-relaxed">Copyright © {new Date().getFullYear()}. All rights reserved. Powered by <span className="text-white font-medium">Lestow</span></p>
+        <p className="text-center md:text-left leading-relaxed">
+          {data.copyright.replace('{year}', new Date().getFullYear().toString())} 
+          <span className="text-white font-medium">{data.poweredBy}</span>
+        </p>
         <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6">
-          <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link href="#" className="hover:text-white transition-colors">Terms & Conditions</Link>
-          <Link href="#" className="hover:text-white transition-colors">Sitemap</Link>
+          {data.bottomLinks.map((link, idx) => (
+            <Link key={idx} href={link.href} className="hover:text-white transition-colors">
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
       

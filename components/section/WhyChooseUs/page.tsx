@@ -67,8 +67,8 @@ export default function WhyChooseUs({ data }: { data: WhyChooseData }) {
               {data.subtitle}
             </p>
             <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-extrabold text-secondary leading-[1.1] mb-6">
-              Your Learning Partner <br className="hidden sm:block" />
-              for a <span className="text-primary">Brighter Tomorrow</span>
+              {data.title} <br className="hidden sm:block" />
+              {data.titleHighlight && <span className="text-primary">{data.titleHighlight}</span>}
             </h2>
             {data.description && (
               <p className="text-gray-500 font-medium text-[15px] sm:text-[16px] leading-relaxed max-w-[90%]">

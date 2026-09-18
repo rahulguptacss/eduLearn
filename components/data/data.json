@@ -24,15 +24,31 @@
       ]
     },
     "Header": {
+      "logo": "/logo/logo.png",
       "logoText": "EduLearn",
       "menu": [
         {
           "label": "Home",
-          "href": "#"
+          "href": "/"
         },
         {
           "label": "About",
-          "href": "#"
+          "href": "/about",
+          "hasDropdown": true,
+          "subItems": [
+            {
+              "label": "About Us",
+              "href": "/about"
+            },
+            {
+              "label": "Why Choose Us",
+              "href": "/why-choose-us"
+            },
+            {
+              "label": "Mission & Vision",
+              "href": "/mission-vision"
+            }
+          ]
         },
         {
           "label": "Programs",
@@ -40,11 +56,11 @@
         },
         {
           "label": "Courses",
-          "href": "#"
+          "href": "/courses"
         },
         {
           "label": "Faculty",
-          "href": "#"
+          "href": "/faculty"
         },
         {
           "label": "Admission Process",
@@ -63,6 +79,7 @@
       "buttonText": "Apply Now"
     },
     "Footer": {
+      "logo": "/logo/footerlogo.png",
       "logoText": "EduLearn",
       "description": "Empowering learners worldwide with quality education, innovative resources and a supportive community.",
       "linkGroups": [
@@ -71,7 +88,7 @@
           "links": [
             {
               "label": "About Us",
-              "href": "#"
+              "href": "/about"
             },
             {
               "label": "Programs",
@@ -170,6 +187,22 @@
           "icon": "youtube",
           "href": "https://www.youtube.com"
         }
+      ],
+      "copyright": "Copyright © {year}. All rights reserved. Powered by ",
+      "poweredBy": "Lestow",
+      "bottomLinks": [
+        {
+          "label": "Privacy Policy",
+          "href": "#"
+        },
+        {
+          "label": "Terms & Conditions",
+          "href": "#"
+        },
+        {
+          "label": "Sitemap",
+          "href": "#"
+        }
       ]
     }
   },
@@ -180,22 +213,135 @@
           "pages": {
             "home": {
               "components": [
-                { "key": "Hero", "component": "Hero" },
-                { "key": "About", "component": "About" },
-                { "key": "PopularCourses", "component": "PopularCourses" },
-                { "key": "Stats", "component": "Stats" },
-                { "key": "WhyChooseUs", "component": "WhyChooseUs" },
-                { "key": "Testimonials", "component": "Testimonials" },
-                { "key": "Blog", "component": "BlogList" }
+                {
+                  "key": "Hero",
+                  "component": "Hero"
+                },
+                {
+                  "key": "About",
+                  "component": "About"
+                },
+                {
+                  "key": "PopularCourses",
+                  "component": "PopularCourses"
+                },
+                {
+                  "key": "Stats",
+                  "component": "Stats"
+                },
+                {
+                  "key": "WhyChooseUs",
+                  "component": "WhyChooseUs"
+                },
+                {
+                  "key": "Testimonials",
+                  "component": "Testimonials"
+                },
+                {
+                  "key": "Blog",
+                  "component": "BlogList"
+                }
               ]
+            },
+            "about": {
+              "breadcrumb": {
+                "title": "About Us",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "About Us"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              }
+            },
+            "courses": {
+              "breadcrumb": {
+                "title": "Our Courses",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Our Courses"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              }
+            },
+            "whyChooseUs": {
+              "breadcrumb": {
+                "title": "Why Choose Us",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Why Choose Us"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              }
+            },
+            "missionVision": {
+              "breadcrumb": {
+                "title": "Mission & Vision",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Mission & Vision"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              }
+            },
+            "courseDetail": {
+              "breadcrumb": {
+                "title": "Course Detail",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Course Detail"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              }
+            },
+            "facultyPage": {
+              "breadcrumb": {
+                "title": "Our Faculty",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Our Faculty"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              }
             }
           },
           "sections": {
             "hero": {
+              "bgImage": "/hero/bherog.png",
               "slides": [
                 {
                   "subtitle": "WELCOME TO EDULEARN",
                   "title": "Take Your Admission To The Best Online Learning Course",
+                  "titleHighlight": "Learning Course",
                   "description": "Learn from industry experts, gain in-demand skills, and build a brighter future with EduLearn.",
                   "primaryButtonText": "Explore Programs",
                   "secondaryButtonText": "Watch Video",
@@ -204,6 +350,7 @@
                 {
                   "subtitle": "MASTER YOUR SKILLS",
                   "title": "Unlock Your Potential With Expert Online Learning Course",
+                  "titleHighlight": "Learning Course",
                   "description": "Join thousands of successful students who have transformed their careers through our platform.",
                   "primaryButtonText": "View Courses",
                   "secondaryButtonText": "Free Trial",
@@ -212,6 +359,7 @@
                 {
                   "subtitle": "GLOBAL RECOGNITION",
                   "title": "Earn Certificates From The Best Online Learning Course",
+                  "titleHighlight": "Learning Course",
                   "description": "Our verified certificates are recognized by top companies worldwide to help you land your dream job.",
                   "primaryButtonText": "Start Learning",
                   "secondaryButtonText": "Our Alumni",
@@ -238,7 +386,8 @@
             },
             "about": {
               "subtitle": "ABOUT EDULEARN",
-              "title": "50 Years of Experience in Education",
+              "title": "50 Years of Experience",
+              "titleHighlight": "in Education",
               "description1": "We are committed to providing quality education and empowering students to build a brighter future. Our industry-focused programs, expert faculty, and modern learning approach help you achieve your goals.",
               "description2": "At EduLearn, we believe education is more than just academics — it's about building character, creativity, and confidence. We strive to create a supportive learning environment where every student can learn, grow, and succeed.",
               "features": [
@@ -255,12 +404,24 @@
                   "icon": "book-open"
                 }
               ],
-              "buttonText": "Know More"
+              "buttonText": "Know More",
+              "images": [
+                "/about/1.png",
+                "/about/2.png",
+                "/about/3.png",
+                "/about/4.png"
+              ],
+              "badge": {
+                "value": "50+",
+                "label": "Years of Experience \n in Education"
+              }
             },
             "popularCourses": {
               "subtitle": "POPULAR COURSES",
-              "title": "Upgrade Your Skills With Popular Courses",
+              "title": "Upgrade Your Skills With",
+              "titleHighlight": "Popular Courses",
               "description": "Choose from our most in-demand courses and take the next step toward a brighter future.",
+              "buttonText": "Read More",
               "courses": [
                 {
                   "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
@@ -272,7 +433,8 @@
                   "duration": "8 Weeks",
                   "price": 15,
                   "originalPrice": 30,
-                  "description": "Learn HTML, CSS, JavaScript and modern frameworks to build real-world websites."
+                  "description": "Learn HTML, CSS, JavaScript and modern frameworks to build real-world websites.",
+                  "id": "complete-web-development-bootcamp"
                 },
                 {
                   "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
@@ -284,7 +446,8 @@
                   "duration": "6 Weeks",
                   "price": 14,
                   "originalPrice": 25,
-                  "description": "Understand key financial concepts, budgeting, investing and wealth management."
+                  "description": "Understand key financial concepts, budgeting, investing and wealth management.",
+                  "id": "finance-fundamentals-for-beginners"
                 },
                 {
                   "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
@@ -296,7 +459,8 @@
                   "duration": "10 Weeks",
                   "price": 50,
                   "originalPrice": 80,
-                  "description": "Learn essential medical terms and improve your healthcare knowledge."
+                  "description": "Learn essential medical terms and improve your healthcare knowledge.",
+                  "id": "medical-terminology-made-easy"
                 },
                 {
                   "image": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80",
@@ -308,12 +472,18 @@
                   "duration": "4 Weeks",
                   "price": 99,
                   "originalPrice": 149,
-                  "description": "Learn photography techniques, composition and editing to capture stunning photos."
+                  "description": "Learn photography techniques, composition and editing to capture stunning photos.",
+                  "id": "photography-masterclass-for-creators"
                 }
               ]
             },
             "stats": {
-              "items": [
+              "bgImage": "/img/bgcounter.png",
+              "subtitle": "OUR IMPACT",
+              "title": "Numbers That Reflect",
+              "titleHighlight": "Our Commitment",
+              "description": "Empowering learners, building careers, and creating brighter futures through quality education and continuous support.",
+              "stats": [
                 {
                   "icon": "users",
                   "value": "12,500+",
@@ -337,9 +507,10 @@
               ]
             },
             "whyChooseUs": {
-              "subtitle": "WHY CHOOSE US?",
-              "title": "Your Learning Partner for a Brighter Tomorrow",
-              "description": "Edulax empowers learners and educators with innovative, accessible and engaging education solutions. We go beyond traditional learning to create real impact globally.",
+              "subtitle": "WHY CHOOSE US",
+              "title": "Your Learning Partner",
+              "titleHighlight": "for a Brighter Tomorrow",
+              "description": "We are committed to providing the best learning experience with interactive classes, expert educators, and modern tools.",
               "features": [
                 {
                   "title": "Course Management",
@@ -392,15 +563,30 @@
             },
             "testimonials": {
               "subtitle": "TESTIMONIALS",
-              "title": "Real Experiences From Our Dedicated Learners",
+              "title": "Real Experiences From Our",
+              "titleHighlight": "Dedicated Learners",
               "description": "Hear from our students who have transformed their skills and careers with us.",
               "testimonials": [
                 {
-                  "quote": "The platform provided a great learning experience. The instructors are amazing and the support team is always there to help. I have gained practical skills and confidence to take on real world projects.",
-                  "author": "Mila Jones",
+                  "quote": "Edulax has completely changed the way I learn. The courses are well-structured, the instructors are amazing, and the support team is always there to help. I've gained practical skills and confidence for my career. Highly recommended!",
+                  "author": "MH Hassan",
                   "role": "Student",
                   "rating": 5,
                   "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "quote": "The quality of education here is top-notch. The interactive platform makes learning so much easier and fun. I managed to land my dream job after completing the advanced development bootcamp. Thank you Edulax!",
+                  "author": "Sarah Jenkins",
+                  "role": "Web Developer",
+                  "rating": 5,
+                  "image": "https://randomuser.me/api/portraits/women/65.jpg"
+                },
+                {
+                  "quote": "I was skeptical at first, but the community and the mentors proved me wrong. It's the best investment I've made for my professional growth. The curriculum is up-to-date with industry standards.",
+                  "author": "David Chen",
+                  "role": "Data Analyst",
+                  "rating": 5,
+                  "image": "https://randomuser.me/api/portraits/men/32.jpg"
                 }
               ],
               "ctaText": "Learn Anytime, Anywhere",
@@ -408,37 +594,678 @@
             },
             "blog": {
               "subtitle": "OUR BLOG",
-              "title": "Latest News & Articles",
-              "description": "Stay updated with the latest news, events and articles from our educational community.",
+              "title": "Latest News &",
+              "titleHighlight": "Articles",
+              "description": "Stay updated with the latest insights, tips and stories from the world of education, learning and career development.",
+              "buttonText": "View All Articles",
               "posts": [
                 {
                   "image": "/blogs/1.png",
-                  "author": "Michal John",
-                  "date": "15 Dec 2024",
-                  "comments": 2,
-                  "title": "All that is wrong with coding in the field of apprentices"
+                  "author": "David Smith",
+                  "date": "10 Aug 2024",
+                  "comments": 15,
+                  "title": "The Importance of Quality Education in Today's World",
+                  "description": "Discover how quality education shapes individuals and communities, preparing them for the challenges of tomorrow.",
+                  "tag": "Education"
                 },
                 {
                   "image": "/blogs/2.png",
-                  "author": "Sarah Smith",
-                  "date": "18 Dec 2024",
-                  "comments": 5,
-                  "title": "How to use technology to adapt your talent to the world"
+                  "author": "Sarah Johnson",
+                  "date": "12 Aug 2024",
+                  "comments": 8,
+                  "title": "Tips for Successful Online Learning",
+                  "description": "Learn effective strategies to maximize your productivity and success while studying in an online environment.",
+                  "tag": "Learning"
                 },
                 {
                   "image": "/blogs/3.png",
-                  "author": "David Warner",
-                  "date": "20 Dec 2024",
-                  "comments": 0,
-                  "title": "Here are the things to look for when selecting an online course"
+                  "author": "Michael Brown",
+                  "date": "15 Aug 2024",
+                  "comments": 22,
+                  "title": "Choosing the Right Career Path for Your Future",
+                  "description": "Navigate the complex world of career choices with our comprehensive guide to finding your perfect professional fit.",
+                  "tag": "Career"
+                }
+              ]
+            },
+            "missionVision": {
+              "topSubtitle": "OUR PURPOSE",
+              "topTitle": "Mission & Vision",
+              "topTitleHighlight": "Vision",
+              "topDescription": "Driven by a clear purpose and a bold vision, we strive to create a brighter future through quality education.",
+              "blocks": [
+                {
+                  "subtitle": "OUR MISSION",
+                  "title": "Empowering Learners\nfor a Better Tomorrow",
+                  "titleHighlight": "Better Tomorrow",
+                  "description": "Our mission is to provide accessible, high-quality education that nurtures curiosity, encourages critical thinking, and builds the skills needed for lifelong success. We are committed to creating an inclusive and supportive learning environment where every student can discover their potential and achieve their goals.",
+                  "image": "/mission-vision/mission.png",
+                  "imagePosition": "right",
+                  "shapeBgColor": "#fff2ed"
+                },
+                {
+                  "subtitle": "OUR VISION",
+                  "title": "A Brighter Future Through Education",
+                  "titleHighlight": "Education",
+                  "description": "Our vision is to be a leading educational institution known for academic excellence, innovation, and positive impact. We aim to empower individuals with knowledge and values, enabling them to contribute to stronger communities and a brighter, more sustainable future.",
+                  "image": "/mission-vision/vision.png",
+                  "imagePosition": "left",
+                  "shapeBgColor": "#e8f2fb"
+                }
+              ]
+            },
+            "coursesPage": {
+              "title": "Upgrade Your Skills With Popular Courses",
+              "titleHighlight": "Popular Courses",
+              "subtitle": "OUR COURSES",
+              "description": "Choose from our most in-demand courses and take the next step toward a brighter future.",
+              "sidebar": {
+                "title": "Filter Courses",
+                "categories": [
+                  {
+                    "label": "Web Development",
+                    "count": 12
+                  },
+                  {
+                    "label": "Design & Creative",
+                    "count": 8
+                  },
+                  {
+                    "label": "Finance",
+                    "count": 10
+                  },
+                  {
+                    "label": "Business",
+                    "count": 7
+                  },
+                  {
+                    "label": "IT & Software",
+                    "count": 5
+                  },
+                  {
+                    "label": "Marketing",
+                    "count": 6
+                  },
+                  {
+                    "label": "Medical & Health",
+                    "count": 8
+                  },
+                  {
+                    "label": "Photography",
+                    "count": 5
+                  }
+                ],
+                "levels": [
+                  {
+                    "label": "Beginner",
+                    "count": 18
+                  },
+                  {
+                    "label": "Intermediate",
+                    "count": 22
+                  },
+                  {
+                    "label": "Advanced",
+                    "count": 10
+                  }
+                ],
+                "durations": [
+                  {
+                    "label": "4 Weeks",
+                    "count": 12
+                  },
+                  {
+                    "label": "6 Weeks",
+                    "count": 14
+                  },
+                  {
+                    "label": "8 Weeks",
+                    "count": 15
+                  },
+                  {
+                    "label": "10 Weeks",
+                    "count": 9
+                  },
+                  {
+                    "label": "12+ Weeks",
+                    "count": 5
+                  }
+                ],
+                "priceRange": {
+                  "min": 0,
+                  "max": 200
+                }
+              },
+              "courses": [
+                {
+                  "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+                  "category": "Web Development",
+                  "rating": 4.8,
+                  "reviews": "1.2K Students",
+                  "title": "Complete Web Development Bootcamp",
+                  "author": "John Doe",
+                  "duration": "8 Weeks",
+                  "price": 15,
+                  "originalPrice": 30,
+                  "description": "Learn HTML, CSS, JavaScript and modern frameworks to build real-world websites.",
+                  "level": "Beginner",
+                  "id": "complete-web-development-bootcamp"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+                  "category": "Finance",
+                  "rating": 4.7,
+                  "reviews": "980 Students",
+                  "title": "Finance Fundamentals for Beginners",
+                  "author": "Jane Smith",
+                  "duration": "6 Weeks",
+                  "price": 14,
+                  "originalPrice": 25,
+                  "description": "Understand key financial concepts, budgeting, investing and wealth management.",
+                  "level": "Beginner",
+                  "id": "finance-fundamentals-for-beginners"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+                  "category": "Medical",
+                  "rating": 4.9,
+                  "reviews": "1.5K Students",
+                  "title": "Medical Terminology Made Easy",
+                  "author": "Dr. Alan",
+                  "duration": "10 Weeks",
+                  "price": 50,
+                  "originalPrice": 80,
+                  "description": "Learn essential medical terms and improve your healthcare knowledge.",
+                  "level": "Intermediate",
+                  "id": "medical-terminology-made-easy"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80",
+                  "category": "Photography",
+                  "rating": 4.6,
+                  "reviews": "870 Students",
+                  "title": "Photography Masterclass for Creators",
+                  "author": "Alice Brown",
+                  "duration": "4 Weeks",
+                  "price": 99,
+                  "originalPrice": 149,
+                  "description": "Learn photography techniques, composition and editing to capture stunning photos.",
+                  "level": "Advanced",
+                  "id": "photography-masterclass-for-creators"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
+                  "category": "Design",
+                  "rating": 4.8,
+                  "reviews": "1.1K Students",
+                  "title": "Graphic Design for Beginners",
+                  "author": "Bob White",
+                  "duration": "6 Weeks",
+                  "price": 20,
+                  "originalPrice": 40,
+                  "description": "Master the fundamentals of graphic design and create stunning visual content.",
+                  "level": "Beginner",
+                  "id": "graphic-design-for-beginners"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80",
+                  "category": "Business",
+                  "rating": 4.7,
+                  "reviews": "950 Students",
+                  "title": "Business Communication Skills",
+                  "author": "Claire Green",
+                  "duration": "8 Weeks",
+                  "price": 25,
+                  "originalPrice": 45,
+                  "description": "Improve your communication skills and build professional relationships.",
+                  "level": "Intermediate",
+                  "id": "business-communication-skills"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+                  "category": "IT & Software",
+                  "rating": 4.5,
+                  "reviews": "600 Students",
+                  "title": "AWS Cloud Practitioner Certification",
+                  "author": "Cloud Guru",
+                  "duration": "10 Weeks",
+                  "price": 45,
+                  "originalPrice": 75,
+                  "description": "Start your cloud journey by mastering Amazon Web Services basics.",
+                  "level": "Beginner",
+                  "id": "aws-cloud-practitioner-certification"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+                  "category": "Finance",
+                  "rating": 4.9,
+                  "reviews": "2.2K Students",
+                  "title": "Advanced Data Analytics for Finance",
+                  "author": "Mark Spencer",
+                  "duration": "12+ Weeks",
+                  "price": 120,
+                  "originalPrice": 200,
+                  "description": "Learn to analyze large financial datasets using modern data tools.",
+                  "level": "Advanced",
+                  "id": "advanced-data-analytics-for-finance"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=800&q=80",
+                  "category": "Marketing",
+                  "rating": 4.6,
+                  "reviews": "850 Students",
+                  "title": "Digital Marketing Strategy 2024",
+                  "author": "Sarah Collins",
+                  "duration": "6 Weeks",
+                  "price": 30,
+                  "originalPrice": 50,
+                  "description": "Master SEO, SEM, and social media marketing to grow your brand.",
+                  "level": "Intermediate",
+                  "id": "digital-marketing-strategy-2024"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
+                  "category": "Medical",
+                  "rating": 4.7,
+                  "reviews": "1.1K Students",
+                  "title": "Nutrition and Wellness Counseling",
+                  "author": "Dr. Sarah Lee",
+                  "duration": "8 Weeks",
+                  "price": 60,
+                  "originalPrice": 100,
+                  "description": "Understand human nutrition and how to guide others to better health.",
+                  "level": "Beginner",
+                  "id": "nutrition-and-wellness-counseling"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80",
+                  "category": "Design & Creative",
+                  "rating": 4.8,
+                  "reviews": "1.8K Students",
+                  "title": "UI/UX Design Masterclass",
+                  "author": "Design Academy",
+                  "duration": "10 Weeks",
+                  "price": 85,
+                  "originalPrice": 125,
+                  "description": "Build beautiful, usable interfaces using Figma and design theory.",
+                  "level": "Intermediate",
+                  "id": "ui-ux-design-masterclass"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
+                  "category": "IT & Software",
+                  "rating": 4.9,
+                  "reviews": "3.5K Students",
+                  "title": "Python for Data Science and AI",
+                  "author": "Tech University",
+                  "duration": "12+ Weeks",
+                  "price": 150,
+                  "originalPrice": 250,
+                  "description": "Learn Python from scratch and start building Machine Learning models.",
+                  "level": "Advanced",
+                  "id": "python-for-data-science-and-ai"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+                  "category": "Marketing",
+                  "rating": 4.5,
+                  "reviews": "700 Students",
+                  "title": "Social Media Advertising Expert",
+                  "author": "Chris Johnson",
+                  "duration": "4 Weeks",
+                  "price": 40,
+                  "originalPrice": 65,
+                  "description": "Learn to run profitable Facebook, Instagram, and TikTok ad campaigns.",
+                  "level": "Intermediate",
+                  "id": "social-media-advertising-expert"
+                },
+                {
+                  "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
+                  "category": "Business",
+                  "rating": 4.7,
+                  "reviews": "1.3K Students",
+                  "title": "Project Management Fundamentals",
+                  "author": "Emma Davis",
+                  "duration": "6 Weeks",
+                  "price": 55,
+                  "originalPrice": 90,
+                  "description": "Learn Agile and Scrum methodologies to manage successful projects.",
+                  "level": "Beginner",
+                  "id": "project-management-fundamentals"
                 }
               ]
             },
             "ctaBanner": {
               "title": "Start Your Learning Journey With EduLearn",
+              "highlightWordCount": 2,
               "subtitle": "Join over 50,000+ happy students who are already learning on our platform. We offer a high class education.",
               "buttonText": "Get Started Now",
               "image": "/img/ctabanner.png"
+            },
+            "courseDetail": {
+              "category": "Web Development",
+              "title": "Complete Web Development Bootcamp",
+              "description": "Learn HTML, CSS, JavaScript and modern frameworks to build real world websites.",
+              "rating": 4.8,
+              "students": 120,
+              "level": "Beginner",
+              "duration": "8 Weeks",
+              "certifications": "Certifications",
+              "videoPreviewImage": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80",
+              "price": 15,
+              "originalPrice": 30,
+              "discount": "50% OFF",
+              "includes": [
+                "40 Lectures",
+                "8 Weeks Duration",
+                "Lifetime Access",
+                "Certificate of Completion",
+                "Full HD Video Lessons",
+                "Downloadable Resources",
+                "Access on Mobile & TV"
+              ],
+              "details": {
+                "category": "Web Development",
+                "level": "Beginner",
+                "duration": "8 Weeks",
+                "students": "120+",
+                "language": "English",
+                "lastUpdated": "Mar 2026"
+              },
+              "overview": {
+                "about": "This comprehensive web development bootcamp is designed to take you from a complete beginner to a pro web developer. You will learn HTML, CSS, JavaScript, and modern frameworks through hands-on projects and real-world examples. By the end of this course, you will be able to build stunning websites, work with APIs, and deploy your own projects.\n\nWhether you want to start a career in web development, build your own website, or enhance your skills, this course provides everything you need to succeed.",
+                "whoIsThisFor": "This course is perfect for beginners, students, professionals looking to switch careers, and anyone who wants to learn web development from scratch.",
+                "whatYouWillLearn": [
+                  "Understand the fundamentals of HTML, CSS, and JavaScript",
+                  "Build responsive and modern websites",
+                  "Work with popular frameworks and libraries",
+                  "Create real-world projects and build a portfolio",
+                  "Learn best practices and industry standards"
+                ],
+                "requirements": "No prior programming experience is required. All you need is a computer with an internet connection and a willingness to learn.",
+                "certification": "Upon successful completion of the course, you will receive a verified certificate that you can add to your resume and LinkedIn profile."
+              },
+              "curriculum": {
+                "totalLectures": 42,
+                "totalWeeks": 8,
+                "modules": [
+                  {
+                    "title": "Introduction to Web Development",
+                    "subtitle": "Understand the basics and how the web works",
+                    "lectures": 6,
+                    "weeks": "1 Week",
+                    "lessons": [
+                      { "title": "Lesson 1: Understanding Basics", "duration": "10:00" },
+                      { "title": "Lesson 2: How the Web Works", "duration": "15:30" },
+                      { "title": "Lesson 3: Introduction to Browsers", "duration": "08:45" }
+                    ]
+                  },
+                  {
+                    "title": "HTML Fundamentals",
+                    "subtitle": "Learn the structure of web pages",
+                    "lectures": 8,
+                    "weeks": "1 Week",
+                    "lessons": [
+                      { "title": "Lesson 1: Tags and Elements", "duration": "12:00" },
+                      { "title": "Lesson 2: Forms and Inputs", "duration": "20:15" },
+                      { "title": "Lesson 3: Semantic HTML", "duration": "14:20" }
+                    ]
+                  },
+                  {
+                    "title": "CSS and Responsive Design",
+                    "subtitle": "Style your websites and make them responsive",
+                    "lectures": 8,
+                    "weeks": "2 Weeks",
+                    "lessons": [
+                      { "title": "Lesson 1: Introduction to CSS", "duration": "11:10" },
+                      { "title": "Lesson 2: Flexbox & Grid", "duration": "25:00" },
+                      { "title": "Lesson 3: Media Queries", "duration": "18:45" }
+                    ]
+                  },
+                  {
+                    "title": "JavaScript Basics",
+                    "subtitle": "Add interactivity to your web pages",
+                    "lectures": 8,
+                    "weeks": "2 Weeks",
+                    "lessons": [
+                      { "title": "Lesson 1: Variables and Data Types", "duration": "15:00" },
+                      { "title": "Lesson 2: Functions and Scope", "duration": "22:30" },
+                      { "title": "Lesson 3: DOM Manipulation", "duration": "19:15" }
+                    ]
+                  },
+                  {
+                    "title": "Modern Frameworks",
+                    "subtitle": "Explore popular frameworks like React",
+                    "lectures": 6,
+                    "weeks": "1 Week",
+                    "lessons": [
+                      { "title": "Lesson 1: Why use Frameworks?", "duration": "09:50" },
+                      { "title": "Lesson 2: Introduction to React", "duration": "30:00" },
+                      { "title": "Lesson 3: Components and State", "duration": "24:10" }
+                    ]
+                  },
+                  {
+                    "title": "Real-World Projects",
+                    "subtitle": "Build and deploy real projects",
+                    "lectures": 6,
+                    "weeks": "1 Week",
+                    "lessons": [
+                      { "title": "Lesson 1: Planning Your Project", "duration": "15:20" },
+                      { "title": "Lesson 2: Building the UI", "duration": "45:00" },
+                      { "title": "Lesson 3: Deployment", "duration": "20:00" }
+                    ]
+                  }
+                ]
+              },
+              "instructor": {
+                "name": "Rahul Sharma",
+                "role": "Senior Web Development Instructor",
+                "rating": 4.8,
+                "students": "12K+",
+                "courses": 15,
+                "experience": "8+ Years",
+                "about": "Rahul Sharma is a passionate web developer and educator with over 8 years of industry experience. He has helped thousands of students build successful careers in web development through practical, project-based learning. His teaching style is simple, engaging, and focused on real-world skills.",
+                "areasOfExpertise": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Web Design", "Project Development"],
+                "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+                "social": [
+                  {
+                    "icon": "linkedin",
+                    "url": "#"
+                  },
+                  {
+                    "icon": "youtube",
+                    "url": "#"
+                  },
+                  {
+                    "icon": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "icon": "website",
+                    "url": "#"
+                  }
+                ]
+              },
+              "reviewsData": {
+                "average": 4.8,
+                "total": 120,
+                "breakdown": [
+                  {
+                    "star": 5,
+                    "percentage": 70
+                  },
+                  {
+                    "star": 4,
+                    "percentage": 20
+                  },
+                  {
+                    "star": 3,
+                    "percentage": 5
+                  },
+                  {
+                    "star": 2,
+                    "percentage": 3
+                  },
+                  {
+                    "star": 1,
+                    "percentage": 2
+                  }
+                ],
+                "reviewsList": [
+                  {
+                    "name": "Priya Malik",
+                    "date": "10 Aug, 2026",
+                    "rating": 5,
+                    "comment": "This course is amazing! The concepts are explained very clearly, and the projects are very helpful. Highly recommended for beginners.",
+                    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                  },
+                  {
+                    "name": "Amit Kumar",
+                    "date": "05 Aug, 2026",
+                    "rating": 4,
+                    "comment": "Great content and well-structured. I learned a lot about responsive design and modern frameworks. Would love to see more advanced topics.",
+                    "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80"
+                  },
+                  {
+                    "name": "Neha Verma",
+                    "date": "28 Jul, 2026",
+                    "rating": 5,
+                    "comment": "Absolutely brilliant course! Rahul is a fantastic instructor. The hands-on approach made learning JavaScript so much easier.",
+                    "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80"
+                  }
+                ]
+              },
+              "faqs": [
+                {
+                  "question": "Is this course suitable for beginners?",
+                  "answer": "Yes, this course is designed specifically for complete beginners. We start from the absolute basics and gradually move to advanced concepts."
+                },
+                {
+                  "question": "How long will I have access to the course?",
+                  "answer": "You will have lifetime access to the course materials, including all future updates and additions."
+                },
+                {
+                  "question": "Will I receive a certificate upon completion?",
+                  "answer": "Yes, you will receive a verifiable Certificate of Completion that you can share on your resume and LinkedIn profile."
+                },
+                {
+                  "question": "Can I access the course on my mobile device?",
+                  "answer": "Absolutely! Our platform is fully responsive, and you can watch the lessons on your smartphone, tablet, or TV."
+                },
+                {
+                  "question": "Do I need any special software installed?",
+                  "answer": "No special software is required. We will guide you through installing a free code editor (like VS Code) and a web browser during the first few lessons."
+                },
+                {
+                  "question": "Is there a refund policy if I don't like the course?",
+                  "answer": "Yes, we offer a 30-day money-back guarantee. If you are not satisfied with the course, you can request a full refund within the first 30 days."
+                }
+              ]
+            },
+            "facultyPage": {
+              "title": "Our Faculty",
+              "subtitle": "OUR TEAM",
+              "members": [
+                {
+                  "name": "Dr. Rajesh Sharma",
+                  "role": "Science Lecturer",
+                  "image": "/teachers/1.png",
+                  "socials": [
+                    { "icon": "facebook", "url": "#" },
+                    { "icon": "twitter", "url": "#" },
+                    { "icon": "instagram", "url": "#" },
+                    { "icon": "linkedin", "url": "#" }
+                  ]
+                },
+                {
+                  "name": "Priya Verma",
+                  "role": "Science Lecturer",
+                  "image": "/teachers/2.png",
+                  "socials": [
+                    { "icon": "facebook", "url": "#" },
+                    { "icon": "twitter", "url": "#" },
+                    { "icon": "instagram", "url": "#" },
+                    { "icon": "linkedin", "url": "#" }
+                  ]
+                },
+                {
+                  "name": "Amit Kumar",
+                  "role": "Science Lecturer",
+                  "image": "/teachers/3.png",
+                  "socials": [
+                    { "icon": "facebook", "url": "#" },
+                    { "icon": "twitter", "url": "#" },
+                    { "icon": "instagram", "url": "#" },
+                    { "icon": "linkedin", "url": "#" }
+                  ]
+                },
+                {
+                  "name": "Dr. Sandeep Mehta",
+                  "role": "Chemistry Professor",
+                  "image": "/teachers/4.png",
+                  "socials": [
+                    { "icon": "facebook", "url": "#" },
+                    { "icon": "twitter", "url": "#" },
+                    { "icon": "instagram", "url": "#" },
+                    { "icon": "linkedin", "url": "#" }
+                  ]
+                },
+                {
+                  "name": "Neha Singh",
+                  "role": "Lecturer",
+                  "image": "/teachers/5.png",
+                  "socials": [
+                    { "icon": "facebook", "url": "#" },
+                    { "icon": "twitter", "url": "#" },
+                    { "icon": "instagram", "url": "#" },
+                    { "icon": "linkedin", "url": "#" }
+                  ]
+                },
+                {
+                  "name": "Kavita Yadav",
+                  "role": "Science Lecturer",
+                  "image": "/teachers/6.png",
+                  "socials": [
+                    { "icon": "facebook", "url": "#" },
+                    { "icon": "twitter", "url": "#" },
+                    { "icon": "instagram", "url": "#" },
+                    { "icon": "linkedin", "url": "#" }
+                  ]
+                },
+                {
+                  "name": "Pooja Gupta",
+                  "role": "Math Professor",
+                  "image": "/teachers/1.png",
+                  "socials": [
+                    { "icon": "facebook", "url": "#" },
+                    { "icon": "twitter", "url": "#" },
+                    { "icon": "instagram", "url": "#" },
+                    { "icon": "linkedin", "url": "#" }
+                  ]
+                },
+                {
+                  "name": "Vikram Patel",
+                  "role": "English Lecturer",
+                  "image": "/teachers/2.png",
+                  "socials": [
+                    { "icon": "facebook", "url": "#" },
+                    { "icon": "twitter", "url": "#" },
+                    { "icon": "instagram", "url": "#" },
+                    { "icon": "linkedin", "url": "#" }
+                  ]
+                },
+                {
+                  "name": "Rohit Malhotra",
+                  "role": "Science Lecturer",
+                  "image": "/teachers/3.png",
+                  "socials": [
+                    { "icon": "facebook", "url": "#" },
+                    { "icon": "twitter", "url": "#" },
+                    { "icon": "instagram", "url": "#" },
+                    { "icon": "linkedin", "url": "#" }
+                  ]
+                }
+              ]
             }
           }
         }

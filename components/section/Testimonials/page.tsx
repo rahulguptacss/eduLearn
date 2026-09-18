@@ -6,47 +6,27 @@ import { ArrowLeft, ArrowRight, Phone, Star, StarHalf } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Demo Testimonials Data
-const demoTestimonials = [
-  {
-    text: "Edulax has completely changed the way I learn. The courses are well-structured, the instructors are amazing, and the support team is always there to help. I've gained practical skills and confidence for my career. Highly recommended!",
-    name: "MH Hassan",
-    role: "Student",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
-  },
-  {
-    text: "The quality of education here is top-notch. The interactive platform makes learning so much easier and fun. I managed to land my dream job after completing the advanced development bootcamp. Thank you Edulax!",
-    name: "Sarah Jenkins",
-    role: "Web Developer",
-    image: "https://randomuser.me/api/portraits/women/65.jpg"
-  },
-  {
-    text: "I was skeptical at first, but the community and the mentors proved me wrong. It's the best investment I've made for my professional growth. The curriculum is up-to-date with industry standards.",
-    name: "David Chen",
-    role: "Data Analyst",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
-  }
-];
+
 
 export default function Testimonials({ data }: { data: TestimonialsData }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % demoTestimonials.length);
+      setCurrentIndex((prev) => (prev + 1) % data.testimonials.length);
     }, 5000); // 5 seconds interval
     return () => clearInterval(timer);
-  }, []);
+  }, [data.testimonials.length]);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % demoTestimonials.length);
+    setCurrentIndex((prev) => (prev + 1) % data.testimonials.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? demoTestimonials.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? data.testimonials.length - 1 : prev - 1));
   };
 
-  const currentTestimonial = demoTestimonials[currentIndex];
+  const currentTestimonial = data.testimonials[currentIndex];
 
   return (
     <section className="bg-[#f8faff] relative pt-8 lg:pt-16 pb-10 lg:pb-20 px-4 sm:px-8 lg:px-16 z-10 mt-0">
@@ -64,7 +44,7 @@ export default function Testimonials({ data }: { data: TestimonialsData }) {
           {/* Top Section Header (TESTIMONIALS) */}
           <div className="flex items-center gap-3 mb-4 lg:mb-4 w-full z-20">
             <div className="w-3 h-3 bg-[#ff5e14]"></div>
-            <span className="text-[14px] font-bold text-[#0e2a46] tracking-[1.5px] uppercase whitespace-nowrap">TESTIMONIALS</span>
+            <span className="text-[14px] font-bold text-[#0e2a46] tracking-[1.5px] uppercase whitespace-nowrap">{data.subtitle}</span>
             <div className="flex-grow h-px bg-gray-300 ml-4"></div>
           </div>
 
@@ -129,15 +109,15 @@ export default function Testimonials({ data }: { data: TestimonialsData }) {
         <div className="lg:w-1/2 flex flex-col items-start z-10 w-full lg:pl-10">
           
           <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-extrabold text-[#0e2a46] leading-[1.2] tracking-tight mb-3">
-            Real Experiences From Our <br className="hidden lg:block" />
-            <span className="text-[#ff5e14]">Dedicated Learners</span>
+            {data.title} <br className="hidden lg:block" />
+            {data.titleHighlight && <span className="text-[#ff5e14]">{data.titleHighlight}</span>}
           </h2>
           
           {/* Orange Underline */}
           <div className="w-[72px] h-[5px] bg-[#ff5e14] rounded-full mb-5"></div>
           
           <p className="text-gray-500 mb-7 text-[14px] sm:text-[15px] leading-[1.6] max-w-[500px]">
-            Hear from our students who have transformed their skills and achieved their goals with Edulax.
+            {data.description}
           </p>
           
           {/* Testimonial Card */}
@@ -153,19 +133,21 @@ export default function Testimonials({ data }: { data: TestimonialsData }) {
             <div className="flex-grow flex flex-col justify-between">
               <div>
                 <p className="text-[#3b4c68] text-[16px] sm:text-[17px] leading-[1.7] mb-6 font-medium line-clamp-4 min-h-[110px]">
-                  &ldquo;{currentTestimonial.text}&rdquo;
+                  &ldquo;{currentTestimonial.quote}&rdquo;
                 </p>
 
                 {/* Stars */}
                 <div className="flex gap-1.5 mb-8">
-                  {[...Array(4)].map((_, i) => (
+                  {[...Array(Math.floor(currentTestimonial.rating || 5))].map((_, i) => (
                     <Star 
                       key={i} 
                       size={20} 
                       className="text-[#ff5e14] fill-[#ff5e14]" 
                     />
                   ))}
-                  <StarHalf size={20} className="text-[#ff5e14] fill-[#ff5e14]" />
+                  {(currentTestimonial.rating % 1 !== 0) && (
+                    <StarHalf size={20} className="text-[#ff5e14] fill-[#ff5e14]" />
+                  )}
                 </div>
               </div>
 
@@ -173,10 +155,10 @@ export default function Testimonials({ data }: { data: TestimonialsData }) {
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6 mt-auto border-t border-gray-100 pt-6">
                 <div className="flex items-center gap-4">
                   <div className="w-[56px] h-[56px] rounded-full overflow-hidden relative shadow-sm border-[3px] border-blue-50/50 ring-2 ring-[#ff5e14]">
-                    <Image src={currentTestimonial.image} alt={currentTestimonial.name} fill className="object-cover" />
+                    <Image src={currentTestimonial.image} alt={currentTestimonial.author} fill className="object-cover" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#0e2a46] text-[17px] leading-tight">{currentTestimonial.name}</h4>
+                    <h4 className="font-extrabold text-[#0e2a46] text-[17px] leading-tight">{currentTestimonial.author}</h4>
                     <p className="text-gray-500 text-[14px] mt-0.5">{currentTestimonial.role}</p>
                   </div>
                 </div>

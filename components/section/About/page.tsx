@@ -51,8 +51,10 @@ export default function About({ data }: { data: AboutData }) {
 
           {/* Title */}
           <h2 className="text-[32px] sm:text-[44px] lg:text-[50px] font-extrabold text-secondary leading-[1.15] mb-6 tracking-tight">
-            50 Years of Experience <br className="hidden lg:block" />
-            <span className="text-primary block lg:inline mt-1 lg:mt-0">in Education</span>
+            {data.title} <br className="hidden lg:block" />
+            {data.titleHighlight && (
+              <span className="text-primary block lg:inline mt-1 lg:mt-0">{data.titleHighlight}</span>
+            )}
           </h2>
 
           {/* Descriptions */}
@@ -156,47 +158,16 @@ export default function About({ data }: { data: AboutData }) {
 
           {/* CSS Grid for Images: 2x2 */}
           <div className="grid grid-cols-2 grid-rows-2 gap-3 sm:gap-4 lg:gap-5 w-full h-full relative z-10 p-2 lg:p-4">
-            
-            {/* Image 1 (Top Left) */}
-            <div className="relative rounded-[20px] lg:rounded-[28px] overflow-hidden transform transition-transform hover:scale-[1.02] duration-500">
-              <Image 
-                src="/about/1.png" 
-                alt="Student 1" 
-                fill 
-                className="object-cover" 
-              />
-            </div>
-            
-            {/* Image 2 (Top Right) */}
-            <div className="relative rounded-[20px] lg:rounded-[28px] overflow-hidden transform transition-transform hover:scale-[1.02] duration-500">
-              <Image 
-                src="/about/2.png" 
-                alt="Student 2" 
-                fill 
-                className="object-cover" 
-              />
-            </div>
-
-            {/* Image 3 (Bottom Left) */}
-            <div className="relative rounded-[20px] lg:rounded-[28px] overflow-hidden transform transition-transform hover:scale-[1.02] duration-500">
-              <Image 
-                src="/about/3.png" 
-                alt="Student 3" 
-                fill 
-                className="object-cover" 
-              />
-            </div>
-
-            {/* Image 4 (Bottom Right) */}
-            <div className="relative rounded-[20px] lg:rounded-[28px] overflow-hidden transform transition-transform hover:scale-[1.02] duration-500">
-              <Image 
-                src="/about/4.png" 
-                alt="Student 4" 
-                fill 
-                className="object-cover" 
-              />
-            </div>
-
+            {data.images.map((imgSrc, idx) => (
+              <div key={idx} className="relative rounded-[20px] lg:rounded-[28px] overflow-hidden transform transition-transform hover:scale-[1.02] duration-500">
+                <Image 
+                  src={imgSrc} 
+                  alt={`Student ${idx + 1}`} 
+                  fill 
+                  className="object-cover" 
+                />
+              </div>
+            ))}
           </div>
 
           {/* Floating Center Badge */}
@@ -211,8 +182,15 @@ export default function About({ data }: { data: AboutData }) {
               <GraduationCap size={28} fill="currentColor" strokeWidth={1} />
             </div>
             <div>
-              <p className="font-extrabold text-secondary text-[26px] lg:text-[30px] leading-none mb-1">50+</p>
-              <p className="text-[#6b7280] text-[12px] lg:text-[13px] leading-snug font-medium">Years of Experience <br/> in Education</p>
+              <p className="font-extrabold text-secondary text-[26px] lg:text-[30px] leading-none mb-1">{data.badge.value}</p>
+              <p className="text-[#6b7280] text-[12px] lg:text-[13px] leading-snug font-medium">
+                {data.badge.label.split('\n').map((line, i, arr) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i !== arr.length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </p>
             </div>
           </motion.div>
 

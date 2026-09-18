@@ -8,12 +8,12 @@ import { motion } from "framer-motion";
 
 export default function CTABanner({ data }: { data: CTABannerData }) {
   const words = data.title.split(" ");
-  const highlightWordCount = 2; // "With EduLearn"
+  const highlightWordCount = data.highlightWordCount || 2; // Default to 2 if not provided
   const normalText = words.slice(0, words.length - highlightWordCount).join(" ");
   const highlightText = words.slice(words.length - highlightWordCount).join(" ");
 
   return (
-    <section className="px-4 sm:px-8 lg:px-16 py-12 lg:py-16 relative z-20 max-w-[1400px] mx-auto">
+    <section className="px-4 sm:px-8 lg:px-16 pt-4 pb-12 lg:pt-4 lg:pb-16 relative z-20 max-w-[1400px] mx-auto">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
