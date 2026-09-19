@@ -18,6 +18,7 @@ export interface HeaderData {
   menu: MenuItem[];
   contactButtonText: string;
   buttonText: string;
+  buttonHref?: string;
 }
 
 export interface HeroSlide {
@@ -325,6 +326,50 @@ export interface FacultyPageData {
   members: FacultyMember[];
 }
 
+export interface FacultyDetailsContact {
+  email: string;
+  phone: string;
+  location: string;
+  degree: string;
+  department: string;
+}
+
+export interface FacultyDetailsFeature {
+  icon: string;
+  title: string;
+}
+
+export interface FacultyDetailsData {
+  id: string;
+  name: string;
+  role: string;
+  department: string;
+  image: string;
+  experience: {
+    years: string;
+    text: string;
+  };
+  contactInfo: FacultyDetailsContact;
+  socials: { icon: string; url: string }[];
+  about: {
+    title: string;
+    description: string[];
+  };
+  quote: {
+    text: string;
+    author: string;
+  };
+  features: FacultyDetailsFeature[];
+  teachingPhilosophy: {
+    title: string;
+    description: string;
+  };
+  areasOfInterest: {
+    title: string;
+    items: string[];
+  };
+}
+
 export interface TemplateSections {
   hero: HeroData;
   about: AboutData;
@@ -332,12 +377,17 @@ export interface TemplateSections {
   stats: StatsData;
   whyChooseUs: WhyChooseData;
   testimonials: TestimonialsData;
+  testimonialsGrid: any;
   blog: BlogData;
   ctaBanner: CTABannerData;
   missionVision: MissionVisionData;
   coursesPage: CoursesPageData;
   courseDetail: CourseDetailData;
   facultyPage: FacultyPageData;
+  facultyDetails: FacultyDetailsData;
+  ourAchievements: any;
+  awardsRecognition: any;
+  studentSuccess: any;
 }
 
 export interface TemplateComponents {

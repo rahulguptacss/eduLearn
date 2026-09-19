@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FacultyPageData } from "../../types";
 import { FaFacebookF as Facebook, FaTwitter as Twitter, FaInstagram as Instagram, FaLinkedinIn as Linkedin } from "react-icons/fa";
 import { Users } from "lucide-react";
@@ -68,20 +69,22 @@ export default function Faculty({ data }: { data: FacultyPageData }) {
                 </div>
                 
                 {/* Image */}
-                <div className="flex-1 -mt-[80px] bg-[#e4e6eb] relative aspect-[3/3.8] shadow-md rounded-tr-md">
+                <Link href={`/faculty/${member.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="flex-1 -mt-[80px] bg-[#e4e6eb] relative aspect-[3/3.8] shadow-md rounded-tr-[20px] overflow-hidden group/img">
                   <Image 
                     src={member.image} 
                     alt={member.name} 
                     fill 
-                    className="object-cover object-top" 
+                    className="object-cover object-top group-hover/img:scale-105 transition-transform duration-500" 
                   />
-                </div>
+                </Link>
               </div>
               
               {/* Bottom Text */}
               <div className="relative z-10 pt-6 pb-7 text-center w-full">
-                <h3 className="text-[#ff5e14] font-bold text-[22px] mb-1">{member.name}</h3>
-                <p className="text-gray-200 text-[15px] font-medium tracking-wide">{member.role}</p>
+                <Link href={`/faculty/${member.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="inline-block">
+                  <h3 className="text-[#ff5e14] font-bold text-[22px] mb-1 hover:text-white transition-colors">{member.name}</h3>
+                  <p className="text-gray-200 text-[15px] font-medium tracking-wide">{member.role}</p>
+                </Link>
               </div>
             </motion.div>
           ))}

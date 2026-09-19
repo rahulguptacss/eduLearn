@@ -98,7 +98,7 @@ export default function Header({ data }: { data: HeaderData }) {
             <Send size={18} className="-ml-0.5" />
           </div>
         </Link>
-        <Link href="#" className="group whitespace-nowrap bg-primary hover:bg-orange-600 text-white pl-6 pr-2 py-1.5 rounded-xl font-semibold text-[15px] transition-all duration-300 hover:scale-105 hover:shadow-md flex items-center gap-3">
+        <Link href={data.buttonHref || "#"} className="group whitespace-nowrap bg-primary hover:bg-orange-600 text-white pl-6 pr-2 py-1.5 rounded-xl font-semibold text-[15px] transition-all duration-300 hover:scale-105 hover:shadow-md flex items-center gap-3">
           {data.buttonText}
           <div className="bg-white text-primary rounded-full p-1.5 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:translate-x-1.5">
             <ArrowRight size={18} />
@@ -211,7 +211,7 @@ export default function Header({ data }: { data: HeaderData }) {
                     <Send size={16} className="-ml-0.5" />
                   </div>
                 </Link>
-                <Link href="#" className="flex-1 group bg-primary hover:bg-orange-600 text-white pl-3 sm:pl-6 pr-1 sm:pr-2 py-1.5 rounded-xl font-semibold text-[13px] sm:text-[15px] transition-all hover:shadow-md flex items-center justify-between w-full sm:w-auto">
+                <Link href={data.buttonHref || "#"} className="flex-1 group bg-primary hover:bg-orange-600 text-white pl-3 sm:pl-6 pr-1 sm:pr-2 py-1.5 rounded-xl font-semibold text-[13px] sm:text-[15px] transition-all hover:shadow-md flex items-center justify-between w-full sm:w-auto">
                   <span className="whitespace-nowrap truncate">{data.buttonText}</span>
                   <div className="bg-white text-primary rounded-full p-1 sm:p-1.5 ml-1 sm:ml-3 transition-transform duration-300 group-hover:translate-x-1.5 shrink-0">
                     <ArrowRight size={16} />

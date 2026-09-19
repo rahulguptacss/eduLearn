@@ -28,7 +28,7 @@
       "logoText": "EduLearn",
       "menu": [
         {
-          "label": "Home",
+          "label": "HOME",
           "href": "/"
         },
         {
@@ -47,6 +47,10 @@
             {
               "label": "Mission & Vision",
               "href": "/mission-vision"
+            },
+            {
+              "label": "Achievements",
+              "href": "/achievements"
             }
           ]
         },
@@ -64,19 +68,31 @@
         },
         {
           "label": "Admission Process",
-          "href": "#"
+          "href": "/admission-process"
         },
         {
-          "label": "Gallery",
-          "href": "#"
+          "label": "Pages",
+          "href": "#",
+          "hasDropdown": true,
+          "subItems": [
+            {
+              "label": "Gallery",
+              "href": "/gallery"
+            },
+            {
+              "label": "Testimonials",
+              "href": "/testimonials"
+            }
+          ]
         },
         {
-          "label": "Blog",
+          "label": "BLOG",
           "href": "#"
         }
       ],
       "contactButtonText": "Contact Us",
-      "buttonText": "Apply Now"
+      "buttonText": "Apply Now",
+      "buttonHref": "/apply-online"
     },
     "Footer": {
       "logo": "/logo/footerlogo.png",
@@ -104,7 +120,7 @@
             },
             {
               "label": "Admission Process",
-              "href": "#"
+              "href": "/admission-process"
             }
           ]
         },
@@ -256,7 +272,21 @@
                   }
                 ],
                 "bgImage": "/img/coverbc.png"
-              }
+              },
+              "components": [
+                {
+                  "key": "About",
+                  "component": "About"
+                },
+                {
+                  "key": "Stats",
+                  "component": "Stats"
+                },
+                {
+                  "key": "WhyChooseUs",
+                  "component": "WhyChooseUs"
+                }
+              ]
             },
             "courses": {
               "breadcrumb": {
@@ -271,7 +301,13 @@
                   }
                 ],
                 "bgImage": "/img/coverbc.png"
-              }
+              },
+              "components": [
+                {
+                  "key": "Courses",
+                  "component": "Courses"
+                }
+              ]
             },
             "whyChooseUs": {
               "breadcrumb": {
@@ -286,7 +322,21 @@
                   }
                 ],
                 "bgImage": "/img/coverbc.png"
-              }
+              },
+              "components": [
+                {
+                  "key": "WhyChooseUs",
+                  "component": "WhyChooseUs"
+                },
+                {
+                  "key": "Stats",
+                  "component": "Stats"
+                },
+                {
+                  "key": "Testimonials",
+                  "component": "Testimonials"
+                }
+              ]
             },
             "missionVision": {
               "breadcrumb": {
@@ -301,7 +351,13 @@
                   }
                 ],
                 "bgImage": "/img/coverbc.png"
-              }
+              },
+              "components": [
+                {
+                  "key": "MissionVision",
+                  "component": "MissionVision"
+                }
+              ]
             },
             "courseDetail": {
               "breadcrumb": {
@@ -316,7 +372,13 @@
                   }
                 ],
                 "bgImage": "/img/coverbc.png"
-              }
+              },
+              "components": [
+                {
+                  "key": "CourseDetail",
+                  "component": "CourseDetail"
+                }
+              ]
             },
             "facultyPage": {
               "breadcrumb": {
@@ -331,7 +393,134 @@
                   }
                 ],
                 "bgImage": "/img/coverbc.png"
-              }
+              },
+              "components": [
+                {
+                  "key": "Faculty",
+                  "component": "Faculty"
+                }
+              ]
+            },
+            "facultyDetails": {
+              "breadcrumb": {
+                "title": "Faculty Details",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Faculty Details"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "FacultyDetails",
+                  "component": "FacultyDetails"
+                }
+              ]
+            },
+            "admissionProcess": {
+              "breadcrumb": {
+                "title": "Admission Process",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Admission Process"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "AdmissionProcess",
+                  "component": "AdmissionProcess"
+                }
+              ]
+            },
+            "achievements": {
+              "breadcrumb": {
+                "title": "Achievements",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Achievements"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "OurAchievements",
+                  "component": "OurAchievements"
+                },
+                {
+                  "key": "AwardsRecognition",
+                  "component": "AwardsRecognition"
+                },
+                {
+                  "key": "StudentSuccess",
+                  "component": "StudentSuccess"
+                }
+              ]
+            },
+            "testimonials": {
+              "breadcrumb": {
+                "title": "Our Testimonials",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Testimonials"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "TestimonialsGrid",
+                  "component": "TestimonialsGrid"
+                }
+              ]
+            },
+            "gallery": {
+              "breadcrumb": {
+                "title": "Our Gallery",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Our Gallery"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "PhotoGallery",
+                  "component": "PhotoGallery"
+                },
+                {
+                  "key": "VideoGallery",
+                  "component": "VideoGallery"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ]
             }
           },
           "sections": {
@@ -560,6 +749,206 @@
                 "value": "26+",
                 "label": "Years of Experiences"
               }
+            },
+            "testimonialsGrid": {
+              "subtitle": "STUDENT TESTIMONIALS",
+              "title": "What Our",
+              "titleHighlight": "Students Say",
+              "description": "Real stories from real students. Discover how we've helped them achieve their goals and build brighter futures.",
+              "testimonials": [
+                {
+                  "id": 1,
+                  "quote": "Edulax has completely changed the way I learn. The courses are well-structured, the instructors are amazing, and the support team is always there to help. I've gained practical skills and confidence for my career. Highly recommended!",
+                  "author": "MH Hassan",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 2,
+                  "quote": "The learning experience at Edulax is outstanding. Flexible schedules, expert mentors, and real-world projects helped me grow both personally and professionally. I'm now working in my dream field!",
+                  "author": "Rohit Sharma",
+                  "role": "Student",
+                  "rating": 5,
+                  "image": "https://randomuser.me/api/portraits/men/32.jpg"
+                },
+                {
+                  "id": 3,
+                  "quote": "I loved the interactive classes and practical approach. The mentors are very supportive and the content is up-to-date with industry standards. Edulax is the best platform for anyone serious about their future.",
+                  "author": "Sneha Patel",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/65.jpg"
+                },
+                {
+                  "id": 4,
+                  "quote": "Edulax gave me the right guidance and resources to develop my skills. The community and support team are always helpful. I've become more confident and job-ready after completing my course.",
+                  "author": "Arjun Mehta",
+                  "role": "Student",
+                  "rating": 5,
+                  "image": "https://randomuser.me/api/portraits/men/41.jpg"
+                },
+                {
+                  "id": 5,
+                  "quote": "The instructors explain everything so clearly, and the projects are really hands-on. I've learned so much in such a short time. Thank you, Edulax!",
+                  "author": "Priya Verma",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/68.jpg"
+                },
+                {
+                  "id": 6,
+                  "quote": "The best part about Edulax is the career support. From learning to placement guidance, they are with you at every step. I highly recommend it to all aspiring students.",
+                  "author": "Karan Singh",
+                  "role": "Student",
+                  "rating": 5,
+                  "image": "https://randomuser.me/api/portraits/men/55.jpg"
+                },
+                {
+                  "id": 7,
+                  "quote": "Edulax provides high-quality education with real industry exposure. The course material is easy to understand and very practical. It's been a great learning journey!",
+                  "author": "Ayesha Khan",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/90.jpg"
+                },
+                {
+                  "id": 8,
+                  "quote": "I'm really impressed with the teaching style and personal attention given to students. Edulax helped me discover my strengths and build the skills I need for a successful career.",
+                  "author": "Vikram Rao",
+                  "role": "Student",
+                  "rating": 5,
+                  "image": "https://randomuser.me/api/portraits/men/22.jpg"
+                },
+                {
+                  "id": 9,
+                  "quote": "The courses are designed perfectly for today's industry needs. I've gained valuable knowledge and hands-on experience. Edulax has been a game-changer for me!",
+                  "author": "Neha Soni",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/33.jpg"
+                },
+                {
+                  "id": 10,
+                  "quote": "This is a demo testimonial added to show pagination functionality. The courses are well-structured and the instructors are amazing.",
+                  "author": "Demo Student 1",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 11,
+                  "quote": "This is a demo testimonial added to show pagination functionality. The courses are well-structured and the instructors are amazing.",
+                  "author": "Demo Student 2",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 12,
+                  "quote": "This is a demo testimonial added to show pagination functionality. The courses are well-structured and the instructors are amazing.",
+                  "author": "Demo Student 3",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 13,
+                  "quote": "This is a demo testimonial added to show pagination functionality. The courses are well-structured and the instructors are amazing.",
+                  "author": "Demo Student 4",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 14,
+                  "quote": "This is a demo testimonial added to show pagination functionality. The courses are well-structured and the instructors are amazing.",
+                  "author": "Demo Student 5",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 15,
+                  "quote": "This is a demo testimonial added to show pagination functionality. The courses are well-structured and the instructors are amazing.",
+                  "author": "Demo Student 6",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 16,
+                  "quote": "Another demo testimonial added so that there are enough for page 2.",
+                  "author": "Extra Student 1",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 17,
+                  "quote": "Another demo testimonial added so that there are enough for page 2.",
+                  "author": "Extra Student 2",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 18,
+                  "quote": "Another demo testimonial added so that there are enough for page 2.",
+                  "author": "Extra Student 3",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 19,
+                  "quote": "Another demo testimonial added so that there are enough for page 2.",
+                  "author": "Extra Student 4",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 20,
+                  "quote": "Another demo testimonial added so that there are enough for page 2.",
+                  "author": "Extra Student 5",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 21,
+                  "quote": "Another demo testimonial added so that there are enough for page 2.",
+                  "author": "Extra Student 6",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 22,
+                  "quote": "Another demo testimonial added so that there are enough for page 2.",
+                  "author": "Extra Student 7",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 23,
+                  "quote": "Another demo testimonial added so that there are enough for page 2.",
+                  "author": "Extra Student 8",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                },
+                {
+                  "id": 24,
+                  "quote": "Another demo testimonial added so that there are enough for page 2.",
+                  "author": "Extra Student 9",
+                  "role": "Student",
+                  "rating": 4.5,
+                  "image": "https://randomuser.me/api/portraits/women/44.jpg"
+                }
+              ]
             },
             "testimonials": {
               "subtitle": "TESTIMONIALS",
@@ -936,9 +1325,9 @@
               ]
             },
             "ctaBanner": {
-              "title": "Start Your Learning Journey With EduLearn",
+              "title": "Start Your Learning Journey With Edulax",
               "highlightWordCount": 2,
-              "subtitle": "Join over 50,000+ happy students who are already learning on our platform. We offer a high class education.",
+              "subtitle": "Gain in-demand skills, learn from expert educators, and build a brighter future with Edulax.",
               "buttonText": "Get Started Now",
               "image": "/img/ctabanner.png"
             },
@@ -995,9 +1384,18 @@
                     "lectures": 6,
                     "weeks": "1 Week",
                     "lessons": [
-                      { "title": "Lesson 1: Understanding Basics", "duration": "10:00" },
-                      { "title": "Lesson 2: How the Web Works", "duration": "15:30" },
-                      { "title": "Lesson 3: Introduction to Browsers", "duration": "08:45" }
+                      {
+                        "title": "Lesson 1: Understanding Basics",
+                        "duration": "10:00"
+                      },
+                      {
+                        "title": "Lesson 2: How the Web Works",
+                        "duration": "15:30"
+                      },
+                      {
+                        "title": "Lesson 3: Introduction to Browsers",
+                        "duration": "08:45"
+                      }
                     ]
                   },
                   {
@@ -1006,9 +1404,18 @@
                     "lectures": 8,
                     "weeks": "1 Week",
                     "lessons": [
-                      { "title": "Lesson 1: Tags and Elements", "duration": "12:00" },
-                      { "title": "Lesson 2: Forms and Inputs", "duration": "20:15" },
-                      { "title": "Lesson 3: Semantic HTML", "duration": "14:20" }
+                      {
+                        "title": "Lesson 1: Tags and Elements",
+                        "duration": "12:00"
+                      },
+                      {
+                        "title": "Lesson 2: Forms and Inputs",
+                        "duration": "20:15"
+                      },
+                      {
+                        "title": "Lesson 3: Semantic HTML",
+                        "duration": "14:20"
+                      }
                     ]
                   },
                   {
@@ -1017,9 +1424,18 @@
                     "lectures": 8,
                     "weeks": "2 Weeks",
                     "lessons": [
-                      { "title": "Lesson 1: Introduction to CSS", "duration": "11:10" },
-                      { "title": "Lesson 2: Flexbox & Grid", "duration": "25:00" },
-                      { "title": "Lesson 3: Media Queries", "duration": "18:45" }
+                      {
+                        "title": "Lesson 1: Introduction to CSS",
+                        "duration": "11:10"
+                      },
+                      {
+                        "title": "Lesson 2: Flexbox & Grid",
+                        "duration": "25:00"
+                      },
+                      {
+                        "title": "Lesson 3: Media Queries",
+                        "duration": "18:45"
+                      }
                     ]
                   },
                   {
@@ -1028,9 +1444,18 @@
                     "lectures": 8,
                     "weeks": "2 Weeks",
                     "lessons": [
-                      { "title": "Lesson 1: Variables and Data Types", "duration": "15:00" },
-                      { "title": "Lesson 2: Functions and Scope", "duration": "22:30" },
-                      { "title": "Lesson 3: DOM Manipulation", "duration": "19:15" }
+                      {
+                        "title": "Lesson 1: Variables and Data Types",
+                        "duration": "15:00"
+                      },
+                      {
+                        "title": "Lesson 2: Functions and Scope",
+                        "duration": "22:30"
+                      },
+                      {
+                        "title": "Lesson 3: DOM Manipulation",
+                        "duration": "19:15"
+                      }
                     ]
                   },
                   {
@@ -1039,9 +1464,18 @@
                     "lectures": 6,
                     "weeks": "1 Week",
                     "lessons": [
-                      { "title": "Lesson 1: Why use Frameworks?", "duration": "09:50" },
-                      { "title": "Lesson 2: Introduction to React", "duration": "30:00" },
-                      { "title": "Lesson 3: Components and State", "duration": "24:10" }
+                      {
+                        "title": "Lesson 1: Why use Frameworks?",
+                        "duration": "09:50"
+                      },
+                      {
+                        "title": "Lesson 2: Introduction to React",
+                        "duration": "30:00"
+                      },
+                      {
+                        "title": "Lesson 3: Components and State",
+                        "duration": "24:10"
+                      }
                     ]
                   },
                   {
@@ -1050,9 +1484,18 @@
                     "lectures": 6,
                     "weeks": "1 Week",
                     "lessons": [
-                      { "title": "Lesson 1: Planning Your Project", "duration": "15:20" },
-                      { "title": "Lesson 2: Building the UI", "duration": "45:00" },
-                      { "title": "Lesson 3: Deployment", "duration": "20:00" }
+                      {
+                        "title": "Lesson 1: Planning Your Project",
+                        "duration": "15:20"
+                      },
+                      {
+                        "title": "Lesson 2: Building the UI",
+                        "duration": "45:00"
+                      },
+                      {
+                        "title": "Lesson 3: Deployment",
+                        "duration": "20:00"
+                      }
                     ]
                   }
                 ]
@@ -1065,7 +1508,15 @@
                 "courses": 15,
                 "experience": "8+ Years",
                 "about": "Rahul Sharma is a passionate web developer and educator with over 8 years of industry experience. He has helped thousands of students build successful careers in web development through practical, project-based learning. His teaching style is simple, engaging, and focused on real-world skills.",
-                "areasOfExpertise": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Web Design", "Project Development"],
+                "areasOfExpertise": [
+                  "HTML",
+                  "CSS",
+                  "JavaScript",
+                  "React",
+                  "Node.js",
+                  "Web Design",
+                  "Project Development"
+                ],
                 "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
                 "social": [
                   {
@@ -1171,10 +1622,22 @@
                   "role": "Science Lecturer",
                   "image": "/teachers/1.png",
                   "socials": [
-                    { "icon": "facebook", "url": "#" },
-                    { "icon": "twitter", "url": "#" },
-                    { "icon": "instagram", "url": "#" },
-                    { "icon": "linkedin", "url": "#" }
+                    {
+                      "icon": "facebook",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "twitter",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "instagram",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "linkedin",
+                      "url": "#"
+                    }
                   ]
                 },
                 {
@@ -1182,10 +1645,22 @@
                   "role": "Science Lecturer",
                   "image": "/teachers/2.png",
                   "socials": [
-                    { "icon": "facebook", "url": "#" },
-                    { "icon": "twitter", "url": "#" },
-                    { "icon": "instagram", "url": "#" },
-                    { "icon": "linkedin", "url": "#" }
+                    {
+                      "icon": "facebook",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "twitter",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "instagram",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "linkedin",
+                      "url": "#"
+                    }
                   ]
                 },
                 {
@@ -1193,10 +1668,22 @@
                   "role": "Science Lecturer",
                   "image": "/teachers/3.png",
                   "socials": [
-                    { "icon": "facebook", "url": "#" },
-                    { "icon": "twitter", "url": "#" },
-                    { "icon": "instagram", "url": "#" },
-                    { "icon": "linkedin", "url": "#" }
+                    {
+                      "icon": "facebook",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "twitter",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "instagram",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "linkedin",
+                      "url": "#"
+                    }
                   ]
                 },
                 {
@@ -1204,10 +1691,22 @@
                   "role": "Chemistry Professor",
                   "image": "/teachers/4.png",
                   "socials": [
-                    { "icon": "facebook", "url": "#" },
-                    { "icon": "twitter", "url": "#" },
-                    { "icon": "instagram", "url": "#" },
-                    { "icon": "linkedin", "url": "#" }
+                    {
+                      "icon": "facebook",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "twitter",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "instagram",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "linkedin",
+                      "url": "#"
+                    }
                   ]
                 },
                 {
@@ -1215,10 +1714,22 @@
                   "role": "Lecturer",
                   "image": "/teachers/5.png",
                   "socials": [
-                    { "icon": "facebook", "url": "#" },
-                    { "icon": "twitter", "url": "#" },
-                    { "icon": "instagram", "url": "#" },
-                    { "icon": "linkedin", "url": "#" }
+                    {
+                      "icon": "facebook",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "twitter",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "instagram",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "linkedin",
+                      "url": "#"
+                    }
                   ]
                 },
                 {
@@ -1226,10 +1737,22 @@
                   "role": "Science Lecturer",
                   "image": "/teachers/6.png",
                   "socials": [
-                    { "icon": "facebook", "url": "#" },
-                    { "icon": "twitter", "url": "#" },
-                    { "icon": "instagram", "url": "#" },
-                    { "icon": "linkedin", "url": "#" }
+                    {
+                      "icon": "facebook",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "twitter",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "instagram",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "linkedin",
+                      "url": "#"
+                    }
                   ]
                 },
                 {
@@ -1237,10 +1760,22 @@
                   "role": "Math Professor",
                   "image": "/teachers/1.png",
                   "socials": [
-                    { "icon": "facebook", "url": "#" },
-                    { "icon": "twitter", "url": "#" },
-                    { "icon": "instagram", "url": "#" },
-                    { "icon": "linkedin", "url": "#" }
+                    {
+                      "icon": "facebook",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "twitter",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "instagram",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "linkedin",
+                      "url": "#"
+                    }
                   ]
                 },
                 {
@@ -1248,10 +1783,22 @@
                   "role": "English Lecturer",
                   "image": "/teachers/2.png",
                   "socials": [
-                    { "icon": "facebook", "url": "#" },
-                    { "icon": "twitter", "url": "#" },
-                    { "icon": "instagram", "url": "#" },
-                    { "icon": "linkedin", "url": "#" }
+                    {
+                      "icon": "facebook",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "twitter",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "instagram",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "linkedin",
+                      "url": "#"
+                    }
                   ]
                 },
                 {
@@ -1259,11 +1806,433 @@
                   "role": "Science Lecturer",
                   "image": "/teachers/3.png",
                   "socials": [
-                    { "icon": "facebook", "url": "#" },
-                    { "icon": "twitter", "url": "#" },
-                    { "icon": "instagram", "url": "#" },
-                    { "icon": "linkedin", "url": "#" }
+                    {
+                      "icon": "facebook",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "twitter",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "instagram",
+                      "url": "#"
+                    },
+                    {
+                      "icon": "linkedin",
+                      "url": "#"
+                    }
                   ]
+                }
+              ]
+            },
+            "facultyDetails": {
+              "id": "dr-rajesh-sharma",
+              "name": "Dr. Rajesh",
+              "role": "Sharma",
+              "department": "Science Lecturer",
+              "image": "/teachers/1.png",
+              "experience": {
+                "years": "12+",
+                "text": "Years of\nTeaching Experience"
+              },
+              "contactInfo": {
+                "email": "rajesh.sharma@edulearn.com",
+                "phone": "+1 123 456 7890",
+                "location": "New York, United States",
+                "degree": "M.Sc. in Physics",
+                "department": "Department of Science"
+              },
+              "socials": [
+                {
+                  "icon": "facebook",
+                  "url": "#"
+                },
+                {
+                  "icon": "twitter",
+                  "url": "#"
+                },
+                {
+                  "icon": "instagram",
+                  "url": "#"
+                },
+                {
+                  "icon": "linkedin",
+                  "url": "#"
+                }
+              ],
+              "about": {
+                "title": "About Dr. Rajesh Sharma",
+                "description": [
+                  "Dr. Rajesh Sharma is a dedicated and passionate Science Lecturer with over 12 years of teaching experience. He believes in making complex scientific concepts simple and engaging for students through practical examples, interactive learning, and real-world applications.",
+                  "His goal is to create a positive and inclusive learning environment where every student feels confident to explore, question, and innovate. He is committed to guiding students not only in academics but also in developing critical thinking and problem-solving skills for their future careers."
+                ]
+              },
+              "quote": {
+                "text": "\"Science is not just about facts, but about curiosity, exploration, and discovering new possibilities.\"",
+                "author": "Dr. Rajesh Sharma"
+              },
+              "features": [
+                {
+                  "icon": "users",
+                  "title": "Student\nFocused"
+                },
+                {
+                  "icon": "lightbulb",
+                  "title": "Innovative\nTeaching"
+                },
+                {
+                  "icon": "book-open",
+                  "title": "Practical\nLearning"
+                },
+                {
+                  "icon": "target",
+                  "title": "Academic\nExcellence"
+                }
+              ],
+              "teachingPhilosophy": {
+                "title": "Teaching Philosophy",
+                "description": "I believe in learning by doing. My teaching approach focuses on practical understanding, real-life applications, and continuous encouragement to help students achieve their full potential."
+              },
+              "areasOfInterest": {
+                "title": "Areas of Interest",
+                "items": [
+                  "Physics Fundamentals",
+                  "Applied Science",
+                  "Research & Innovation",
+                  "Student Mentorship",
+                  "Science for Sustainable Future"
+                ]
+              }
+            },
+            "admissionProcess": {
+              "title": "Admission",
+              "titleHighlight": "Process",
+              "subtitle": "Follow these simple steps to complete your admission and begin your academic journey with us.",
+              "steps": [
+                {
+                  "number": "01",
+                  "title": "Explore Programs",
+                  "description": "Browse our wide range of undergraduate and postgraduate programs. Choose the course that matches your interests, goals, and career aspirations.",
+                  "image": "/process/1.png",
+                  "badge": "Find the Right Program for Your Future",
+                  "badgeIcon": "graduation-cap"
+                },
+                {
+                  "number": "02",
+                  "title": "Fill Application Form",
+                  "description": "Complete the online application form with accurate personal, academic, and contact details.",
+                  "image": "/process/2.png"
+                },
+                {
+                  "number": "03",
+                  "title": "Submit Required Documents",
+                  "description": "Upload the necessary documents as per the guidelines, including academic records, ID proof, and other relevant certificates.",
+                  "image": "/process/3.png",
+                  "documents": [
+                    "Academic Records",
+                    "ID Proof",
+                    "Photograph",
+                    "Other Documents"
+                  ]
+                },
+                {
+                  "number": "04",
+                  "title": "Application Review",
+                  "description": "Our admission team will review your application and verify the submitted documents. You may be contacted for further clarification if required.",
+                  "image": "/process/4.png"
+                },
+                {
+                  "number": "05",
+                  "title": "Receive Admission Offer",
+                  "description": "Once your application is approved, you will receive your admission offer via email. The offer will include course details, fee information, and next steps.",
+                  "image": "/process/5.png"
+                },
+                {
+                  "number": "06",
+                  "title": "Confirm Admission",
+                  "description": "Pay the admission fee within the given timeline to confirm your seat. After confirmation, you will receive a welcome email with further details to begin your journey with us.",
+                  "image": "/process/6.png"
+                }
+              ]
+            },
+            "applyOnline": {
+              "breadcrumb": {
+                "title": "Apply Online",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Apply Online"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "subtitle": "ADMISSION FORM",
+              "title": "Apply Online",
+              "titleHighlight": "for Admission",
+              "description": "Take the first step towards a brighter future. Fill out the online admission form and join a community committed to academic excellence and personal growth.",
+              "features": [
+                {
+                  "icon": "graduation-cap",
+                  "title": "Easy Application",
+                  "description": "Simple and quick process"
+                },
+                {
+                  "icon": "shield-check",
+                  "title": "Secure & Safe",
+                  "description": "Your data is protected"
+                },
+                {
+                  "icon": "clock",
+                  "title": "Quick Response",
+                  "description": "Get updates on time"
+                },
+                {
+                  "icon": "users",
+                  "title": "Join Our Community",
+                  "description": "Be a part of our success"
+                }
+              ],
+              "image": "/img/apply.png",
+              "imageBadge": "\"Education is the key to unlock a brighter tomorrow.\"",
+              "contactBlock": {
+                "title": "Need Help?",
+                "subtitle": "Our admission team is here to assist you.",
+                "phone": "+1 123 456 7890",
+                "phoneTime": "Mon - Fri, 9:00 AM - 6:00 PM",
+                "email": "admissions@example.com",
+                "emailTime": "We reply within 24 hours",
+                "address": "123 Education Street, New York, USA",
+                "actionBox": {
+                  "icon": "send",
+                  "title": "Start Your Journey Today",
+                  "subtitle": "We look forward to welcoming you!"
+                }
+              }
+            },
+            "ourAchievements": {
+              "subtitle": "OUR ACHIEVEMENTS",
+              "title": "Achievements",
+              "titleHighlight": "That Inspire",
+              "description": "Our achievements reflect our commitment to academic excellence, innovation and the success of our students.",
+              "stats": [
+                {
+                  "value": "10,000+",
+                  "label": "Happy Students",
+                  "description": "Building brighter futures every year.",
+                  "icon": "users",
+                  "color": "blue"
+                },
+                {
+                  "value": "200+",
+                  "label": "Expert Faculty",
+                  "description": "Guiding with knowledge and experience.",
+                  "icon": "graduation-cap",
+                  "color": "orange"
+                },
+                {
+                  "value": "50+",
+                  "label": "Awards & Recognition",
+                  "description": "For academic excellence and innovation.",
+                  "icon": "award",
+                  "color": "blue"
+                },
+                {
+                  "value": "90%",
+                  "label": "Placement Success",
+                  "description": "Our students build successful careers.",
+                  "icon": "briefcase",
+                  "color": "orange"
+                }
+              ],
+              "image": "/img/achivement.png"
+            },
+            "awardsRecognition": {
+              "subtitle": "AWARDS & RECOGNITION",
+              "title": "Honored for Our",
+              "titleHighlight": "Excellence",
+              "description": "We are proud to be recognized by leading organizations for our contribution to quality education and student success.",
+              "badges": [
+                {
+                  "title": "Best Educational Institute",
+                  "year": "2023"
+                },
+                {
+                  "title": "Excellence in Teaching",
+                  "year": "2022"
+                },
+                {
+                  "title": "Outstanding Student Support",
+                  "year": "2021"
+                }
+              ]
+            },
+            "studentSuccess": {
+              "subtitle": "STUDENT ACHIEVEMENTS",
+              "title": "Creating",
+              "titleHighlight": "Success Stories",
+              "description": "Our students continue to make us proud by excelling in academics, competitions and real-world opportunities.",
+              "features": [
+                {
+                  "icon": "trophy",
+                  "title": "Top University Ranks",
+                  "description": "Our students secure top positions in university examinations."
+                },
+                {
+                  "icon": "users",
+                  "title": "National Level Competitions",
+                  "description": "Winners in various national and international events."
+                },
+                {
+                  "icon": "briefcase",
+                  "title": "Successful Careers",
+                  "description": "Our alumni are placed in top companies across the globe."
+                }
+              ],
+              "image": "/img/achivestudent.png",
+              "imageBadge": {
+                "title": "Our Students",
+                "titleHighlight": "Our Pride",
+                "description": "Consistent achievers in academics, innovation and leadership.",
+                "icon": "badge-check"
+              }
+            },
+            "photoGallery": {
+              "title": "Photo Gallery",
+              "description": "A collection of memorable moments from our campus life, events and activities.",
+              "filters": [
+                "All",
+                "Campus",
+                "Events",
+                "Classrooms",
+                "Activities"
+              ],
+              "photos": [
+                {
+                  "id": 1,
+                  "category": "Campus",
+                  "image": "/gallery/1.png"
+                },
+                {
+                  "id": 2,
+                  "category": "Classrooms",
+                  "image": "/gallery/2.png"
+                },
+                {
+                  "id": 3,
+                  "category": "Campus",
+                  "image": "/gallery/3.png"
+                },
+                {
+                  "id": 4,
+                  "category": "Activities",
+                  "image": "/gallery/4.png"
+                },
+                {
+                  "id": 5,
+                  "category": "Events",
+                  "image": "/gallery/5.png"
+                },
+                {
+                  "id": 6,
+                  "category": "Events",
+                  "image": "/gallery/6.png"
+                },
+                {
+                  "id": 7,
+                  "category": "Activities",
+                  "image": "/gallery/7.png"
+                },
+                {
+                  "id": 8,
+                  "category": "Campus",
+                  "image": "/gallery/8.png"
+                }
+              ],
+              "header": {
+                "subtitle": "OUR GALLERY",
+                "title": "Moments That",
+                "titleHighlight": "Matter",
+                "description": "Explore glimpses of our campus, activities, events and achievements through our photo and video galleries."
+              }
+            },
+            "videoGallery": {
+              "title": "Video Gallery",
+              "description": "Watch our campus tours, events, student testimonials and more.",
+              "filters": [
+                "All",
+                "Campus Tour",
+                "Events",
+                "Student Stories",
+                "Activities"
+              ],
+              "videos": [
+                {
+                  "id": 1,
+                  "category": "Campus Tour",
+                  "thumbnail": "/gallery/1.png",
+                  "duration": "02:35",
+                  "title": "Campus Tour",
+                  "description": "Explore our beautiful campus"
+                },
+                {
+                  "id": 2,
+                  "category": "Events",
+                  "thumbnail": "/gallery/2.png",
+                  "duration": "03:12",
+                  "title": "Annual Function 2024",
+                  "description": "Celebrating talent and togetherness"
+                },
+                {
+                  "id": 3,
+                  "category": "Student Stories",
+                  "thumbnail": "/gallery/3.png",
+                  "duration": "01:48",
+                  "title": "Life at Campus",
+                  "description": "A day in our student life"
+                },
+                {
+                  "id": 4,
+                  "category": "Activities",
+                  "thumbnail": "/gallery/4.png",
+                  "duration": "02:30",
+                  "title": "Science Lab Tour",
+                  "description": "Innovation in action"
+                },
+                {
+                  "id": 5,
+                  "category": "Activities",
+                  "thumbnail": "/gallery/5.png",
+                  "duration": "01:55",
+                  "title": "Sports Activities",
+                  "description": "Building a healthy tomorrow"
+                },
+                {
+                  "id": 6,
+                  "category": "Events",
+                  "thumbnail": "/gallery/6.png",
+                  "duration": "03:40",
+                  "title": "Expert Faculty",
+                  "description": "Guiding for a brighter future"
+                },
+                {
+                  "id": 7,
+                  "category": "Student Stories",
+                  "thumbnail": "/gallery/7.png",
+                  "duration": "02:18",
+                  "title": "Student Testimonials",
+                  "description": "Real stories, real experiences"
+                },
+                {
+                  "id": 8,
+                  "category": "Events",
+                  "thumbnail": "/gallery/8.png",
+                  "duration": "04:05",
+                  "title": "Cultural Fest",
+                  "description": "Where creativity comes alive"
                 }
               ]
             }

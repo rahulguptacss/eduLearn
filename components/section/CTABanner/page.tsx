@@ -13,7 +13,7 @@ export default function CTABanner({ data }: { data: CTABannerData }) {
   const highlightText = words.slice(words.length - highlightWordCount).join(" ");
 
   return (
-    <section className="px-4 sm:px-8 lg:px-16 pt-4 pb-12 lg:pt-4 lg:pb-16 relative z-20 max-w-[1400px] mx-auto">
+    <section className="px-4 sm:px-8 lg:px-16 pt-4 pb-4 lg:pt-4 lg:pb-6 relative z-20 max-w-[1400px] mx-auto">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

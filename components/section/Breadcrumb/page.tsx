@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { BreadcrumbData } from "../../types";
+import { motion } from "framer-motion";
 
 export default function Breadcrumb({ data, waveColor = "#ffffff" }: { data: BreadcrumbData, waveColor?: string }) {
   const { title, paths, bgImage = "/img/coverbc.png" } = data;
@@ -14,7 +17,12 @@ export default function Breadcrumb({ data, waveColor = "#ffffff" }: { data: Brea
       <div className="absolute inset-0 bg-[#05192c]/80"></div>
       
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 flex flex-col items-center text-center"
+      >
         <h1 className="text-white text-5xl sm:text-6xl font-bold tracking-wide mb-4" style={{ fontFamily: "var(--font-oswald), sans-serif" }}>{title}</h1>
         <div className="flex items-center space-x-2 text-sm sm:text-base font-medium tracking-wide" style={{ fontFamily: "var(--font-oswald), sans-serif" }}>
           {paths.map((path, index) => {
@@ -38,7 +46,7 @@ export default function Breadcrumb({ data, waveColor = "#ffffff" }: { data: Brea
             );
           })}
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom Wave Divider */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
