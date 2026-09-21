@@ -8,10 +8,19 @@ import { FiArrowRight } from "react-icons/fi";
 
 export default function PhotoGallery({ data }: { data: any }) {
   const [activePhotoFilter, setActivePhotoFilter] = useState("All");
+  const [visibleCount, setVisibleCount] = useState(8);
+
+  const handleFilterChange = (filter: string) => {
+    setActivePhotoFilter(filter);
+    setVisibleCount(8);
+  };
 
   const filteredPhotos = activePhotoFilter === "All" 
     ? data.photos 
     : data.photos.filter((p: any) => p.category === activePhotoFilter);
+
+  const displayedPhotos = filteredPhotos.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredPhotos.length;
 
   return (
     <div className="mb-10 md:mb-16">
@@ -30,7 +39,7 @@ export default function PhotoGallery({ data }: { data: any }) {
           {data.filters.map((filter: string, idx: number) => (
             <button
               key={idx}
-              onClick={() => setActivePhotoFilter(filter)}
+              onClick={() => handleFilterChange(filter)}
               className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-[6px] text-[14px] sm:text-[15px] font-medium transition-colors border whitespace-nowrap flex-shrink-0 ${
                 activePhotoFilter === filter
                   ? "bg-[#ff5e14] text-white border-[#ff5e14]"
@@ -45,7 +54,7 @@ export default function PhotoGallery({ data }: { data: any }) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 min-h-[400px]">
         <AnimatePresence mode="popLayout">
-          {filteredPhotos.map((photo: any) => (
+          {displayedPhotos.map((photo: any) => (
             <motion.div
               key={photo.id}
               layout
@@ -67,11 +76,16 @@ export default function PhotoGallery({ data }: { data: any }) {
         </AnimatePresence>
       </div>
       
-      <div className="flex justify-center mt-10">
-        <button className="px-8 py-2.5 rounded-full bg-white border border-[#1e2a47] text-[#1e2a47] font-semibold text-[15px] flex items-center gap-2 hover:bg-[#1e2a47] hover:text-white transition-colors shadow-sm">
-          View More Photos <FiArrowRight size={18} className="stroke-[2.5]" />
-        </button>
-      </div>
+      {hasMore && (
+        <div className="flex justify-center mt-10">
+          <button 
+            onClick={() => setVisibleCount(prev => prev + 8)}
+            className="px-8 py-2.5 rounded-full bg-white border border-[#1e2a47] text-[#1e2a47] font-semibold text-[15px] flex items-center gap-2 hover:bg-[#1e2a47] hover:text-white transition-colors shadow-sm"
+          >
+            View More Photos <FiArrowRight size={18} className="stroke-[2.5]" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

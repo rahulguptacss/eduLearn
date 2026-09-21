@@ -9,10 +9,19 @@ import { FiArrowRight } from "react-icons/fi";
 export default function VideoGallery({ data }: { data: any }) {
   const [activeVideoFilter, setActiveVideoFilter] = useState("All");
   const [selectedVideo, setSelectedVideo] = useState<any>(null);
+  const [visibleCount, setVisibleCount] = useState(8);
+
+  const handleFilterChange = (filter: string) => {
+    setActiveVideoFilter(filter);
+    setVisibleCount(8);
+  };
 
   const filteredVideos = activeVideoFilter === "All"
     ? data.videos
     : data.videos.filter((v: any) => v.category === activeVideoFilter);
+    
+  const displayedVideos = filteredVideos.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredVideos.length;
 
   return (
     <div>
@@ -31,7 +40,7 @@ export default function VideoGallery({ data }: { data: any }) {
           {data.filters.map((filter: string, idx: number) => (
             <button
               key={idx}
-              onClick={() => setActiveVideoFilter(filter)}
+              onClick={() => handleFilterChange(filter)}
               className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-[6px] text-[14px] sm:text-[15px] font-medium transition-colors border whitespace-nowrap flex-shrink-0 ${
                 activeVideoFilter === filter
                   ? "bg-[#ff5e14] text-white border-[#ff5e14]"
@@ -46,7 +55,7 @@ export default function VideoGallery({ data }: { data: any }) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 min-h-[400px]">
         <AnimatePresence mode="popLayout">
-          {filteredVideos.map((video: any) => (
+          {displayedVideos.map((video: any) => (
             <motion.div
               key={video.id}
               layout
@@ -81,11 +90,16 @@ export default function VideoGallery({ data }: { data: any }) {
         </AnimatePresence>
       </div>
       
-      <div className="flex justify-center mt-10">
-        <button className="px-8 py-2.5 rounded-full bg-white border border-[#1e2a47] text-[#1e2a47] font-semibold text-[15px] flex items-center gap-2 hover:bg-[#1e2a47] hover:text-white transition-colors shadow-sm">
-          View More Videos <FiArrowRight size={18} className="stroke-[2.5]" />
-        </button>
-      </div>
+      {hasMore && (
+        <div className="flex justify-center mt-10">
+          <button 
+            onClick={() => setVisibleCount(prev => prev + 8)}
+            className="px-8 py-2.5 rounded-full bg-white border border-[#1e2a47] text-[#1e2a47] font-semibold text-[15px] flex items-center gap-2 hover:bg-[#1e2a47] hover:text-white transition-colors shadow-sm"
+          >
+            View More Videos <FiArrowRight size={18} className="stroke-[2.5]" />
+          </button>
+        </div>
+      )}
 
       {/* Video Popup Modal */}
       <AnimatePresence>

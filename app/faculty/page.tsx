@@ -5,6 +5,7 @@ import Faculty from "@/components/section/Faculty/page";
 import Footer from "@/components/section/Footer/page";
 import BackToTop from "@/components/BackToTop";
 import data from "@/components/data/data.json";
+import CTABanner from "@/components/section/CTABanner/page";
 
 export default function FacultyPage() {
   const pages = data.categories.Education.templateComponents["template-1"].pages;
@@ -18,6 +19,7 @@ export default function FacultyPage() {
       <main>
         <Breadcrumb data={pages.facultyPage.breadcrumb} waveColor="#ffffff" />
         <Faculty data={sections.facultyPage} />
+        <CTABanner data={sections.ctaBanner} />
       </main>
 
       <Footer data={data.common.Footer} />

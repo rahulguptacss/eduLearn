@@ -82,6 +82,14 @@
             {
               "label": "Testimonials",
               "href": "/testimonials"
+            },
+            {
+              "label": "Events",
+              "href": "/events"
+            },
+            {
+              "label": "News & Notice",
+              "href": "/news"
             }
           ]
         },
@@ -521,6 +529,84 @@
                   "component": "CTABanner"
                 }
               ]
+            },
+            "eventsPage": {
+              "breadcrumb": {
+                "title": "Our Events",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Our Events"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "Events",
+                  "component": "Events"
+                }
+              ]
+            },
+            "eventDetailsPage": {
+              "breadcrumb": {
+                "title": "Event Details",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Event Details"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "EventDetails",
+                  "component": "EventDetails"
+                }
+              ]
+            },
+            "newsPage": {
+              "breadcrumb": {
+                "title": "News & Notice",
+                "bgImage": "/img/coverbc.png",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "News & Notice",
+                    "href": "/news"
+                  }
+                ]
+              },
+              "components": [
+                "breadcrumb",
+                "news"
+              ]
+            },
+            "newsDetailsPage": {
+              "breadcrumb": {
+                "title": "Notice Details",
+                "bgImage": "/img/coverbc.png",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Notice Details",
+                    "href": "#"
+                  }
+                ]
+              }
             }
           },
           "sections": {
@@ -2150,6 +2236,46 @@
                   "id": 8,
                   "category": "Campus",
                   "image": "/gallery/8.png"
+                },
+                {
+                  "id": 9,
+                  "category": "Events",
+                  "image": "/gallery/1.png"
+                },
+                {
+                  "id": 10,
+                  "category": "Classrooms",
+                  "image": "/gallery/2.png"
+                },
+                {
+                  "id": 11,
+                  "category": "Campus",
+                  "image": "/gallery/3.png"
+                },
+                {
+                  "id": 12,
+                  "category": "Activities",
+                  "image": "/gallery/4.png"
+                },
+                {
+                  "id": 13,
+                  "category": "Events",
+                  "image": "/gallery/5.png"
+                },
+                {
+                  "id": 14,
+                  "category": "Classrooms",
+                  "image": "/gallery/6.png"
+                },
+                {
+                  "id": 15,
+                  "category": "Campus",
+                  "image": "/gallery/7.png"
+                },
+                {
+                  "id": 16,
+                  "category": "Activities",
+                  "image": "/gallery/8.png"
                 }
               ],
               "header": {
@@ -2233,8 +2359,463 @@
                   "duration": "04:05",
                   "title": "Cultural Fest",
                   "description": "Where creativity comes alive"
+                },
+                {
+                  "id": 9,
+                  "category": "Campus Tour",
+                  "thumbnail": "/gallery/1.png",
+                  "duration": "02:35",
+                  "title": "Campus Tour II",
+                  "description": "Explore our beautiful campus"
+                },
+                {
+                  "id": 10,
+                  "category": "Events",
+                  "thumbnail": "/gallery/2.png",
+                  "duration": "03:12",
+                  "title": "Annual Function 2025",
+                  "description": "Celebrating talent and togetherness"
+                },
+                {
+                  "id": 11,
+                  "category": "Student Stories",
+                  "thumbnail": "/gallery/3.png",
+                  "duration": "01:48",
+                  "title": "Life at Campus II",
+                  "description": "A day in our student life"
+                },
+                {
+                  "id": 12,
+                  "category": "Activities",
+                  "thumbnail": "/gallery/4.png",
+                  "duration": "02:30",
+                  "title": "Science Lab Tour II",
+                  "description": "Innovation in action"
+                },
+                {
+                  "id": 13,
+                  "category": "Campus Tour",
+                  "thumbnail": "/gallery/5.png",
+                  "duration": "02:35",
+                  "title": "Campus Tour III",
+                  "description": "Explore our beautiful campus again"
+                },
+                {
+                  "id": 14,
+                  "category": "Events",
+                  "thumbnail": "/gallery/6.png",
+                  "duration": "03:12",
+                  "title": "Annual Function 2026",
+                  "description": "Celebrating talent and togetherness"
+                },
+                {
+                  "id": 15,
+                  "category": "Student Stories",
+                  "thumbnail": "/gallery/7.png",
+                  "duration": "01:48",
+                  "title": "Life at Campus III",
+                  "description": "A day in our student life"
+                },
+                {
+                  "id": 16,
+                  "category": "Activities",
+                  "thumbnail": "/gallery/8.png",
+                  "duration": "02:30",
+                  "title": "Science Lab Tour III",
+                  "description": "Innovation in action"
                 }
               ]
+            },
+            "events": {
+              "header": {
+                "subtitle": "OUR EVENTS",
+                "title": "Upcoming ",
+                "titleHighlight": "Events",
+                "description": "Join our exciting events, workshops, seminars and more. Be a part of our journey towards learning, growth and innovation."
+              },
+              "filters": [
+                "All",
+                "Conferences",
+                "Workshops",
+                "Webinars",
+                "Seminars",
+                "Meetups"
+              ],
+              "list": [
+                {
+                  "id": 1,
+                  "image": "/event/1.png",
+                  "date": "25 Apr, 2025",
+                  "title": "Digital Marketing Conference 2025",
+                  "description": "Learn from industry experts, network with professionals and explore the latest trends in digital marketing.",
+                  "location": "New York, USA",
+                  "category": "Conferences"
+                },
+                {
+                  "id": 2,
+                  "image": "/event/2.png",
+                  "date": "10 May, 2025",
+                  "title": "Web Development Workshop",
+                  "description": "Hands-on workshop to learn modern web technologies and build your first real-world project.",
+                  "location": "San Francisco, USA",
+                  "category": "Workshops"
+                },
+                {
+                  "id": 3,
+                  "image": "/event/3.png",
+                  "date": "12 Jun, 2025",
+                  "title": "Tech Innovation Expo",
+                  "description": "Explore cutting-edge technology, meet innovators and get inspired by future possibilities.",
+                  "location": "Berlin, Germany",
+                  "category": "Seminars"
+                },
+                {
+                  "id": 4,
+                  "image": "/event/4.png",
+                  "date": "20 Jun, 2025",
+                  "title": "Online Learning Webinar",
+                  "description": "Join our free webinar on career growth, new skills and industry insights from leading experts.",
+                  "location": "Online Event",
+                  "category": "Webinars"
+                },
+                {
+                  "id": 5,
+                  "image": "/event/5.png",
+                  "date": "05 Jul, 2025",
+                  "title": "Business Growth Seminar",
+                  "description": "Get practical strategies to scale your business and stay ahead in the competitive market.",
+                  "location": "Chicago, USA",
+                  "category": "Seminars"
+                },
+                {
+                  "id": 6,
+                  "image": "/event/6.png",
+                  "date": "18 Jul, 2025",
+                  "title": "Community Meetup",
+                  "description": "Connect with like-minded people, share ideas and grow your professional network.",
+                  "location": "Austin, USA",
+                  "category": "Meetups"
+                },
+                {
+                  "id": 7,
+                  "image": "/event/1.png",
+                  "date": "02 Aug, 2025",
+                  "title": "Creative Design Workshop",
+                  "description": "Learn design thinking and creative tools to turn your ideas into impactful solutions.",
+                  "location": "Los Angeles, USA",
+                  "category": "Workshops"
+                },
+                {
+                  "id": 8,
+                  "image": "/event/2.png",
+                  "date": "15 Aug, 2025",
+                  "title": "Annual Tech Summit",
+                  "description": "A full-day event featuring keynotes, panel discussions and networking opportunities.",
+                  "location": "London, UK",
+                  "category": "Conferences"
+                },
+                {
+                  "id": 9,
+                  "image": "/event/3.png",
+                  "date": "28 Aug, 2025",
+                  "title": "Skill Building Workshop",
+                  "description": "Enhance your skills with practical sessions and expert guidance from top industry professionals.",
+                  "location": "Toronto, Canada",
+                  "category": "Workshops"
+                }
+              ]
+            },
+            "eventDetails": {
+              "header": {
+                "subtitle": "EVENT DETAILS",
+                "title": "Graduation Party",
+                "date": "10 Nov, 2024",
+                "time": "12:00 AM - 5:00 PM"
+              },
+              "image": "/event/1.png",
+              "about": {
+                "title": "About This Event",
+                "paragraphs": [
+                  "Join us for a memorable Graduation Party as we celebrate the achievements, hard work and bright futures of our graduates. This special event brings together students, faculty, families and friends for an evening filled with joy, networking and unforgettable moments.",
+                  "The evening will feature a felicitation ceremony, music, delicious food, photo sessions and opportunities to connect with peers and mentors. It's a time to celebrate new beginnings and the exciting journeys ahead."
+                ],
+                "quote": "Let's come together to honour the milestone, celebrate success and create memories that will last a lifetime!"
+              },
+              "highlights": {
+                "title": "Event Highlights",
+                "items": [
+                  {
+                    "icon": "awards",
+                    "title": "Awards Ceremony",
+                    "description": "Honouring our graduates"
+                  },
+                  {
+                    "icon": "users",
+                    "title": "Networking",
+                    "description": "Meet alumni and professionals"
+                  },
+                  {
+                    "icon": "music",
+                    "title": "Live Music",
+                    "description": "Enjoy performances"
+                  },
+                  {
+                    "icon": "food",
+                    "title": "Delicious Food",
+                    "description": "Refreshments & dinner"
+                  }
+                ]
+              },
+              "venue": {
+                "title": "Venue Location",
+                "mapImage": "/event/map.png",
+                "locationBox": {
+                  "address": "New Jersey, USA",
+                  "linkText": "View larger map"
+                }
+              },
+              "sidebar": {
+                "bookingForm": {
+                  "title": "Book Your Seat",
+                  "description": "Fill out the form below to reserve your spot at the event.",
+                  "buttonText": "Book Now",
+                  "secureText": "Your information is secure with us."
+                },
+                "eventInfo": {
+                  "title": "Event Information",
+                  "details": [
+                    {
+                      "icon": "calendar",
+                      "label": "Start Date",
+                      "value": "10 Nov, 2024"
+                    },
+                    {
+                      "icon": "clock",
+                      "label": "Time",
+                      "value": "12:00 AM - 5:00 PM"
+                    },
+                    {
+                      "icon": "calendar",
+                      "label": "End Date",
+                      "value": "10 Nov, 2024"
+                    },
+                    {
+                      "icon": "map",
+                      "label": "Address",
+                      "value": "New Jersey, USA"
+                    },
+                    {
+                      "icon": "email",
+                      "label": "Email",
+                      "value": "events@example.com"
+                    },
+                    {
+                      "icon": "phone",
+                      "label": "Phone",
+                      "value": "+1 123 456 7890"
+                    }
+                  ]
+                }
+              }
+            },
+            "news": {
+              "header": {
+                "title": "News & Notice"
+              },
+              "filters": [
+                "All",
+                "Academic",
+                "Admissions",
+                "Examinations",
+                "Events",
+                "General"
+              ],
+              "list": [
+                {
+                  "id": 1,
+                  "date": "15",
+                  "month": "MAR",
+                  "year": "2024",
+                  "category": "Admissions",
+                  "title": "Admission Process for 2024-25 Now Open",
+                  "description": "We are pleased to announce that the admission process for the academic year 2024-25 has officially started. Interested candidates can apply online through our admission portal.",
+                  "image": "/event/1.png"
+                },
+                {
+                  "id": 2,
+                  "date": "12",
+                  "month": "MAR",
+                  "year": "2024",
+                  "category": "Examinations",
+                  "title": "Mid Term Examination Schedule Released",
+                  "description": "The mid term examination schedule for all undergraduate and postgraduate programs has been released. Please check the detailed timetable and guidelines.",
+                  "image": "/event/2.png"
+                },
+                {
+                  "id": 3,
+                  "date": "08",
+                  "month": "MAR",
+                  "year": "2024",
+                  "category": "Events",
+                  "title": "Annual Cultural Fest 2024",
+                  "description": "Get ready for the most awaited cultural fest of the year! Join us for two days of music, art, dance and much more.",
+                  "image": "/event/3.png"
+                },
+                {
+                  "id": 4,
+                  "date": "05",
+                  "month": "MAR",
+                  "year": "2024",
+                  "category": "Academic",
+                  "title": "New Courses Introduced for 2024",
+                  "description": "We are excited to introduce new industry-focused courses designed to help you build future-ready skills. Explore the new programs and shape your career with us.",
+                  "image": "/event/4.png"
+                },
+                {
+                  "id": 5,
+                  "date": "28",
+                  "month": "FEB",
+                  "year": "2024",
+                  "category": "General",
+                  "title": "Important Notice for All Students",
+                  "description": "All students are informed to update their personal details on the student portal latest by 10th March 2024 to avoid any inconvenience.",
+                  "image": "/event/5.png"
+                },
+                {
+                  "id": 6,
+                  "date": "25",
+                  "month": "OCT",
+                  "year": "2024",
+                  "category": "Admissions",
+                  "title": "New Event Registration Opens for Fall Semester",
+                  "description": "We are pleased to announce that the admission process for the academic year 2024-25 has officially started. Interested candidates can apply online through our admission portal.",
+                  "image": "/news/4.png"
+                },
+                {
+                  "id": 7,
+                  "date": "30",
+                  "month": "OCT",
+                  "year": "2024",
+                  "category": "Examinations",
+                  "title": "University Library Announces Extended Hours",
+                  "description": "The mid term examination schedule for all undergraduate and postgraduate programs has been released. Please check the detailed timetable and guidelines.",
+                  "image": "/news/5.png"
+                }
+              ],
+              "sidebar": {
+                "searchPlaceholder": "Enter keyword...",
+                "categories": [
+                  {
+                    "label": "All Notices",
+                    "count": "24"
+                  },
+                  {
+                    "label": "Academic",
+                    "count": "06"
+                  },
+                  {
+                    "label": "Admissions",
+                    "count": "05"
+                  },
+                  {
+                    "label": "Examinations",
+                    "count": "04"
+                  },
+                  {
+                    "label": "Events",
+                    "count": "06"
+                  },
+                  {
+                    "label": "General",
+                    "count": "03"
+                  }
+                ],
+                "subscribe": {
+                  "title": "Stay Updated",
+                  "description": "Subscribe to get the latest news and notices directly in your inbox.",
+                  "placeholder": "Enter your email address",
+                  "buttonText": "Subscribe"
+                },
+                "contact": {
+                  "title": "Need Help?",
+                  "description": "For any queries related to notices, feel free to contact us.",
+                  "phone": "+1 123 456 7890",
+                  "email": "info@example.com"
+                }
+              },
+              "banner": {
+                "title": "Start Your Learning Journey ",
+                "titleHighlight": "With Edulax",
+                "description": "Gain in-demand skills, learn from expert educators, and build a brighter future with Edulax.",
+                "buttonText": "Get Started Now",
+                "buttonHref": "/courses",
+                "bgImage": "/img/ctabanner.png"
+              }
+            },
+            "newsDetails": {
+              "sidebar": {
+                "searchPlaceholder": "Enter keyword...",
+                "categories": [
+                  {
+                    "label": "All Notices",
+                    "count": "24"
+                  },
+                  {
+                    "label": "Academic",
+                    "count": "06"
+                  },
+                  {
+                    "label": "Admissions",
+                    "count": "05"
+                  },
+                  {
+                    "label": "Examinations",
+                    "count": "04"
+                  },
+                  {
+                    "label": "Events",
+                    "count": "06"
+                  },
+                  {
+                    "label": "General",
+                    "count": "03"
+                  }
+                ]
+              },
+              "content": {
+                "keyInfoTitle": "Key Information",
+                "keyInfoItems": [
+                  {
+                    "icon": "FaRegFileAlt",
+                    "label": "Application Mode:",
+                    "value": "Online Only"
+                  },
+                  {
+                    "icon": "FaRegCalendarAlt",
+                    "label": "Application Start Date:",
+                    "value": "15 March 2024"
+                  },
+                  {
+                    "icon": "FaRegCalendarAlt",
+                    "label": "Last Date to Apply:",
+                    "value": "30 April 2024"
+                  },
+                  {
+                    "icon": "FaUsers",
+                    "label": "Eligible Programs:",
+                    "value": "Undergraduate, Postgraduate and Diploma Courses"
+                  },
+                  {
+                    "icon": "FaInfoCircle",
+                    "label": "Selection Process:",
+                    "value": "Based on merit and entrance test (if applicable)"
+                  }
+                ],
+                "quote": "Education is the key to unlock a brighter tomorrow. Take the next step with us!",
+                "paragraphs": [
+                  "Candidates are advised to read the detailed guidelines and eligibility criteria before filling out the application form. Make sure to keep all the required documents ready for a smooth application process."
+                ]
+              }
             }
           }
         }
