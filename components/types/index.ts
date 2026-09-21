@@ -17,6 +17,7 @@ export interface HeaderData {
   logoText: string;
   menu: MenuItem[];
   contactButtonText: string;
+  contactButtonHref?: string;
   buttonText: string;
   buttonHref?: string;
 }
@@ -162,6 +163,7 @@ export interface TestimonialsData {
 }
 
 export interface BlogPost {
+  id: number;
   image: string;
   author: string;
   date: string;
@@ -185,7 +187,9 @@ export interface CTABannerData {
   highlightWordCount?: number;
   subtitle: string;
   buttonText: string;
+  buttonHref?: string;
   image: string;
+  imageAlt?: string;
 }
 
 export interface MissionVisionBlock {
@@ -370,6 +374,118 @@ export interface FacultyDetailsData {
   };
 }
 
+export interface PageComponentItem {
+  key: string;
+  component: string;
+}
+
+export interface PageSeo {
+  title: string;
+  description: string;
+  keywords?: string;
+  canonical?: string;
+  ogImage?: string;
+  noIndex?: boolean;
+}
+
+export interface SiteSeo {
+  siteName: string;
+  siteUrl: string;
+  defaultTitle: string;
+  defaultDescription: string;
+  keywords: string;
+  ogImage: string;
+  locale: string;
+}
+
+export interface PageEntry {
+  breadcrumb: BreadcrumbData;
+  components?: PageComponentItem[];
+  seo?: PageSeo;
+}
+
+export interface TemplatePages {
+  home: PageEntry;
+  about: PageEntry;
+  courses: PageEntry;
+  whyChooseUs: PageEntry;
+  missionVision: PageEntry;
+  courseDetail: PageEntry;
+  facultyPage: PageEntry;
+  facultyDetails: PageEntry;
+  admissionProcess: PageEntry;
+  applyOnline: PageEntry;
+  achievements: PageEntry;
+  testimonials: PageEntry;
+  gallery: PageEntry;
+  eventsPage: PageEntry;
+  eventDetailsPage: PageEntry;
+  newsPage: PageEntry;
+  newsDetailsPage: PageEntry;
+  blogPage: PageEntry;
+  blogDetailsPage: PageEntry;
+  facilities: PageEntry;
+  enquiry: PageEntry;
+  faq: PageEntry;
+  privacyPolicy: PageEntry;
+  termsConditions: PageEntry;
+  refundPolicy: PageEntry;
+  sitemap: PageEntry;
+  error404: PageEntry;
+}
+
+export interface LegalBlock {
+  heading: string;
+  text: string;
+}
+
+export interface LegalPageContent {
+  subtitle: string;
+  title: string;
+  intro: string;
+  lastUpdated: string;
+  sections: LegalBlock[];
+}
+
+export interface LegalData {
+  privacyPolicy: LegalPageContent;
+  termsConditions: LegalPageContent;
+  refundPolicy: LegalPageContent;
+}
+
+export interface SitemapLink {
+  label: string;
+  href: string;
+}
+
+export interface SitemapGroup {
+  title: string;
+  icon: string;
+  links: SitemapLink[];
+}
+
+export interface SitemapData {
+  searchPlaceholder: string;
+  searchButton: string;
+  quickTitle: string;
+  quickText: string;
+  helpTitle: string;
+  helpText: string;
+  helpButton: string;
+  helpHref: string;
+  groups: SitemapGroup[];
+}
+
+export interface Error404Data {
+  subtitle: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonHref: string;
+  image: string;
+  imageAlt?: string;
+}
+
 export interface TemplateSections {
   hero: HeroData;
   about: AboutData;
@@ -379,20 +495,35 @@ export interface TemplateSections {
   testimonials: TestimonialsData;
   testimonialsGrid: any;
   blog: BlogData;
+  blogDetails: any;
   ctaBanner: CTABannerData;
   missionVision: MissionVisionData;
   coursesPage: CoursesPageData;
   courseDetail: CourseDetailData;
   facultyPage: FacultyPageData;
   facultyDetails: FacultyDetailsData;
+  admissionProcess: any;
+  applyOnline: any;
   ourAchievements: any;
   awardsRecognition: any;
   studentSuccess: any;
+  photoGallery: any;
+  videoGallery: any;
+  events: any;
+  eventDetails: any;
+  news: any;
+  newsDetails: any;
+  facilities: any;
+  enquiry: any;
+  faq: any;
+  legal: LegalData;
+  sitemap: SitemapData;
+  error404: Error404Data;
 }
 
 export interface TemplateComponents {
   "template-1": {
-    pages: Record<string, any>;
+    pages: TemplatePages;
     sections: TemplateSections;
   };
 }
@@ -402,6 +533,7 @@ export interface PageData {
     Topbar: TopbarData;
     Header: HeaderData;
     Footer: FooterData;
+    seo: SiteSeo;
   };
   categories: {
     Education: {

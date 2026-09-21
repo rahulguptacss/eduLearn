@@ -39,14 +39,16 @@ export default function Hero({ data }: { data: HeroData }) {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+    const timer = setInterval(nextSlide, 8000);
     return () => clearInterval(timer);
   }, [data.slides.length]);
 
   const slide = data.slides[currentSlide];
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f8fbfd]">
+    <section className="relative w-full overflow-hidden bg-[#f8fbfd]" aria-label="Featured programs">
 
       {/* =====================================================
           VERY LIGHT BACKGROUND UNIVERSITY IMAGE
@@ -54,9 +56,11 @@ export default function Hero({ data }: { data: HeroData }) {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
           src={data.bgImage || "/hero/bherog.png"}
-          alt="University Background"
+          alt=""
           fill
-          priority
+          priority={false}
+          sizes="100vw"
+          quality={50}
           className="object-cover"
         />
       </div>
@@ -129,7 +133,7 @@ export default function Hero({ data }: { data: HeroData }) {
                 {slide.titleHighlight ? (
                   <>
                     {slide.title.split(slide.titleHighlight)[0]}
-                    <span className="text-primary">{slide.titleHighlight}</span>
+                    <span className="text-[#c2410c]">{slide.titleHighlight}</span>
                     {slide.title.split(slide.titleHighlight)[1]}
                   </>
                 ) : (
@@ -141,7 +145,7 @@ export default function Hero({ data }: { data: HeroData }) {
               {/* ================= DESCRIPTION ================= */}
               <p
                 className="
-                  text-[#6b7280]
+                  text-[#4b5563]
                   text-[14.5px]
                   lg:text-[16px]
                   leading-[1.6]
@@ -159,6 +163,7 @@ export default function Hero({ data }: { data: HeroData }) {
 
                 {/* Primary */}
                 <button
+                  type="button"
                   className="
                     group
                     bg-primary
@@ -213,6 +218,7 @@ export default function Hero({ data }: { data: HeroData }) {
 
                 {/* Secondary */}
                 <button
+                  type="button"
                   className="
                     group
                     bg-transparent
@@ -339,7 +345,7 @@ export default function Hero({ data }: { data: HeroData }) {
                         className="
                           text-[11px]
                           lg:text-[12px]
-                          text-gray-500
+                          text-[#4b5563]
                           leading-tight
                           whitespace-nowrap
                         "
@@ -414,9 +420,10 @@ export default function Hero({ data }: { data: HeroData }) {
             >
               <Image
                 src={slide.image}
-                alt="Students"
+                alt={slide.title}
                 fill
-                priority
+                sizes="(max-width: 1023px) 80vw, 0px"
+                quality={70}
                 className="object-cover"
               />
             </motion.div>
@@ -508,10 +515,11 @@ export default function Hero({ data }: { data: HeroData }) {
               >
                 <Image
                   src={slide.image}
-                  alt="Students"
+                  alt={slide.title}
                   fill
-                  priority
-                  sizes="600px"
+                  priority={currentSlide === 0}
+                  sizes="(min-width: 1024px) 41vw, 0px"
+                  quality={75}
                   className="object-cover object-center"
                 />
               </motion.div>
@@ -539,8 +547,8 @@ export default function Hero({ data }: { data: HeroData }) {
           lg:top-1/2
           -translate-y-1/2
           z-40
-          w-9
-          h-9
+          w-11
+          h-11
           rounded-full
           bg-secondary
           text-white
@@ -570,8 +578,8 @@ export default function Hero({ data }: { data: HeroData }) {
           lg:top-1/2
           -translate-y-1/2
           z-40
-          w-9
-          h-9
+          w-11
+          h-11
           rounded-full
           bg-secondary
           text-white

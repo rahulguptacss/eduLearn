@@ -4,8 +4,22 @@ import Breadcrumb from "@/components/section/Breadcrumb/page";
 import Footer from "@/components/section/Footer/page";
 import BackToTop from "@/components/BackToTop";
 import NewsDetails from "@/components/section/NewsDetails/page";
+import type { Metadata } from "next";
+import { getDynamicMetadata } from "@/lib/seo";
 import data from "@/components/data/data.json";
 import CTABanner from "@/components/section/CTABanner/page";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const newsId = Number(id);
+  const item = data.categories.Education.templateComponents["template-1"].sections.news.list.find((n: { id: number }) => n.id === newsId);
+  return getDynamicMetadata({
+    title: item?.title || "Notice Details",
+    description: item?.description || "Read this EduLearn notice.",
+    path: `/news/${id}`,
+    image: item?.image,
+  });
+}
 
 export default async function NewsDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
@@ -47,9 +61,13 @@ export default async function NewsDetailsPage({ params }: { params: Promise<{ id
     };
   }
 
+  const breadcrumb = pages.newsDetailsPage.breadcrumb || {
+    title: "Notice Details",
+    paths: [{ label: "Home", href: "/" }, { label: "Notice Details" }],
+  };
   const breadcrumbData = {
-    ...pages.newsDetailsPage.breadcrumb,
-    paths: [...pages.newsDetailsPage.breadcrumb.paths]
+    ...breadcrumb,
+    paths: [...breadcrumb.paths],
   };
   
   if (currentNews) {

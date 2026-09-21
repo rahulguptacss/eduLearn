@@ -373,7 +373,7 @@ export default function ApplyOnline({ data }: { data: any }) {
                       <svg className="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path></svg>
                     </div>
                     <span className="text-[14px] text-gray-600 leading-snug">
-                      I agree to the <Link href="#" className="text-blue-600 hover:underline font-semibold">Terms & Conditions</Link> and <Link href="#" className="text-blue-600 hover:underline font-semibold">Privacy Policy</Link>.
+                      I agree to the <Link href="/terms-conditions" className="text-[#1d4ed8] hover:underline font-semibold">Terms & Conditions</Link> and <Link href="/privacy-policy" className="text-[#1d4ed8] hover:underline font-semibold">Privacy Policy</Link>.
                     </span>
                   </label>
 

@@ -1,16 +1,15 @@
-"use client";
-
-import React from "react";
+import type { Metadata } from "next";
 import Topbar from "@/components/section/Topbar/page";
 import Header from "@/components/section/Header/page";
 import Breadcrumb from "@/components/section/Breadcrumb/page";
 import News from "@/components/section/News/page";
+import CTABanner from "@/components/section/CTABanner/page";
 import Footer from "@/components/section/Footer/page";
 import BackToTop from "@/components/BackToTop";
 import data from "@/components/data/data.json";
-import { motion } from "framer-motion";
+import { getPageMetadata } from "@/lib/seo";
 
-import CTABanner from "@/components/section/CTABanner/page";
+export const metadata: Metadata = getPageMetadata("newsPage");
 
 export default function NewsPage() {
   const templateData = data.categories.Education.templateComponents["template-1"];
@@ -21,18 +20,11 @@ export default function NewsPage() {
     <div className="min-h-screen bg-[#fafbfc] font-sans text-gray-900 overflow-x-clip">
       <Topbar data={data.common.Topbar} />
       <Header data={data.common.Header} />
-      
-      <motion.main
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
+      <main>
         <Breadcrumb data={pageData.breadcrumb} />
-        
         <News data={sections.news} />
         <CTABanner data={sections.ctaBanner} />
-      </motion.main>
-
+      </main>
       <Footer data={data.common.Footer} />
       <BackToTop />
     </div>

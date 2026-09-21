@@ -5,8 +5,12 @@ import MissionVision from "@/components/section/MissionVision/page";
 import CTABanner from "@/components/section/CTABanner/page";
 import Footer from "@/components/section/Footer/page";
 import BackToTop from "@/components/BackToTop";
+import type { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 import data from "@/components/data/data.json";
 import { MissionVisionData } from "@/components/types";
+
+export const metadata: Metadata = getPageMetadata("missionVision");
 
 export default function MissionVisionPage() {
   const pages = data.categories.Education.templateComponents["template-1"].pages;

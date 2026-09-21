@@ -1,6 +1,4 @@
-"use client";
-
-import React from "react";
+import type { Metadata } from "next";
 import Topbar from "@/components/section/Topbar/page";
 import Header from "@/components/section/Header/page";
 import Breadcrumb from "@/components/section/Breadcrumb/page";
@@ -9,7 +7,9 @@ import CTABanner from "@/components/section/CTABanner/page";
 import Footer from "@/components/section/Footer/page";
 import BackToTop from "@/components/BackToTop";
 import data from "@/components/data/data.json";
-import { motion } from "framer-motion";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = getPageMetadata("gallery");
 
 export default function GalleryPage() {
   const templateData = data.categories.Education.templateComponents["template-1"];
@@ -20,26 +20,11 @@ export default function GalleryPage() {
     <div className="min-h-screen bg-[#fafbfc] font-sans text-gray-900 overflow-x-clip">
       <Topbar data={data.common.Topbar} />
       <Header data={data.common.Header} />
-      
-      <motion.main
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
+      <main>
         <Breadcrumb data={pageData.breadcrumb} />
-        
         <Gallery photoData={sections.photoGallery} videoData={sections.videoGallery} />
-      </motion.main>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
         <CTABanner data={sections.ctaBanner} />
-      </motion.div>
-      
+      </main>
       <Footer data={data.common.Footer} />
       <BackToTop />
     </div>

@@ -1,5 +1,14 @@
 {
   "common": {
+    "seo": {
+      "siteName": "EduLearn",
+      "siteUrl": "https://www.edulearn.in",
+      "defaultTitle": "EduLearn | Online Learning Courses & Admissions",
+      "defaultDescription": "Learn from industry experts at EduLearn. Explore courses, admissions, faculty and campus facilities to build a brighter future.",
+      "keywords": "EduLearn, online courses, admissions, education, faculty, learning, Noida",
+      "ogImage": "/img/coverbc.png",
+      "locale": "en_IN"
+    },
     "Topbar": {
       "address": "123, Sector 62, Noida, Uttar Pradesh 201309",
       "email": "admissions@edulearn.in",
@@ -28,7 +37,7 @@
       "logoText": "EduLearn",
       "menu": [
         {
-          "label": "HOME",
+          "label": "Home",
           "href": "/"
         },
         {
@@ -55,8 +64,8 @@
           ]
         },
         {
-          "label": "Programs",
-          "href": "#"
+          "label": "Events",
+          "href": "/events"
         },
         {
           "label": "Courses",
@@ -80,25 +89,50 @@
               "href": "/gallery"
             },
             {
+              "label": "Facilities",
+              "href": "/facilities"
+            },
+            {
               "label": "Testimonials",
               "href": "/testimonials"
             },
             {
-              "label": "Events",
-              "href": "/events"
-            },
-            {
               "label": "News & Notice",
               "href": "/news"
+            },
+            {
+              "label": "Enquiry Now",
+              "href": "/enquiry"
+            },
+            {
+              "label": "FAQ",
+              "href": "/faq"
+            },
+            {
+              "label": "Privacy Policy",
+              "href": "/privacy-policy"
+            },
+            {
+              "label": "Terms & Conditions",
+              "href": "/terms-conditions"
+            },
+            {
+              "label": "Refund Policy",
+              "href": "/refund-policy"
+            },
+            {
+              "label": "Sitemap",
+              "href": "/sitemap"
             }
           ]
         },
         {
-          "label": "BLOG",
-          "href": "#"
+          "label": "Blog",
+          "href": "/blog"
         }
       ],
       "contactButtonText": "Contact Us",
+      "contactButtonHref": "/contact",
       "buttonText": "Apply Now",
       "buttonHref": "/apply-online"
     },
@@ -115,20 +149,20 @@
               "href": "/about"
             },
             {
-              "label": "Programs",
-              "href": "#"
-            },
-            {
               "label": "Courses",
-              "href": "#"
+              "href": "/courses"
             },
             {
               "label": "Events",
-              "href": "#"
+              "href": "/events"
             },
             {
               "label": "Admission Process",
               "href": "/admission-process"
+            },
+            {
+              "label": "Blog",
+              "href": "/blog"
             }
           ]
         },
@@ -161,24 +195,24 @@
           "title": "Support",
           "links": [
             {
-              "label": "Help Center",
-              "href": "#"
-            },
-            {
               "label": "FAQ",
-              "href": "#"
+              "href": "/faq"
             },
             {
               "label": "Privacy Policy",
-              "href": "#"
+              "href": "/privacy-policy"
             },
             {
-              "label": "Terms of Service",
-              "href": "#"
+              "label": "Terms & Conditions",
+              "href": "/terms-conditions"
+            },
+            {
+              "label": "Refund Policy",
+              "href": "/refund-policy"
             },
             {
               "label": "Sitemap",
-              "href": "#"
+              "href": "/sitemap"
             }
           ]
         }
@@ -217,15 +251,19 @@
       "bottomLinks": [
         {
           "label": "Privacy Policy",
-          "href": "#"
+          "href": "/privacy-policy"
         },
         {
           "label": "Terms & Conditions",
-          "href": "#"
+          "href": "/terms-conditions"
+        },
+        {
+          "label": "Refund Policy",
+          "href": "/refund-policy"
         },
         {
           "label": "Sitemap",
-          "href": "#"
+          "href": "/sitemap"
         }
       ]
     }
@@ -236,6 +274,16 @@
         "template-1": {
           "pages": {
             "home": {
+              "breadcrumb": {
+                "title": "Home",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
               "components": [
                 {
                   "key": "Hero",
@@ -262,10 +310,20 @@
                   "component": "Testimonials"
                 },
                 {
-                  "key": "Blog",
+                  "key": "BlogList",
                   "component": "BlogList"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Online Learning Courses & Admissions",
+                "description": "Join EduLearn to learn from industry experts, explore in-demand courses and apply for admission online.",
+                "keywords": "EduLearn, online courses, admissions, Noida",
+                "canonical": "/"
+              }
             },
             "about": {
               "breadcrumb": {
@@ -293,8 +351,17 @@
                 {
                   "key": "WhyChooseUs",
                   "component": "WhyChooseUs"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "About Us",
+                "description": "Learn about EduLearn, our mission, experienced faculty and commitment to quality education.",
+                "canonical": "/about"
+              }
             },
             "courses": {
               "breadcrumb": {
@@ -314,8 +381,17 @@
                 {
                   "key": "Courses",
                   "component": "Courses"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Our Courses",
+                "description": "Browse EduLearn courses across web development, finance, photography and more.",
+                "canonical": "/courses"
+              }
             },
             "whyChooseUs": {
               "breadcrumb": {
@@ -343,8 +419,17 @@
                 {
                   "key": "Testimonials",
                   "component": "Testimonials"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Why Choose Us",
+                "description": "Discover why students choose EduLearn for expert-led courses, support and career-ready skills.",
+                "canonical": "/why-choose-us"
+              }
             },
             "missionVision": {
               "breadcrumb": {
@@ -364,8 +449,17 @@
                 {
                   "key": "MissionVision",
                   "component": "MissionVision"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Mission & Vision",
+                "description": "Read EduLearn mission and vision for accessible, high-quality education.",
+                "canonical": "/mission-vision"
+              }
             },
             "courseDetail": {
               "breadcrumb": {
@@ -385,8 +479,17 @@
                 {
                   "key": "CourseDetail",
                   "component": "CourseDetail"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Course Details",
+                "description": "View course curriculum, fees, instructor details and enrollment information at EduLearn.",
+                "canonical": "/courses"
+              }
             },
             "facultyPage": {
               "breadcrumb": {
@@ -406,8 +509,17 @@
                 {
                   "key": "Faculty",
                   "component": "Faculty"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Our Faculty",
+                "description": "Meet EduLearn faculty and teachers dedicated to student success.",
+                "canonical": "/faculty"
+              }
             },
             "facultyDetails": {
               "breadcrumb": {
@@ -427,8 +539,17 @@
                 {
                   "key": "FacultyDetails",
                   "component": "FacultyDetails"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Faculty Details",
+                "description": "Read faculty profiles, experience and teaching areas at EduLearn.",
+                "canonical": "/faculty"
+              }
             },
             "admissionProcess": {
               "breadcrumb": {
@@ -448,8 +569,47 @@
                 {
                   "key": "AdmissionProcess",
                   "component": "AdmissionProcess"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Admission Process",
+                "description": "Follow the EduLearn admission process from application to confirmation.",
+                "canonical": "/admission-process"
+              }
+            },
+            "applyOnline": {
+              "breadcrumb": {
+                "title": "Apply Online",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Apply Online"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "ApplyOnline",
+                  "component": "ApplyOnline"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "Apply Online",
+                "description": "Submit your EduLearn admission application online quickly and securely.",
+                "canonical": "/apply-online"
+              }
             },
             "achievements": {
               "breadcrumb": {
@@ -477,8 +637,17 @@
                 {
                   "key": "StudentSuccess",
                   "component": "StudentSuccess"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Achievements",
+                "description": "See EduLearn awards, recognition and student success stories.",
+                "canonical": "/achievements"
+              }
             },
             "testimonials": {
               "breadcrumb": {
@@ -498,8 +667,17 @@
                 {
                   "key": "TestimonialsGrid",
                   "component": "TestimonialsGrid"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Student Testimonials",
+                "description": "Read reviews from EduLearn students about their learning experience.",
+                "canonical": "/testimonials"
+              }
             },
             "gallery": {
               "breadcrumb": {
@@ -528,7 +706,12 @@
                   "key": "CTABanner",
                   "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Campus Gallery",
+                "description": "Explore EduLearn campus, classrooms and student life in our photo and video gallery.",
+                "canonical": "/gallery"
+              }
             },
             "eventsPage": {
               "breadcrumb": {
@@ -548,8 +731,17 @@
                 {
                   "key": "Events",
                   "component": "Events"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Events",
+                "description": "Stay updated with EduLearn conferences, workshops and campus events.",
+                "canonical": "/events"
+              }
             },
             "eventDetailsPage": {
               "breadcrumb": {
@@ -569,8 +761,17 @@
                 {
                   "key": "EventDetails",
                   "component": "EventDetails"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
                 }
-              ]
+              ],
+              "seo": {
+                "title": "Event Details",
+                "description": "Get schedules, venues and registration details for EduLearn events.",
+                "canonical": "/events"
+              }
             },
             "newsPage": {
               "breadcrumb": {
@@ -588,9 +789,20 @@
                 ]
               },
               "components": [
-                "breadcrumb",
-                "news"
-              ]
+                {
+                  "key": "News",
+                  "component": "News"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "News & Notices",
+                "description": "Read the latest EduLearn news, academic notices and announcements.",
+                "canonical": "/news"
+              }
             },
             "newsDetailsPage": {
               "breadcrumb": {
@@ -606,6 +818,310 @@
                     "href": "#"
                   }
                 ]
+              },
+              "components": [
+                {
+                  "key": "NewsDetails",
+                  "component": "NewsDetails"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "Notice Details",
+                "description": "View full EduLearn notices and academic announcements.",
+                "canonical": "/news"
+              }
+            },
+            "blogPage": {
+              "breadcrumb": {
+                "title": "Our Blogs",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Our Blogs"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "Blog",
+                  "component": "BlogList"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "Blog",
+                "description": "Read EduLearn blogs on learning, careers and education tips.",
+                "canonical": "/blog"
+              }
+            },
+            "blogDetailsPage": {
+              "breadcrumb": {
+                "title": "Blog Details",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Blog Details"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "BlogDetails",
+                  "component": "BlogDetails"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "Blog Details",
+                "description": "Read in-depth EduLearn articles and education insights.",
+                "canonical": "/blog"
+              }
+            },
+            "facilities": {
+              "breadcrumb": {
+                "title": "Our Facilities",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Our Facilities"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "Facilities",
+                  "component": "Facilities"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "Campus Facilities",
+                "description": "Discover EduLearn campus facilities including labs, library and student amenities.",
+                "canonical": "/facilities"
+              }
+            },
+            "enquiry": {
+              "breadcrumb": {
+                "title": "Enquiry Now",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Enquiry Now"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "Enquiry",
+                  "component": "Enquiry"
+                }
+              ],
+              "seo": {
+                "title": "Enquiry Now",
+                "description": "Send an enquiry to EduLearn admissions for course and application support.",
+                "canonical": "/enquiry"
+              }
+            },
+            "faq": {
+              "breadcrumb": {
+                "title": "Frequently Asked Questions",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Frequently Asked Questions"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "FAQ",
+                  "component": "FAQ"
+                }
+              ],
+              "seo": {
+                "title": "Frequently Asked Questions",
+                "description": "Find answers to common questions about EduLearn courses, fees, admissions and certificates.",
+                "canonical": "/faq"
+              }
+            },
+            "privacyPolicy": {
+              "breadcrumb": {
+                "title": "Privacy Policy",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Privacy Policy"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "LegalContent",
+                  "component": "LegalContent"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "Privacy Policy",
+                "description": "Learn how EduLearn collects, uses and protects your personal information.",
+                "canonical": "/privacy-policy"
+              }
+            },
+            "termsConditions": {
+              "breadcrumb": {
+                "title": "Terms & Conditions",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Terms & Conditions"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "LegalContent",
+                  "component": "LegalContent"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "Terms & Conditions",
+                "description": "Read the terms and conditions for using EduLearn website and services.",
+                "canonical": "/terms-conditions"
+              }
+            },
+            "refundPolicy": {
+              "breadcrumb": {
+                "title": "Refund / Cancellation Policy",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Refund / Cancellation Policy"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "LegalContent",
+                  "component": "LegalContent"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "Refund & Cancellation Policy",
+                "description": "Understand EduLearn refund and cancellation rules for course enrollments.",
+                "canonical": "/refund-policy"
+              }
+            },
+            "sitemap": {
+              "breadcrumb": {
+                "title": "Sitemap",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Sitemap"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "Sitemap",
+                  "component": "Sitemap"
+                },
+                {
+                  "key": "CTABanner",
+                  "component": "CTABanner"
+                }
+              ],
+              "seo": {
+                "title": "Sitemap",
+                "description": "Browse all EduLearn website pages from the HTML sitemap.",
+                "canonical": "/sitemap"
+              }
+            },
+            "error404": {
+              "breadcrumb": {
+                "title": "404 Error",
+                "paths": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "404 Error"
+                  }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                {
+                  "key": "Error404",
+                  "component": "Error404"
+                }
+              ],
+              "seo": {
+                "title": "Page Not Found",
+                "description": "The requested EduLearn page could not be found.",
+                "canonical": "/error-404",
+                "noIndex": true
               }
             }
           },
@@ -1081,7 +1597,8 @@
                   "comments": 15,
                   "title": "The Importance of Quality Education in Today's World",
                   "description": "Discover how quality education shapes individuals and communities, preparing them for the challenges of tomorrow.",
-                  "tag": "Education"
+                  "tag": "Education",
+                  "id": 1
                 },
                 {
                   "image": "/blogs/2.png",
@@ -1090,7 +1607,8 @@
                   "comments": 8,
                   "title": "Tips for Successful Online Learning",
                   "description": "Learn effective strategies to maximize your productivity and success while studying in an online environment.",
-                  "tag": "Learning"
+                  "tag": "Learning",
+                  "id": 2
                 },
                 {
                   "image": "/blogs/3.png",
@@ -1099,7 +1617,108 @@
                   "comments": 22,
                   "title": "Choosing the Right Career Path for Your Future",
                   "description": "Navigate the complex world of career choices with our comprehensive guide to finding your perfect professional fit.",
-                  "tag": "Career"
+                  "tag": "Career",
+                  "id": 3
+                },
+                {
+                  "image": "/blogs/1.png",
+                  "author": "Emily Carter",
+                  "date": "18 Aug 2024",
+                  "comments": 11,
+                  "title": "How Technology Helps Students Learn Faster",
+                  "description": "Explore practical ways digital tools and modern classrooms help students stay engaged and improve learning outcomes.",
+                  "tag": "Learning",
+                  "id": 4
+                },
+                {
+                  "image": "/blogs/2.png",
+                  "author": "James Wilson",
+                  "date": "20 Aug 2024",
+                  "comments": 9,
+                  "title": "What to Look for When Selecting an Online Course",
+                  "description": "A simple checklist to help you compare course quality, support, certificates and real career value before you enroll.",
+                  "tag": "Courses",
+                  "id": 5
+                },
+                {
+                  "image": "/blogs/3.png",
+                  "author": "Priya Sharma",
+                  "date": "22 Aug 2024",
+                  "comments": 17,
+                  "title": "Building Confidence Through Skill-Based Education",
+                  "description": "See how hands-on projects and mentorship help learners turn knowledge into confidence and job-ready skills.",
+                  "tag": "Education",
+                  "id": 6
+                },
+                {
+                  "image": "/blogs/1.png",
+                  "author": "David Smith",
+                  "date": "25 Aug 2024",
+                  "comments": 6,
+                  "title": "Study Habits That Actually Work for Busy Learners",
+                  "description": "Simple daily routines and focus techniques that help working students stay consistent without burning out.",
+                  "tag": "Learning",
+                  "id": 7
+                },
+                {
+                  "image": "/blogs/2.png",
+                  "author": "Sarah Johnson",
+                  "date": "28 Aug 2024",
+                  "comments": 13,
+                  "title": "Why Mentorship Matters in Modern Education",
+                  "description": "Learn how guidance from experienced mentors can shorten the learning curve and keep students motivated.",
+                  "tag": "Education",
+                  "id": 8
+                },
+                {
+                  "image": "/blogs/3.png",
+                  "author": "Michael Brown",
+                  "date": "01 Sep 2024",
+                  "comments": 19,
+                  "title": "From Classroom to Career: Making Learning Practical",
+                  "description": "Discover how real-world assignments and internships help students move from theory to a successful career.",
+                  "tag": "Career",
+                  "id": 9
+                },
+                {
+                  "image": "/blogs/1.png",
+                  "author": "Emily Carter",
+                  "date": "04 Sep 2024",
+                  "comments": 7,
+                  "title": "The Future of Online Learning and Digital Classrooms",
+                  "description": "A look at how virtual classrooms, interactive tools and flexible schedules are changing education worldwide.",
+                  "tag": "Courses",
+                  "id": 10
+                },
+                {
+                  "image": "/blogs/2.png",
+                  "author": "James Wilson",
+                  "date": "08 Sep 2024",
+                  "comments": 10,
+                  "title": "How to Stay Motivated Throughout Your Learning Journey",
+                  "description": "Practical tips to keep your goals visible, track progress and stay inspired from the first lesson to the last.",
+                  "tag": "Learning",
+                  "id": 11
+                },
+                {
+                  "image": "/blogs/3.png",
+                  "author": "Priya Sharma",
+                  "date": "12 Sep 2024",
+                  "comments": 14,
+                  "title": "Soft Skills Every Student Should Master",
+                  "description": "Communication, teamwork and problem-solving are just as important as technical knowledge in today's workplace.",
+                  "tag": "Career",
+                  "id": 12
+                },
+                {
+                  "image": "/blogs/1.png",
+                  "author": "David Smith",
+                  "date": "16 Sep 2024",
+                  "comments": 8,
+                  "title": "Making the Most of Your First Month in a New Course",
+                  "description": "Start strong with a clear plan, the right study setup and habits that help you finish what you begin.",
+                  "tag": "Courses",
+                  "id": 13
                 }
               ]
             },
@@ -1415,7 +2034,9 @@
               "highlightWordCount": 2,
               "subtitle": "Gain in-demand skills, learn from expert educators, and build a brighter future with Edulax.",
               "buttonText": "Get Started Now",
-              "image": "/img/ctabanner.png"
+              "buttonHref": "/apply-online",
+              "image": "/img/ctabanner.png",
+              "imageAlt": "Students studying"
             },
             "courseDetail": {
               "category": "Web Development",
@@ -2816,6 +3437,618 @@
                   "Candidates are advised to read the detailed guidelines and eligibility criteria before filling out the application form. Make sure to keep all the required documents ready for a smooth application process."
                 ]
               }
+            },
+            "blogDetails": {
+              "authorRole": "Education Consultant",
+              "readTime": "8 Min Read",
+              "authorImage": "https://randomuser.me/api/portraits/women/44.jpg",
+              "intro": "In today's fast-paced world, effective learning is more important than ever. Whether you're a school student, college learner, or a working professional, the right study habits can make a huge difference in achieving your goals. In this blog, we'll share 10 practical study tips that can help you stay focused, retain information better, and get the most out of your learning journey.",
+              "midQuote": {
+                "after": 2,
+                "text": "Plan today, achieve tomorrow."
+              },
+              "sections": [
+                {
+                  "title": "Set Clear Goals",
+                  "text": "Before you start studying, define what you want to achieve. Break your goals into smaller, manageable tasks and set a timeline. This will keep you motivated and on track."
+                },
+                {
+                  "title": "Create a Study Schedule",
+                  "text": "A well-planned study schedule helps you manage your time effectively. Allocate specific hours for each subject and stick to it. Don't forget to include short breaks to avoid burnout."
+                },
+                {
+                  "title": "Use Active Learning Techniques",
+                  "text": "Instead of just reading, try active learning methods like note-taking, self-quizzing, teaching others, and using flashcards. These techniques help you understand and remember information better."
+                },
+                {
+                  "title": "Minimize Distractions",
+                  "text": "Find a quiet study space, keep your phone away, and avoid unnecessary distractions. A focused environment can significantly improve your productivity."
+                },
+                {
+                  "title": "Take Regular Breaks",
+                  "text": "Your brain needs rest to stay sharp. Use a simple method like 25 minutes of study followed by a 5-minute break to maintain focus and avoid fatigue."
+                }
+              ],
+              "highlights": {
+                "after": 4,
+                "items": [
+                  {
+                    "icon": "book",
+                    "label": "Stay Focused"
+                  },
+                  {
+                    "icon": "target",
+                    "label": "Be Consistent"
+                  },
+                  {
+                    "icon": "chart",
+                    "label": "Track Progress"
+                  },
+                  {
+                    "icon": "trophy",
+                    "label": "Achieve Success"
+                  }
+                ]
+              },
+              "sidebar": {
+                "searchTitle": "Search Blog",
+                "searchPlaceholder": "Search article, tips, or topics...",
+                "categoriesTitle": "Categories",
+                "recentTitle": "Recent Posts",
+                "cta": {
+                  "title": "Ready to start your journey?",
+                  "description": "Explore our courses and take the next step toward a brighter future.",
+                  "buttonText": "Explore Courses",
+                  "buttonHref": "/courses",
+                  "image": "/blogs/3.png"
+                }
+              }
+            },
+            "facilities": {
+              "subtitle": "OUR FACILITIES",
+              "title": "World-Class",
+              "titleHighlight": "Infrastructure",
+              "description": "A modern learning environment with state-of-the-art facilities to help students learn, grow and achieve their dreams.",
+              "items": [
+                {
+                  "image": "/facilities/1.webp",
+                  "icon": "users",
+                  "title": "Spacious Classrooms",
+                  "description": "Well-designed, air-conditioned classrooms equipped with modern teaching tools for an interactive learning experience."
+                },
+                {
+                  "image": "/facilities/2.webp",
+                  "icon": "monitor",
+                  "title": "Computer Labs",
+                  "description": "Advanced computer labs with high-speed internet and licensed software to strengthen practical skills."
+                },
+                {
+                  "image": "/facilities/3.webp",
+                  "icon": "book",
+                  "title": "Library",
+                  "description": "A rich collection of books, journals and digital resources to support academic and research needs."
+                },
+                {
+                  "image": "/facilities/4.webp",
+                  "icon": "flask",
+                  "title": "Science & Research Labs",
+                  "description": "Fully equipped laboratories to encourage hands-on learning, experiments and innovation."
+                },
+                {
+                  "image": "/facilities/5.webp",
+                  "icon": "mic",
+                  "title": "Auditorium",
+                  "description": "A modern auditorium for seminars, workshops, cultural events and guest lectures."
+                },
+                {
+                  "image": "/facilities/6.webp",
+                  "icon": "trophy",
+                  "title": "Sports Facilities",
+                  "description": "Indoor and outdoor sports facilities to promote a healthy and active lifestyle among students."
+                },
+                {
+                  "image": "/facilities/7.webp",
+                  "icon": "utensils",
+                  "title": "Cafeteria",
+                  "description": "Hygienic and spacious cafeteria offering nutritious and delicious food options."
+                },
+                {
+                  "image": "/facilities/8.webp",
+                  "icon": "building",
+                  "title": "Hostel Accommodation",
+                  "description": "Safe, comfortable and well-furnished hostel facilities with all essential amenities."
+                },
+                {
+                  "image": "/facilities/9.webp",
+                  "icon": "bus",
+                  "title": "Transportation",
+                  "description": "Reliable transport facility with well-maintained buses for a safe and convenient commute."
+                }
+              ]
+            },
+            "enquiry": {
+              "subtitle": "GET IN TOUCH",
+              "title": "Have a Question?",
+              "titleHighlight": "We're Here to Help!",
+              "description": "Whether you have questions about our programs, events or need guidance, feel free to reach out. Our team is always ready to assist you.",
+              "image": "https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=80",
+              "imageBadge": "Let's Build Your Brighter Future Together!",
+              "features": [
+                {
+                  "icon": "message",
+                  "title": "Quick Response",
+                  "description": "We reply within 24 hours"
+                },
+                {
+                  "icon": "users",
+                  "title": "Expert Guidance",
+                  "description": "Get the right information"
+                },
+                {
+                  "icon": "file",
+                  "title": "Personalized Support",
+                  "description": "Assistance tailored to your needs"
+                },
+                {
+                  "icon": "heart",
+                  "title": "Your Success Matters",
+                  "description": "We're with you every step"
+                }
+              ],
+              "form": {
+                "subtitle": "ENQUIRY FORM",
+                "title": "Send Us Your Enquiry",
+                "description": "Fill out the form below and our team will get back to you shortly.",
+                "buttonText": "Submit Enquiry",
+                "agreeText": "I agree to the Terms & Conditions and Privacy Policy.",
+                "secureText": "Your information is safe with us. We never share your details.",
+                "interests": [
+                  "Admission",
+                  "Courses",
+                  "Programs",
+                  "Fees",
+                  "Campus Visit",
+                  "Other"
+                ],
+                "subjects": [
+                  "Admission Query",
+                  "Course Information",
+                  "Fee Structure",
+                  "Scholarship",
+                  "Other"
+                ]
+              },
+              "contact": {
+                "subtitle": "OTHER WAYS TO REACH US",
+                "title": "Contact Information",
+                "description": "You can also reach us through the following official details. We'd love to hear from you.",
+                "items": [
+                  {
+                    "icon": "phone",
+                    "title": "Call Us",
+                    "line1": "+1 123 456 7890",
+                    "line2": "Monday - Friday, 9:00 AM - 6:00 PM"
+                  },
+                  {
+                    "icon": "mail",
+                    "title": "Email Us",
+                    "line1": "enquiry@example.com",
+                    "line2": "We reply within 24 hours"
+                  },
+                  {
+                    "icon": "map",
+                    "title": "Visit Us",
+                    "line1": "123 Education Street",
+                    "line2": "New York, NY 10001, United States"
+                  },
+                  {
+                    "icon": "headset",
+                    "title": "Live Chat",
+                    "line1": "Chat with our support team for instant assistance.",
+                    "buttonText": "Start Chat"
+                  }
+                ]
+              }
+            },
+            "faq": {
+              "subtitle": "FAQ",
+              "title": "Frequently Asked",
+              "titleHighlight": "Questions",
+              "description": "Find answers to the most common questions about our courses, admissions, certificates and more. Can't find what you're looking for? Feel free to reach out to our support team.",
+              "help": {
+                "title": "Still Have Questions?",
+                "description": "We're here to help! If you couldn't find the answer you're looking for, our support team is just a message away.",
+                "buttonText": "Contact Us",
+                "buttonHref": "/contact",
+                "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80",
+                "imageBadge": "Better Learning\nBrighter Future"
+              },
+              "categories": [
+                {
+                  "icon": "graduation",
+                  "title": "Admission Support",
+                  "description": "Get help with course selection and enrollment."
+                },
+                {
+                  "icon": "book",
+                  "title": "Course Information",
+                  "description": "Learn more about our programs, fees and certificates."
+                },
+                {
+                  "icon": "headset",
+                  "title": "Technical Support",
+                  "description": "Facing an issue? We're here to help."
+                },
+                {
+                  "icon": "chat",
+                  "title": "General Inquiries",
+                  "description": "Reach out for any other questions."
+                }
+              ],
+              "searchPlaceholder": "Search your question here...",
+              "items": [
+                {
+                  "question": "Is this course suitable for beginners?",
+                  "answer": "Yes! Our courses are designed for learners of all levels, including complete beginners. We start from the basics and gradually move to advanced topics with practical examples and hands-on projects."
+                },
+                {
+                  "question": "How long will I have access to the course content?",
+                  "answer": "You will have lifetime access to the course materials, including all future updates and additional resources added to the program."
+                },
+                {
+                  "question": "Will I receive a certificate after completing the course?",
+                  "answer": "Yes, you will receive a verifiable Certificate of Completion that you can share on your resume and LinkedIn profile."
+                },
+                {
+                  "question": "Are there any prerequisites for enrolling?",
+                  "answer": "Most of our beginner courses have no prerequisites. For advanced programs, the required skills are clearly mentioned on the course page."
+                },
+                {
+                  "question": "Can I access the course on mobile devices?",
+                  "answer": "Absolutely. Our platform is fully responsive, so you can learn on your smartphone, tablet or laptop anytime."
+                },
+                {
+                  "question": "Are the course materials downloadable?",
+                  "answer": "Yes, notes, assignments and selected resources can be downloaded so you can learn even when you are offline."
+                },
+                {
+                  "question": "Do you provide placement assistance?",
+                  "answer": "Yes, we offer career guidance, resume support and interview preparation to help students move toward better job opportunities."
+                },
+                {
+                  "question": "What payment methods do you accept?",
+                  "answer": "We accept credit/debit cards, UPI, net banking and other secure online payment options."
+                },
+                {
+                  "question": "Can I get a refund if I'm not satisfied?",
+                  "answer": "Yes, we offer a 30-day money-back guarantee. If you are not satisfied, you can request a refund within the first 30 days."
+                },
+                {
+                  "question": "How can I contact the instructor if I have questions?",
+                  "answer": "You can reach instructors through the course discussion board or by contacting our support team from the Enquiry page."
+                }
+              ]
+            },
+            "legal": {
+              "privacyPolicy": {
+                "subtitle": "PRIVACY POLICY",
+                "title": "Privacy Policy",
+                "intro": "At EduLearn, we are committed to protecting your personal information and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
+                "lastUpdated": "Last Updated: 03 June, 2026",
+                "sections": [
+                  {
+                    "heading": "Information We Collect",
+                    "text": "We may collect personal information such as your name, email address, phone number, and other details when you fill out a form, register for a program, subscribe to our newsletter, or contact us. We may also collect non-personal information such as browser type, device information, pages visited, and usage data to improve our website and services."
+                  },
+                  {
+                    "heading": "How We Use Your Information",
+                    "text": "The information we collect is used to provide and improve our services, respond to your inquiries, process your applications, communicate important updates, and personalize your learning experience. We may also use your information to send you relevant news, offers, and educational resources, but only if you have opted in to receive such communications."
+                  },
+                  {
+                    "heading": "Information Sharing",
+                    "text": "We do not sell, trade, or rent your personal information. We may share your information with trusted third-party service providers who help us operate our website and deliver our services, such as hosting, analytics, or communication tools. These providers are bound by confidentiality agreements and are only allowed to use the information for the purpose of providing services to us. We may also disclose information if required by law or to protect our rights, property, or safety."
+                  },
+                  {
+                    "heading": "Data Security",
+                    "text": "We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. While we strive to ensure the security of your data, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security."
+                  },
+                  {
+                    "heading": "Cookies",
+                    "text": "Our website uses cookies to enhance your browsing experience, analyze website traffic, and understand user behavior. You can choose to disable cookies through your browser settings, but this may affect the functionality of certain features on our website."
+                  },
+                  {
+                    "heading": "Third-Party Links",
+                    "text": "Our website may contain links to third-party websites for your convenience. We are not responsible for the privacy practices or content of those sites, and we encourage you to review their privacy policies."
+                  },
+                  {
+                    "heading": "Policy Updates",
+                    "text": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with the updated effective date. We encourage you to review this page periodically to stay informed about how we are protecting your information."
+                  },
+                  {
+                    "heading": "Contact Us",
+                    "text": "If you have any questions, concerns, or requests related to this Privacy Policy, please contact us at admissions@edulearn.in. We are here to help and will respond to your query as soon as possible."
+                  }
+                ]
+              },
+              "termsConditions": {
+                "subtitle": "TERMS & CONDITIONS",
+                "title": "Terms & Conditions",
+                "intro": "Welcome to EduLearn. By accessing our website or enrolling in our programs, you agree to follow these Terms & Conditions. Please read them carefully before using our services.",
+                "lastUpdated": "Last Updated: 03 June, 2026",
+                "sections": [
+                  {
+                    "heading": "Acceptance of Terms",
+                    "text": "By using this website, creating an account, or submitting an application, you confirm that you have read, understood, and agreed to these Terms & Conditions. If you do not agree, please do not use our website or services."
+                  },
+                  {
+                    "heading": "Use of Website",
+                    "text": "You agree to use the EduLearn website only for lawful purposes. You must not misuse the platform, attempt to gain unauthorized access, upload harmful content, or interfere with the security and performance of our services."
+                  },
+                  {
+                    "heading": "Courses and Enrollment",
+                    "text": "Course details, fees, schedules, and availability may change from time to time. Enrollment is confirmed only after successful payment and verification of required information. EduLearn reserves the right to accept or decline an application."
+                  },
+                  {
+                    "heading": "User Responsibilities",
+                    "text": "You are responsible for providing accurate information, keeping your login details secure, and using course materials for personal learning only. Sharing, copying, or reselling our content without permission is not allowed."
+                  },
+                  {
+                    "heading": "Intellectual Property",
+                    "text": "All logos, course content, videos, documents, graphics, and website materials belong to EduLearn or its licensors. You may not copy, distribute, or modify this content without written permission."
+                  },
+                  {
+                    "heading": "Limitation of Liability",
+                    "text": "EduLearn is not liable for any indirect or incidental damages arising from the use of our website or courses. We make reasonable efforts to keep information accurate, but we do not guarantee that all content will always be complete or error-free."
+                  },
+                  {
+                    "heading": "Changes to Terms",
+                    "text": "We may update these Terms & Conditions at any time. The revised version will be published on this page with an updated date. Continued use of our website after changes means you accept the updated terms."
+                  },
+                  {
+                    "heading": "Contact Us",
+                    "text": "If you have questions about these Terms & Conditions, please contact us at admissions@edulearn.in. Our team will be happy to assist you."
+                  }
+                ]
+              },
+              "refundPolicy": {
+                "subtitle": "REFUND POLICY",
+                "title": "Refund / Cancellation Policy",
+                "intro": "At EduLearn, we want learners to feel confident while enrolling. This Refund / Cancellation Policy explains when a refund or cancellation can be requested and how our team processes it.",
+                "lastUpdated": "Last Updated: 03 June, 2026",
+                "sections": [
+                  {
+                    "heading": "Eligibility for Refund",
+                    "text": "Students may request a refund within 30 days of enrollment if they are not satisfied with the course, provided that a substantial portion of the paid content has not already been completed or downloaded."
+                  },
+                  {
+                    "heading": "How to Request a Cancellation",
+                    "text": "To cancel a course or admission request, please email admissions@edulearn.in with your full name, registered email, course name, and payment details. Our support team will review the request and respond as soon as possible."
+                  },
+                  {
+                    "heading": "Refund Processing Time",
+                    "text": "Once a refund is approved, the amount is usually processed within 7 to 14 working days. The time taken for the amount to reflect in your account may vary depending on your bank or payment provider."
+                  },
+                  {
+                    "heading": "Non-Refundable Cases",
+                    "text": "Refunds may not be issued for completed courses, downloaded materials, late cancellations after the stated window, or payments made for non-refundable services such as application processing or one-time registration fees, unless required by law."
+                  },
+                  {
+                    "heading": "Course Changes by EduLearn",
+                    "text": "If a course is postponed, cancelled, or significantly changed by EduLearn, students will be offered a transfer to another batch or a refund of the amount paid for that course."
+                  },
+                  {
+                    "heading": "Payment Gateway Charges",
+                    "text": "Any transaction fees charged by payment gateways or banks may be deducted from the refund amount where applicable. We will mention this clearly while confirming your refund."
+                  },
+                  {
+                    "heading": "Policy Updates",
+                    "text": "This Refund / Cancellation Policy may be updated from time to time. The latest version will always be available on this page with the updated date."
+                  },
+                  {
+                    "heading": "Contact Us",
+                    "text": "For refund or cancellation support, contact us at admissions@edulearn.in. We are here to help and will respond to your query as soon as possible."
+                  }
+                ]
+              }
+            },
+            "sitemap": {
+              "searchPlaceholder": "Search for a page...",
+              "searchButton": "Search",
+              "quickTitle": "Quick Navigation",
+              "quickText": "Click any card below to visit the page directly",
+              "helpTitle": "Still Can't Find What You Need?",
+              "helpText": "We're here to help you.",
+              "helpButton": "Contact Us",
+              "helpHref": "/contact",
+              "groups": [
+                {
+                  "title": "Home",
+                  "icon": "home",
+                  "links": [
+                    {
+                      "label": "Home",
+                      "href": "/"
+                    }
+                  ]
+                },
+                {
+                  "title": "About Us",
+                  "icon": "about",
+                  "links": [
+                    {
+                      "label": "About Us",
+                      "href": "/about"
+                    },
+                    {
+                      "label": "Why Choose Us",
+                      "href": "/why-choose-us"
+                    },
+                    {
+                      "label": "Mission & Vision",
+                      "href": "/mission-vision"
+                    },
+                    {
+                      "label": "Achievements",
+                      "href": "/achievements"
+                    }
+                  ]
+                },
+                {
+                  "title": "Academics",
+                  "icon": "academics",
+                  "links": [
+                    {
+                      "label": "Courses",
+                      "href": "/courses"
+                    },
+                    {
+                      "label": "Course Details",
+                      "href": "/courses/complete-web-development-bootcamp"
+                    },
+                    {
+                      "label": "Facilities / Infrastructure",
+                      "href": "/facilities"
+                    }
+                  ]
+                },
+                {
+                  "title": "Admissions",
+                  "icon": "admissions",
+                  "links": [
+                    {
+                      "label": "Admission Process",
+                      "href": "/admission-process"
+                    },
+                    {
+                      "label": "Apply Online",
+                      "href": "/apply-online"
+                    },
+                    {
+                      "label": "Enquiry",
+                      "href": "/enquiry"
+                    },
+                    {
+                      "label": "FAQ",
+                      "href": "/faq"
+                    }
+                  ]
+                },
+                {
+                  "title": "Our People",
+                  "icon": "people",
+                  "links": [
+                    {
+                      "label": "Faculty / Teachers",
+                      "href": "/faculty"
+                    },
+                    {
+                      "label": "Teacher Details",
+                      "href": "/faculty/dr-rajesh-sharma"
+                    },
+                    {
+                      "label": "Testimonials",
+                      "href": "/testimonials"
+                    }
+                  ]
+                },
+                {
+                  "title": "Events",
+                  "icon": "events",
+                  "links": [
+                    {
+                      "label": "Events",
+                      "href": "/events"
+                    },
+                    {
+                      "label": "Event Details",
+                      "href": "/events/1"
+                    }
+                  ]
+                },
+                {
+                  "title": "News & Blog",
+                  "icon": "news",
+                  "links": [
+                    {
+                      "label": "News / Notices",
+                      "href": "/news"
+                    },
+                    {
+                      "label": "News Details",
+                      "href": "/news/1"
+                    },
+                    {
+                      "label": "Blog",
+                      "href": "/blog"
+                    },
+                    {
+                      "label": "Blog Details",
+                      "href": "/blog/1"
+                    }
+                  ]
+                },
+                {
+                  "title": "Media",
+                  "icon": "media",
+                  "links": [
+                    {
+                      "label": "Gallery",
+                      "href": "/gallery"
+                    }
+                  ]
+                },
+                {
+                  "title": "Contact & Support",
+                  "icon": "contact",
+                  "links": [
+                    {
+                      "label": "Contact Us",
+                      "href": "/contact"
+                    }
+                  ]
+                },
+                {
+                  "title": "Policies",
+                  "icon": "policies",
+                  "links": [
+                    {
+                      "label": "Privacy Policy",
+                      "href": "/privacy-policy"
+                    },
+                    {
+                      "label": "Terms & Conditions",
+                      "href": "/terms-conditions"
+                    },
+                    {
+                      "label": "Refund / Cancellation Policy",
+                      "href": "/refund-policy"
+                    }
+                  ]
+                },
+                {
+                  "title": "Other Pages",
+                  "icon": "other",
+                  "links": [
+                    {
+                      "label": "Sitemap",
+                      "href": "/sitemap"
+                    },
+                    {
+                      "label": "404 Error",
+                      "href": "/error-404"
+                    }
+                  ]
+                }
+              ]
+            },
+            "error404": {
+              "subtitle": "OOPS!",
+              "title": "Page Not Found",
+              "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+              "buttonText": "Go to Homepage",
+              "buttonHref": "/",
+              "image": "/img/404.png",
+              "imageAlt": "Lost student looking for the right page"
             }
           }
         }

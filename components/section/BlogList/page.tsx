@@ -1,12 +1,51 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { BlogData } from "../../types";
-import { ArrowLeft, ArrowRight, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
-export default function BlogList({ data }: { data: BlogData }) {
+export default function BlogList({
+  data,
+  previewLimit,
+  showPagination = false,
+  itemsPerPage = 6,
+}: {
+  data: BlogData;
+  previewLimit?: number;
+  showPagination?: boolean;
+  itemsPerPage?: number;
+}) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const sourcePosts = previewLimit ? data.posts.slice(0, previewLimit) : data.posts;
+  const totalPages = showPagination ? Math.ceil(data.posts.length / itemsPerPage) : 1;
+  const displayedPosts = showPagination
+    ? data.posts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+    : sourcePosts;
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    document.getElementById("blog-list")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const getPageNumbers = () => {
+    if (totalPages <= 5) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+
+    const pages: (number | "ellipsis")[] = [1];
+    const start = Math.max(2, currentPage - 1);
+    const end = Math.min(totalPages - 1, currentPage + 1);
+
+    if (start > 2) pages.push("ellipsis");
+    for (let page = start; page <= end; page++) pages.push(page);
+    if (end < totalPages - 1) pages.push("ellipsis");
+    pages.push(totalPages);
+    return pages;
+  };
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -21,7 +60,7 @@ export default function BlogList({ data }: { data: BlogData }) {
   };
 
   return (
-    <section className="bg-[#f4f9fd] pt-8 pb-8 lg:pt-12 lg:pb-10 px-4 sm:px-8 lg:px-16 relative overflow-hidden">
+    <section id="blog-list" className="bg-[#f4f9fd] pt-8 pb-8 lg:pt-12 lg:pb-10 px-4 sm:px-8 lg:px-16 relative overflow-hidden">
       
       {/* Background Dots Pattern */}
       <motion.div 
@@ -78,14 +117,17 @@ export default function BlogList({ data }: { data: BlogData }) {
         
         {/* Blog Cards Grid */}
         <motion.div 
+          key={currentPage}
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          {data.posts.map((post, idx) => (
-            <motion.div variants={itemVariants} key={idx} className="bg-white rounded-[24px] overflow-hidden shadow-[0_15px_40px_rgba(14,42,70,0.06)] hover:shadow-[0_20px_50px_rgba(14,42,70,0.1)] transition-all duration-300 group flex flex-col border border-gray-100">
+          {displayedPosts.map((post, idx) => {
+            const postId = post.id ?? (showPagination ? (currentPage - 1) * itemsPerPage + idx + 1 : idx + 1);
+            return (
+            <motion.div variants={itemVariants} key={`${currentPage}-${postId}`} className="bg-white rounded-[24px] overflow-hidden shadow-[0_15px_40px_rgba(14,42,70,0.06)] hover:shadow-[0_20px_50px_rgba(14,42,70,0.1)] transition-all duration-300 group flex flex-col border border-gray-100">
               
               {/* Image Container */}
               <div className="relative h-[240px] w-full overflow-hidden">
@@ -125,9 +167,11 @@ export default function BlogList({ data }: { data: BlogData }) {
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-[18px] sm:text-[20px] font-semibold text-[#0e2a46] mb-2 leading-[1.4] group-hover:text-[#ff5e14] transition-colors cursor-pointer line-clamp-2">
-                  {post.title}
-                </h3>
+                <Link href={`/blog/${postId}`}>
+                  <h3 className="text-[18px] sm:text-[20px] font-semibold text-[#0e2a46] mb-2 leading-[1.4] group-hover:text-[#ff5e14] transition-colors cursor-pointer line-clamp-2">
+                    {post.title}
+                  </h3>
+                </Link>
                 
                 {/* Description */}
                 <p className="text-[#5a6b82] text-[13px] sm:text-[14px] leading-[1.6] mb-3 flex-grow">
@@ -135,33 +179,91 @@ export default function BlogList({ data }: { data: BlogData }) {
                 </p>
                 
                 {/* Read More Button */}
-                <button className="bg-[#0e2a46] text-white rounded-full p-[4px] pl-5 sm:p-[5px] sm:pl-6 flex items-center gap-3 sm:gap-4 hover:bg-[#1a3652] transition-colors w-max mt-auto group/btn cursor-pointer">
+                <Link
+                  href={`/blog/${postId}`}
+                  className="bg-[#0e2a46] text-white rounded-full p-[4px] pl-5 sm:p-[5px] sm:pl-6 flex items-center gap-3 sm:gap-4 hover:bg-[#1a3652] transition-colors w-max mt-auto group/btn cursor-pointer"
+                >
                   <span className="font-medium text-[13px] sm:text-[15px]">Read More</span>
                   <div className="bg-[#ff5e14] w-[32px] h-[32px] sm:w-[36px] sm:h-[36px] md:w-[38px] md:h-[38px] rounded-full flex items-center justify-center group-hover/btn:rotate-[-45deg] transition-transform duration-300">
                     <ArrowRight className="w-4 h-4 sm:w-[18px] sm:h-[18px]" strokeWidth={2.5} />
                   </div>
-                </button>
+                </Link>
 
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
         
-        {/* View All Button Row */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-5 lg:mt-6 flex justify-center"
-        >
-          <button className="bg-[#ff5e14] text-white rounded-full p-[4px] pl-6 sm:p-[5px] sm:pl-8 flex items-center gap-4 sm:gap-5 hover:bg-[#e04f0d] hover:shadow-[0_10px_30px_rgba(255,94,20,0.3)] transition-all duration-300 group/btn cursor-pointer">
-            <span className="font-semibold text-[14px] sm:text-[16px]">{data.buttonText || "View All"}</span>
-            <div className="bg-white text-[#ff5e14] w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] rounded-full flex items-center justify-center group-hover/btn:translate-x-1 transition-transform">
-              <ArrowRight className="w-4 h-4 sm:w-[18px] sm:h-[18px]" strokeWidth={2.5} />
-            </div>
-          </button>
-        </motion.div>
+        {showPagination && totalPages > 1 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-8 lg:mt-10 flex justify-center items-center gap-2.5"
+          >
+            {currentPage > 1 && (
+              <button
+                onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+                className="w-11 h-11 rounded-full bg-white text-[#0e2a46] border border-gray-200 flex items-center justify-center hover:border-[#ff5e14] hover:text-[#ff5e14] transition-colors cursor-pointer"
+                aria-label="Previous page"
+              >
+                <ArrowLeft className="w-4 h-4" strokeWidth={2.5} />
+              </button>
+            )}
+
+            {getPageNumbers().map((page, idx) =>
+              page === "ellipsis" ? (
+                <span key={`ellipsis-${idx}`} className="w-11 h-11 rounded-full bg-white text-[#0e2a46] border border-gray-200 flex items-center justify-center font-semibold">
+                  ...
+                </span>
+              ) : (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`w-11 h-11 rounded-full text-[15px] font-semibold border transition-colors cursor-pointer ${
+                    currentPage === page
+                      ? "bg-[#ff5e14] text-white border-[#ff5e14] shadow-[0_8px_20px_rgba(255,94,20,0.25)]"
+                      : "bg-white text-[#0e2a46] border-gray-200 hover:border-[#ff5e14] hover:text-[#ff5e14]"
+                  }`}
+                >
+                  {page}
+                </button>
+              )
+            )}
+
+            {currentPage < totalPages && (
+              <button
+                onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+                className="w-11 h-11 rounded-full bg-white text-[#0e2a46] border border-gray-200 flex items-center justify-center hover:border-[#ff5e14] hover:text-[#ff5e14] transition-colors cursor-pointer"
+                aria-label="Next page"
+              >
+                <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+              </button>
+            )}
+          </motion.div>
+        )}
+
+        {!showPagination && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-5 lg:mt-6 flex justify-center"
+          >
+            <Link
+              href="/blog"
+              className="bg-[#ff5e14] text-white rounded-full p-[4px] pl-6 sm:p-[5px] sm:pl-8 flex items-center gap-4 sm:gap-5 hover:bg-[#e04f0d] hover:shadow-[0_10px_30px_rgba(255,94,20,0.3)] transition-all duration-300 group/btn cursor-pointer"
+            >
+              <span className="font-semibold text-[14px] sm:text-[16px]">{data.buttonText || "View All"}</span>
+              <div className="bg-white text-[#ff5e14] w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] rounded-full flex items-center justify-center group-hover/btn:translate-x-1 transition-transform">
+                <ArrowRight className="w-4 h-4 sm:w-[18px] sm:h-[18px]" strokeWidth={2.5} />
+              </div>
+            </Link>
+          </motion.div>
+        )}
 
       </div>
     </section>

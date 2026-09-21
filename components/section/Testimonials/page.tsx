@@ -110,13 +110,13 @@ export default function Testimonials({ data }: { data: TestimonialsData }) {
           
           <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-extrabold text-[#0e2a46] leading-[1.2] tracking-tight mb-3">
             {data.title} <br className="hidden lg:block" />
-            {data.titleHighlight && <span className="text-[#ff5e14]">{data.titleHighlight}</span>}
+            {data.titleHighlight && <span className="text-[#c2410c]">{data.titleHighlight}</span>}
           </h2>
           
           {/* Orange Underline */}
           <div className="w-[72px] h-[5px] bg-[#ff5e14] rounded-full mb-5"></div>
           
-          <p className="text-gray-500 mb-7 text-[14px] sm:text-[15px] leading-[1.6] max-w-[500px]">
+          <p className="text-[#4b5563] mb-7 text-[14px] sm:text-[15px] leading-[1.6] max-w-[500px]">
             {data.description}
           </p>
           
@@ -159,7 +159,7 @@ export default function Testimonials({ data }: { data: TestimonialsData }) {
                   </div>
                   <div>
                     <h4 className="font-extrabold text-[#0e2a46] text-[17px] leading-tight">{currentTestimonial.author}</h4>
-                    <p className="text-gray-500 text-[14px] mt-0.5">{currentTestimonial.role}</p>
+                    <p className="text-[#4b5563] text-[14px] mt-0.5">{currentTestimonial.role}</p>
                   </div>
                 </div>
 

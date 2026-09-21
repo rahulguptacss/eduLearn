@@ -4,8 +4,22 @@ import Breadcrumb from "@/components/section/Breadcrumb/page";
 import Footer from "@/components/section/Footer/page";
 import BackToTop from "@/components/BackToTop";
 import EventDetails from "@/components/section/EventDetails/page";
+import type { Metadata } from "next";
+import { getDynamicMetadata } from "@/lib/seo";
 import data from "@/components/data/data.json";
 import CTABanner from "@/components/section/CTABanner/page";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const eventId = Number(id);
+  const item = data.categories.Education.templateComponents["template-1"].sections.events.list.find((e: { id: number }) => e.id === eventId);
+  return getDynamicMetadata({
+    title: item?.title || "Event Details",
+    description: item?.description || "View this EduLearn event.",
+    path: `/events/${id}`,
+    image: item?.image,
+  });
+}
 
 export default async function EventDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
@@ -31,9 +45,13 @@ export default async function EventDetailsPage({ params }: { params: Promise<{ i
     eventDetailData.venue.locationBox.address = currentEvent.location;
   }
 
+  const breadcrumb = pages.eventDetailsPage.breadcrumb || {
+    title: "Event Details",
+    paths: [{ label: "Home", href: "/" }, { label: "Event Details" }],
+  };
   const breadcrumbData = {
-    ...pages.eventDetailsPage.breadcrumb,
-    paths: [...pages.eventDetailsPage.breadcrumb.paths]
+    ...breadcrumb,
+    paths: [...breadcrumb.paths],
   };
   
   if (currentEvent) {

@@ -10,7 +10,11 @@ import BlogList from "@/components/section/BlogList/page";
 import CTABanner from "@/components/section/CTABanner/page";
 import Footer from "@/components/section/Footer/page";
 import BackToTop from "@/components/BackToTop";
+import type { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 import data from "@/components/data/data.json";
+
+export const metadata: Metadata = getPageMetadata("home");
 
 export default function Home() {
   const sections = data.categories.Education.templateComponents["template-1"].sections;
@@ -26,7 +30,7 @@ export default function Home() {
         <Stats data={sections.stats} />
         <WhyChooseUs data={sections.whyChooseUs} />
         <Testimonials data={sections.testimonials} />
-        <BlogList data={sections.blog} />
+        <BlogList data={sections.blog} previewLimit={3} />
       </main>
       <CTABanner data={sections.ctaBanner} />
       <Footer data={data.common.Footer} />

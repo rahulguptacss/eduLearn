@@ -5,9 +5,25 @@ import FacultyDetails from "@/components/section/FacultyDetails/page";
 import CTABanner from "@/components/section/CTABanner/page";
 import Footer from "@/components/section/Footer/page";
 import BackToTop from "@/components/BackToTop";
+import type { Metadata } from "next";
+import { getDynamicMetadata } from "@/lib/seo";
 import data from "@/components/data/data.json";
 
 // For static site generation
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const members = data.categories.Education.templateComponents["template-1"].sections.facultyPage.members;
+  const member = members.find((item) => item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") === id);
+  return getDynamicMetadata({
+    title: member?.name || "Faculty Details",
+    description: member
+      ? `${member.name} is a ${member.role} at EduLearn.`
+      : "View EduLearn faculty profile.",
+    path: `/faculty/${id}`,
+    image: member?.image,
+  });
+}
+
 export function generateStaticParams() {
   const sections = data.categories.Education.templateComponents["template-1"].sections;
   return sections.facultyPage.members.map((member) => ({
@@ -62,7 +78,7 @@ export default async function FacultyDetailsPage({ params }: { params: Promise<{
   };
 
   const breadcrumbData = {
-    ...pages.facultyDetails.breadcrumb,
+    ...(pages.facultyDetails.breadcrumb || { title: fullName, paths: [{ label: "Home", href: "/" }, { label: fullName }] }),
     title: facultyData.name,
   };
   

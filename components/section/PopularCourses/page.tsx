@@ -161,6 +161,7 @@ export default function PopularCourses({ data }: { data: PopularCoursesData }) {
                             src={course.image} 
                             alt={course.title} 
                             fill
+                            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                             className="object-cover group-hover:scale-110 transition-transform duration-700"
                           />
                           

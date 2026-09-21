@@ -22,14 +22,11 @@ export default function Header({ data }: { data: HeaderData }) {
   if (!data) return null;
 
   return (
-    <motion.header 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <header
       className="bg-white py-2.5 px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-16 flex justify-between items-center shadow-sm sticky top-0 z-50"
     >
       <div className="flex items-center">
-        <Link href="/">
+        <Link href="/" aria-label={`${data.logoText || "EduLearn"} home`}>
           <Image 
             src={data.logo || "/logo/logo.png"} 
             alt={data.logoText || "Logo"} 
@@ -54,11 +51,12 @@ export default function Header({ data }: { data: HeaderData }) {
             >
               <Link 
                 href={item.href} 
-                className={`whitespace-nowrap font-semibold text-[15px] transition-all duration-300 pb-1 border-b-2 flex items-center gap-1 ${
+                className={`whitespace-nowrap font-semibold text-[15px] capitalize transition-all duration-300 pb-1 border-b-2 flex items-center gap-1 ${
                   isActive 
-                    ? "text-primary border-primary" 
-                    : "text-secondary hover:text-primary border-transparent hover:border-primary/30"
+                    ? "text-secondary border-primary" 
+                    : "text-secondary hover:text-[#9a3412] border-transparent hover:border-primary/30"
                 }`}
+                aria-current={isActive ? "page" : undefined}
               >
                 {item.label}
                 {item.hasDropdown && (
@@ -92,7 +90,7 @@ export default function Header({ data }: { data: HeaderData }) {
         transition={{ delay: 0.5 }}
         className="hidden lg:flex items-center gap-4"
       >
-        <Link href="#" className="group whitespace-nowrap bg-secondary hover:bg-gray-800 text-white pl-6 pr-2 py-1.5 rounded-xl font-semibold text-[15px] transition-all duration-300 hover:scale-105 hover:shadow-md flex items-center gap-3">
+        <Link href={data.contactButtonHref || "/contact"} className="group whitespace-nowrap bg-secondary hover:bg-gray-800 text-white pl-6 pr-2 py-1.5 rounded-xl font-semibold text-[15px] transition-all duration-300 hover:scale-105 hover:shadow-md flex items-center gap-3">
           {data.contactButtonText}
           <div className="bg-white text-secondary rounded-full p-1.5 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
             <Send size={18} className="-ml-0.5" />
@@ -110,7 +108,9 @@ export default function Header({ data }: { data: HeaderData }) {
       <div className="xl:hidden flex items-center">
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-          className="text-white bg-primary hover:bg-[#e05312] p-2 rounded-lg shadow-sm transition-colors focus:outline-none"
+          aria-expanded={isMobileMenuOpen}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          className="text-white bg-primary hover:bg-[#9a3412] p-2.5 rounded-lg shadow-sm transition-colors focus:outline-none min-w-11 min-h-11 flex items-center justify-center"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -137,7 +137,7 @@ export default function Header({ data }: { data: HeaderData }) {
                   <div className="flex items-center justify-between">
                     <Link 
                       href={item.href} 
-                      className={`font-semibold ${pathname === item.href || (item.href !== "/" && item.href !== "#" && pathname.startsWith(item.href)) ? "text-primary" : "text-secondary"}`}
+                      className={`font-semibold capitalize ${pathname === item.href || (item.href !== "/" && item.href !== "#" && pathname.startsWith(item.href)) ? "text-primary" : "text-secondary"}`}
                       onClick={(e) => {
                         if (item.hasDropdown && item.href === "#") {
                           e.preventDefault();
@@ -205,7 +205,7 @@ export default function Header({ data }: { data: HeaderData }) {
                 </motion.div>
               ))}
               <div className="flex flex-row gap-2 sm:gap-4 mt-4 pt-4 border-t border-gray-100">
-                <Link href="#" className="flex-1 group bg-secondary hover:bg-gray-800 text-white pl-3 sm:pl-6 pr-1 sm:pr-2 py-1.5 rounded-xl font-semibold text-[13px] sm:text-[15px] transition-all hover:shadow-md flex items-center justify-between w-full sm:w-auto">
+                <Link href={data.contactButtonHref || "/contact"} className="flex-1 group bg-secondary hover:bg-gray-800 text-white pl-3 sm:pl-6 pr-1 sm:pr-2 py-1.5 rounded-xl font-semibold text-[13px] sm:text-[15px] transition-all hover:shadow-md flex items-center justify-between w-full sm:w-auto">
                   <span className="whitespace-nowrap truncate">{data.contactButtonText}</span>
                   <div className="bg-white text-secondary rounded-full p-1 sm:p-1.5 ml-1 sm:ml-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
                     <Send size={16} className="-ml-0.5" />
@@ -222,6 +222,6 @@ export default function Header({ data }: { data: HeaderData }) {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }

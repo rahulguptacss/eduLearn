@@ -5,7 +5,11 @@ import Courses from "@/components/section/Courses/page";
 import CTABanner from "@/components/section/CTABanner/page";
 import Footer from "@/components/section/Footer/page";
 import BackToTop from "@/components/BackToTop";
+import type { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 import data from "@/components/data/data.json";
+
+export const metadata: Metadata = getPageMetadata("courses");
 
 export default function CoursesPage() {
   const pages = data.categories.Education.templateComponents["template-1"].pages;

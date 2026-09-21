@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { CTABannerData } from "../../types";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -27,7 +28,7 @@ export default function CTABanner({ data }: { data: CTABannerData }) {
            <div className="relative w-full md:w-[70%] lg:w-[65%] h-full">
              <Image 
                src={data.image || "/img/ctabanner.png"}
-               alt="Students studying"
+               alt={data.imageAlt || "Students studying"}
                fill
                className="object-cover object-center"
              />
@@ -65,9 +66,12 @@ export default function CTABanner({ data }: { data: CTABannerData }) {
             {data.subtitle}
           </p>
           
-          <button className="bg-[#ff8c00] hover:bg-[#e67e00] text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-full font-semibold text-[14px] sm:text-[15px] transition-all duration-300 inline-flex items-center justify-center gap-2 w-max shadow-[0_8px_20px_rgba(255,140,0,0.3)] hover:shadow-[0_10px_25px_rgba(255,140,0,0.4)] hover:-translate-y-1 cursor-pointer">
+          <Link
+            href={data.buttonHref || "/apply-online"}
+            className="bg-[#ff8c00] hover:bg-[#e67e00] text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-full font-semibold text-[14px] sm:text-[15px] transition-all duration-300 inline-flex items-center justify-center gap-2 w-max shadow-[0_8px_20px_rgba(255,140,0,0.3)] hover:shadow-[0_10px_25px_rgba(255,140,0,0.4)] hover:-translate-y-1 cursor-pointer"
+          >
             {data.buttonText} <ArrowRight size={18} strokeWidth={2.5} />
-          </button>
+          </Link>
 
         </div>
         

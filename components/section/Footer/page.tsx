@@ -38,7 +38,7 @@ export default function Footer({ data }: { data: FooterData }) {
         {/* Logo and Description */}
         <div className="pr-0 lg:pr-8">
           <div className="mb-2">
-            <Link href="/">
+            <Link href="/" aria-label={`${data.logoText || "EduLearn"} home`}>
               <Image 
                 src={data.logo || "/logo/footerlogo.png"} 
                 alt={data.logoText || "EduLearn Logo"} 
@@ -55,7 +55,7 @@ export default function Footer({ data }: { data: FooterData }) {
             {data.socialLinks.map((social, idx) => {
               const Icon = socialIconMap[social.icon] || FacebookIcon;
               return (
-                <a key={idx} href={social.href} className="w-[38px] h-[38px] rounded-full border border-white/20 flex items-center justify-center hover:bg-[#ff5e14] hover:border-[#ff5e14] text-white transition-all duration-300">
+                <a key={idx} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.icon} className="w-[38px] h-[38px] rounded-full border border-white/20 flex items-center justify-center hover:bg-[#c2410c] hover:border-[#c2410c] text-white transition-all duration-300">
                   <Icon size={16} />
                 </a>
               );

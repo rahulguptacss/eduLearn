@@ -37,7 +37,9 @@ export default function Topbar({ data }: { data: TopbarData }) {
         <span className="text-gray-500 hidden sm:inline">|</span>
         <div className="flex items-center justify-center gap-2">
           <Mail size={16} className="text-primary shrink-0" />
-          <span className="tracking-wide">{data.email}</span>
+          <a href={`mailto:${data.email}`} className="tracking-wide hover:underline">
+            {data.email}
+          </a>
         </div>
       </div>
 
@@ -50,9 +52,11 @@ export default function Topbar({ data }: { data: TopbarData }) {
             return (
               <React.Fragment key={index}>
                 <a 
-                  href={social.href} 
-                  className="hover:text-primary transition-colors text-white flex items-center justify-center"
-                  aria-label={social.icon}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors text-white flex items-center justify-center min-w-[24px] min-h-[24px]"
+                  aria-label={`Follow us on ${social.icon}`}
                 >
                   <Icon size={15} />
                 </a>
