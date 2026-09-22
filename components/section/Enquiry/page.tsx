@@ -76,6 +76,7 @@ function FieldLabel({
 export default function Enquiry({ data }: { data: any }) {
   const [message, setMessage] = useState("");
   const [agreed, setAgreed] = useState(false);
+  const [phone, setPhone] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -194,7 +195,27 @@ export default function Enquiry({ data }: { data: any }) {
                 </div>
                 <div>
                   <FieldLabel icon={Phone}>Phone Number</FieldLabel>
-                  <input required type="tel" placeholder="Enter your phone number" className={fieldClass} />
+                  <input
+                    required
+                    type="tel"
+                    inputMode="numeric"
+                    autoComplete="tel"
+                    maxLength={15}
+                    pattern="[0-9]{7,15}"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 15))}
+                    onKeyDown={(e) => {
+                      if (e.ctrlKey || e.metaKey) return;
+                      if (["Backspace", "Delete", "Tab", "ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) return;
+                      if (!/^\d$/.test(e.key)) e.preventDefault();
+                    }}
+                    onPaste={(e) => {
+                      e.preventDefault();
+                      setPhone(e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 15));
+                    }}
+                    placeholder="Enter your phone number"
+                    className={fieldClass}
+                  />
                 </div>
                 <div>
                   <FieldLabel icon={GraduationCap}>Interested In</FieldLabel>

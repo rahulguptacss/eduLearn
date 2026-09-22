@@ -101,6 +101,7 @@ export const staticRoutes = [
   { path: "/blog", key: "blogPage" as const },
   { path: "/facilities", key: "facilities" as const },
   { path: "/enquiry", key: "enquiry" as const },
+  { path: "/contact", key: "contact" as const },
   { path: "/faq", key: "faq" as const },
   { path: "/privacy-policy", key: "privacyPolicy" as const },
   { path: "/terms-conditions", key: "termsConditions" as const },

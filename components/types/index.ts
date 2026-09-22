@@ -426,6 +426,7 @@ export interface TemplatePages {
   blogDetailsPage: PageEntry;
   facilities: PageEntry;
   enquiry: PageEntry;
+  contact: PageEntry;
   faq: PageEntry;
   privacyPolicy: PageEntry;
   termsConditions: PageEntry;
@@ -515,6 +516,7 @@ export interface TemplateSections {
   newsDetails: any;
   facilities: any;
   enquiry: any;
+  contact: any;
   faq: any;
   legal: LegalData;
   sitemap: SitemapData;

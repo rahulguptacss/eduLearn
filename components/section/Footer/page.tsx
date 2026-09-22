@@ -71,7 +71,7 @@ export default function Footer({ data }: { data: FooterData }) {
             <ul className="flex flex-col gap-4">
               {group.links.map((link, linkIdx) => (
                 <li key={linkIdx}>
-                  <Link href={link.href} className="hover:text-white transition-colors flex items-center gap-3 text-[15px] group">
+                  <Link href={link.href} className="hover:text-white transition-colors flex items-center gap-3 text-[15px] group whitespace-nowrap">
                     <ChevronRight size={14} className="text-white group-hover:text-[#ff5e14] transition-colors" /> 
                     <span>{link.label}</span>
                   </Link>

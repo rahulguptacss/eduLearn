@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import {
@@ -21,6 +21,10 @@ import { FaGraduationCap, FaFileAlt, FaClock, FaUsers, FaPaperPlane, FaPhoneAlt,
 import Link from "next/link";
 
 export default function ApplyOnline({ data }: { data: any }) {
+  const [phone, setPhone] = useState("");
+  const [altPhone, setAltPhone] = useState("");
+
+  const onlyDigits = (value: string) => value.replace(/\D/g, "").slice(0, 15);
   // Animation variants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -259,11 +263,49 @@ export default function ApplyOnline({ data }: { data: any }) {
                     </div>
                     <div className="flex flex-col gap-2">
                       <label className="text-[14px] font-semibold text-[#021d38]">Phone Number <span className="text-red-500">*</span></label>
-                      <input type="tel" placeholder="Enter your phone number" className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-[15px] focus:outline-none focus:border-[#021d38] focus:ring-1 focus:ring-[#021d38] transition-all" />
+                      <input
+                        type="tel"
+                        inputMode="numeric"
+                        autoComplete="tel"
+                        maxLength={15}
+                        pattern="[0-9]{7,15}"
+                        value={phone}
+                        onChange={(e) => setPhone(onlyDigits(e.target.value))}
+                        onKeyDown={(e) => {
+                          if (e.ctrlKey || e.metaKey) return;
+                          if (["Backspace", "Delete", "Tab", "ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) return;
+                          if (!/^\d$/.test(e.key)) e.preventDefault();
+                        }}
+                        onPaste={(e) => {
+                          e.preventDefault();
+                          setPhone(onlyDigits(e.clipboardData.getData("text")));
+                        }}
+                        placeholder="Enter your phone number"
+                        className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-[15px] focus:outline-none focus:border-[#021d38] focus:ring-1 focus:ring-[#021d38] transition-all"
+                      />
                     </div>
                     <div className="flex flex-col gap-2">
                       <label className="text-[14px] font-semibold text-[#021d38]">Alternate Phone Number</label>
-                      <input type="tel" placeholder="Enter alternate phone number" className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-[15px] focus:outline-none focus:border-[#021d38] focus:ring-1 focus:ring-[#021d38] transition-all" />
+                      <input
+                        type="tel"
+                        inputMode="numeric"
+                        autoComplete="tel"
+                        maxLength={15}
+                        pattern="[0-9]{7,15}"
+                        value={altPhone}
+                        onChange={(e) => setAltPhone(onlyDigits(e.target.value))}
+                        onKeyDown={(e) => {
+                          if (e.ctrlKey || e.metaKey) return;
+                          if (["Backspace", "Delete", "Tab", "ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) return;
+                          if (!/^\d$/.test(e.key)) e.preventDefault();
+                        }}
+                        onPaste={(e) => {
+                          e.preventDefault();
+                          setAltPhone(onlyDigits(e.clipboardData.getData("text")));
+                        }}
+                        placeholder="Enter alternate phone number"
+                        className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-[15px] focus:outline-none focus:border-[#021d38] focus:ring-1 focus:ring-[#021d38] transition-all"
+                      />
                     </div>
                     <div className="flex flex-col gap-2">
                       <label className="text-[14px] font-semibold text-[#021d38]">Address <span className="text-red-500">*</span></label>

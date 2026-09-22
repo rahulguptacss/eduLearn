@@ -107,22 +107,6 @@
             {
               "label": "FAQ",
               "href": "/faq"
-            },
-            {
-              "label": "Privacy Policy",
-              "href": "/privacy-policy"
-            },
-            {
-              "label": "Terms & Conditions",
-              "href": "/terms-conditions"
-            },
-            {
-              "label": "Refund Policy",
-              "href": "/refund-policy"
-            },
-            {
-              "label": "Sitemap",
-              "href": "/sitemap"
             }
           ]
         },
@@ -170,24 +154,24 @@
           "title": "Our Courses",
           "links": [
             {
-              "label": "Photography",
-              "href": "#"
+              "label": "Web Development",
+              "href": "/courses/complete-web-development-bootcamp"
             },
             {
-              "label": "Business",
-              "href": "#"
+              "label": "Finance",
+              "href": "/courses/finance-fundamentals-for-beginners"
             },
             {
               "label": "Medical Science",
-              "href": "#"
+              "href": "/courses/medical-terminology-made-easy"
             },
             {
-              "label": "Data Science",
-              "href": "#"
+              "label": "Photography",
+              "href": "/courses/photography-masterclass-for-creators"
             },
             {
-              "label": "Design Art",
-              "href": "#"
+              "label": "Graphic Design",
+              "href": "/courses/graphic-design-for-beginners"
             }
           ]
         },
@@ -197,6 +181,10 @@
             {
               "label": "FAQ",
               "href": "/faq"
+            },
+            {
+              "label": "Contact Us",
+              "href": "/contact"
             },
             {
               "label": "Privacy Policy",
@@ -209,10 +197,6 @@
             {
               "label": "Refund Policy",
               "href": "/refund-policy"
-            },
-            {
-              "label": "Sitemap",
-              "href": "/sitemap"
             }
           ]
         }
@@ -949,6 +933,24 @@
                 "title": "Enquiry Now",
                 "description": "Send an enquiry to EduLearn admissions for course and application support.",
                 "canonical": "/enquiry"
+              }
+            },
+            "contact": {
+              "breadcrumb": {
+                "title": "Contact Us",
+                "paths": [
+                  { "label": "Home", "href": "/" },
+                  { "label": "Contact Us" }
+                ],
+                "bgImage": "/img/coverbc.png"
+              },
+              "components": [
+                { "key": "Contact", "component": "Contact" }
+              ],
+              "seo": {
+                "title": "Contact Us",
+                "description": "Get in touch with EduLearn for admissions, courses and campus support. Email, call or visit us.",
+                "canonical": "/contact"
               }
             },
             "faq": {
@@ -3647,6 +3649,93 @@
                     "line1": "Chat with our support team for instant assistance.",
                     "buttonText": "Start Chat"
                   }
+                ]
+              }
+            },
+            "contact": {
+              "subtitle": "GET IN TOUCH",
+              "title": "We're Here to",
+              "titleHighlight": "Help",
+              "description": "Have questions about our courses, admissions, or need guidance? Our team is always ready to assist you. Reach out to us anytime!",
+              "cards": [
+                {
+                  "icon": "mail",
+                  "title": "Email Us",
+                  "note": "Drop us an email anytime",
+                  "lines": ["admission@edulearn.com", "support@edulearn.com"]
+                },
+                {
+                  "icon": "map",
+                  "title": "Our Location",
+                  "note": "Visit our campus",
+                  "lines": ["2750 Quadra Street Victoria Road,", "New York, United States"]
+                },
+                {
+                  "icon": "phone",
+                  "title": "Call Us",
+                  "note": "Mon - Fri, 9:00 AM - 6:00 PM",
+                  "lines": ["+1 123 456 7890", "+1 241 452 4526"]
+                }
+              ],
+              "form": {
+                "subtitle": "CONTACT US",
+                "title": "Drop us a Message",
+                "titleHighlight": "for Any Query",
+                "description": "Fill out the form and our team will get back to you as soon as possible.",
+                "buttonText": "Send Message",
+                "privacyText": "We respect your privacy. Your information is safe with us.",
+                "fields": {
+                  "name": "Your Name",
+                  "email": "Your Email Address",
+                  "phone": "Your Phone Number",
+                  "subject": "Select Subject",
+                  "message": "Write your message..."
+                },
+                "subjects": [
+                  "Admission Query",
+                  "Course Information",
+                  "Fee Structure",
+                  "Scholarship",
+                  "Campus Visit",
+                  "Other"
+                ]
+              },
+              "promo": {
+                "title": "Let's Shape",
+                "titleHighlight": "Your Brighter Tomorrow",
+                "description": "Have questions about admissions, courses, or career guidance? Our team is here to help you every step of the way.",
+                "image": "/img/contact.png",
+                "badge": "Your Questions Our Priority",
+                "note": "We're Just a Message Away!",
+                "items": [
+                  {
+                    "title": "Admission Support",
+                    "text": "Get complete information about our programs."
+                  },
+                  {
+                    "title": "Career Guidance",
+                    "text": "Talk to our expert counselors."
+                  },
+                  {
+                    "title": "General Inquiries",
+                    "text": "We're happy to help."
+                  }
+                ]
+              },
+              "map": {
+                "subtitle": "OUR LOCATION",
+                "title": "Visit Our Campus",
+                "description": "We'd love to welcome you to our campus. Find us on the map and come experience a learning environment designed for your success.",
+                "address": "2750 Quadra Street Victoria Road,\nNew York, United States",
+                "buttonText": "Get Directions",
+                "mapUrl": "https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed",
+                "directionsUrl": "https://maps.google.com/?q=2750+Quadra+Street+Victoria+Road+New+York",
+                "quote": "Education Changes Lives",
+                "marker": "EduLearn Learning Center",
+                "stats": [
+                  { "value": "500+", "label": "Happy Students" },
+                  { "value": "50+", "label": "Expert Instructors" },
+                  { "value": "10+", "label": "Years of Excellence" }
                 ]
               }
             },
